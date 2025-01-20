@@ -1,12 +1,17 @@
-.glow {
-  animation: glow 1.5s infinite alternate;
+.gradientBackground {
+  background: linear-gradient(270deg, rgb(138, 8, 129) 0%, rgb(0, 106, 255) 50%, rgb(18, 195, 104) 100%);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
 }
 
-@keyframes glow {
+@keyframes gradientAnimation {
   0% {
-    text-shadow: 0 0 5px rgba(255, 165, 0, 0.7), 0 0 7px rgba(254, 234, 11, 0.5);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
   100% {
-    text-shadow: 0 0 10px rgb(255, 132, 0), 0 0 20px rgba(255, 119, 0, 0.8);
+    background-position: 0% 50%;
   }
 }
