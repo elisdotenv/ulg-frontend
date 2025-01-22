@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Welcome to the Lobby',
+  title: 'Uptown Lobby',
   description: 'Made by Gamers, For Gamers',
 };
 
