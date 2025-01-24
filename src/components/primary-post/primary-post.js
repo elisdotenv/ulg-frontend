@@ -6,6 +6,8 @@ import styles from './page.module.css';
 import { FaArrowUpRightFromSquare, FaBookmark, FaRegBookmark, FaLink, FaCopy } from 'react-icons/fa6';
 import { IoIosMore } from 'react-icons/io';
 import { PiArrowFatDownBold, PiArrowFatDownFill, PiArrowFatUpFill, PiArrowFatUpBold, PiDotOutlineFill } from 'react-icons/pi';
+import { HiChatBubbleBottomCenterText } from 'react-icons/hi2';
+import { updatedTimeFn } from '@/utils/date/date-functions';
 
 export default function PrimaryPost({
   gotohref,
@@ -22,8 +24,7 @@ export default function PrimaryPost({
   const [isBookMarked, setIsBookMarked] = useState(false);
   const [isLinkCopied, setIsLinkCopied] = useState(false);
   const [isUpvoted, setIsUpvoted] = useState(false);
-  const [isDownvoted, setIsDownvoted] = useState(false);
-  const [Upvotes, setUpvotes] = useState(673);
+  const [Upvotes, setUpvotes] = useState(674);
 
   // --- Base URL
   const baseURL = 'https://tranquil-morning-50f1598ff6.strapiapp.com';
@@ -76,8 +77,8 @@ export default function PrimaryPost({
                 className={`rounded-full m-0 p-0`}
                 src={authorImageURL}
                 alt={''}
-                width={36}
-                height={36}
+                width={40}
+                height={40}
                 objectFit='cover'
                 layout='intrinsic'
               />
@@ -86,8 +87,8 @@ export default function PrimaryPost({
               <div className={`flex flex-col`}>
                 <h4 className={`${styles.AuthorName}`}>{authorname}</h4>
                 <h4 className={`${styles.updatedTime}`}>
-                  4m read time <PiDotOutlineFill />
-                  {updatedTime}
+                  2m read time <PiDotOutlineFill />
+                  {updatedTimeFn(updatedTime)}
                 </h4>
               </div>
             </div>
@@ -135,10 +136,10 @@ export default function PrimaryPost({
 
           {/* 3. >>> Post Footer Content */}
           <div className={`flex items-center gap-[0.5rem] mt-[0.625rem]`}>
-            {/* --- Upvote/Downvote */}
+            {/* --- Upvote/Chat */}
             <div
               className={`flex items-center gap-3 rounded-[0.5rem] bg-[#333333]/90 px-[6px] h-9 divide-x-[1.5px] divide-[#4f4f4f]`}>
-              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold`}>
+              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-white`}>
                 {isUpvoted ? (
                   <PiArrowFatUpFill className={`${styles.UpvoteDownvote}`} />
                 ) : (
@@ -146,12 +147,10 @@ export default function PrimaryPost({
                 )}
                 {Upvotes}
               </span>
-              <span onClick={() => handleDownvote()} className={`flex items-center`}>
-                {isDownvoted ? (
-                  <PiArrowFatDownFill className={`${styles.UpvoteDownvote} ml-2`} />
-                ) : (
-                  <PiArrowFatDownBold className={`${styles.UpvoteDownvote} ml-2`} />
-                )}
+
+              {/* () ---> Handle Chat Functionality */}
+              <span className={`flex items-center`}>
+                <HiChatBubbleBottomCenterText className={`${styles.UpvoteDownvote} ml-2`} />
               </span>
             </div>
 
@@ -159,7 +158,11 @@ export default function PrimaryPost({
             <span
               onClick={() => setBookmark()}
               className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem]`}>
-              {isBookMarked ? <FaBookmark className={`text-[20px]`} /> : <FaRegBookmark className={`text-[20px]`} />}
+              {isBookMarked ? (
+                <FaBookmark className={`text-[20px] text-white`} />
+              ) : (
+                <FaRegBookmark className={`text-[20px] text-white`} />
+              )}
             </span>
 
             {/* --- Link & Read-post */}
@@ -167,7 +170,7 @@ export default function PrimaryPost({
               <span
                 onClick={() => copyLinkToClipboard()}
                 className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem] `}>
-                <FaLink className={`text-[22px]`} />
+                <FaLink className={`text-[22px] text-white`} />
               </span>
 
               <Link href={gotohref}>
