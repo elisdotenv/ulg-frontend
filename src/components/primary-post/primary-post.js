@@ -97,11 +97,11 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-4`}>
               <Link href={gotohref}>
                 <span>
-                  <FaArrowUpRightFromSquare className={`text-[18px]`} />
+                  <FaArrowUpRightFromSquare className={`text-[18px] text-white`} />
                 </span>
               </Link>
               <span>
-                <IoIosMore className={`text-[24px]`} />
+                <IoIosMore className={`text-[24px] text-white`} />
               </span>
             </div>
           </div>
