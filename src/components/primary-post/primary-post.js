@@ -140,7 +140,7 @@ export default function PrimaryPost({
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
             <div
-              className={`flex items-center gap-3 rounded-[0.5rem] bg-[#333333]/90 px-[6px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
+              className={`flex items-center gap-3 rounded-[0.5rem] bg-[#a8b3cf0b] px-[6px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
                   <PiArrowFatUpFill className={`${styles.UpvoteDownvote}`} />
@@ -159,7 +159,7 @@ export default function PrimaryPost({
             {/* --- Bookmark */}
             <span
               onClick={() => setBookmark()}
-              className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem]`}>
+              className={`bg-[#a8b3cf0b] flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
                 <FaBookmark className={`text-[20px] text-[#a8b3cf]`} />
               ) : (
@@ -171,7 +171,7 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-2`}>
               <span
                 onClick={() => copyLinkToClipboard()}
-                className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem] `}>
+                className={`bg-[#a8b3cf0b] flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem] `}>
                 <FaLink className={`text-[22px] text-[#a8b3cf]`} />
               </span>
 

@@ -30,7 +30,8 @@
 }
 
 .GoBtn {
-  @apply bg-[#d9ded3] font-[500] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];
+  /* @apply bg-[#a8b3cf] font-[500] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];*/
+  @apply bg-[#a8b3cf] font-[500] flex items-center justify-center text-[#000000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];
 }
 
 .UpvoteDownvote {
