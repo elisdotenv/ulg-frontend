@@ -9,6 +9,9 @@ import { PiArrowFatDownBold, PiArrowFatDownFill, PiArrowFatUpFill, PiArrowFatUpB
 import { HiChatBubbleBottomCenterText } from 'react-icons/hi2';
 import { updatedTimeFn } from '@/utils/date/date-functions';
 import { truncateDescription, truncateTitle } from '@/utils/truncate/truncations';
+import UpvoteIcon from '../../../public/icons/upvote.svg';
+import ChatIcon from '../../../public/icons/chat.svg';
+import BookmarkIcon from '../../../public/icons/bookmark.svg';
 
 export default function PrimaryPost({
   gotohref,
@@ -143,16 +146,16 @@ export default function PrimaryPost({
               className={`flex items-center gap-3 rounded-[0.5rem] bg-[#a8b3cf0b] px-[14px] py-[16px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
-                  <PiArrowFatUpFill className={`${styles.UpvoteDownvote}`} />
+                  <UpvoteIcon className={`${styles.UpvoteDownvote}`} />
                 ) : (
-                  <PiArrowFatUpBold className={`${styles.UpvoteDownvote}`} />
+                  <UpvoteIcon className={`${styles.UpvoteDownvote}`} />
                 )}
                 {Upvotes}
               </span>
 
               {/* () ---> Handle Chat Functionality */}
               <span className={`flex items-center`}>
-                <HiChatBubbleBottomCenterText className={`${styles.UpvoteDownvote} ml-2`} />
+                <ChatIcon className={`${styles.UpvoteDownvote} ml-2`} />
               </span>
             </div>
 
@@ -161,9 +164,9 @@ export default function PrimaryPost({
               onClick={() => setBookmark()}
               className={`bg-[#a8b3cf0b] flex items-center justify-center px-[12px] py-[16px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
-                <FaBookmark className={`text-[20px] text-[#a8b3cf]`} />
+                <BookmarkIcon className={`text-[30px] text-[#a8b3cf]`} />
               ) : (
-                <FaRegBookmark className={`text-[20px] text-[#a8b3cf]`} />
+                <BookmarkIcon className={`text-[30px] text-[#a8b3cf]`} />
               )}
             </span>
 
@@ -172,12 +175,12 @@ export default function PrimaryPost({
               <span
                 onClick={() => copyLinkToClipboard()}
                 className={`bg-[#a8b3cf0b] flex items-center justify-center px-[12px] py-[16px] rounded-[6px] h-9 leading-[1.125rem] `}>
-                <FaLink className={`text-[22px] text-[#a8b3cf]`} />
+                <FaLink className={`text-[28px] text-[#a8b3cf]`} />
               </span>
 
-              <Link href={gotohref}>
+              {/* <Link href={gotohref}>
                 <span className={`${styles.GoBtn}`}>View post</span>
-              </Link>
+              </Link>*/}
             </div>
           </div>
           {/* ####### */}
