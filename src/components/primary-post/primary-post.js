@@ -8,7 +8,6 @@ import { IoIosMore } from 'react-icons/io';
 import { PiDotOutlineFill } from 'react-icons/pi';
 import { updatedTimeFn } from '@/utils/date/date-functions';
 import { truncateDescription, truncateTitle } from '@/utils/truncate/truncations';
-/*import { UpvoteIconPressed, UpvoteIcon, BookmarkIcon, ChatIcon } from '@/ui/svg-icons/svg-icons';*/
 
 export default function PrimaryPost({
   gotohref,
@@ -131,33 +130,33 @@ export default function PrimaryPost({
           {/* 3. >>> Post Footer Content */}
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
-            <div
+            {/*            <div
               className={`flex items-center gap-3 rounded-[0.5rem] bg-[#a8b3cf0b] px-[14px] py-[16px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
-                  <span className={`${styles.UpvoteDownvote}`}>{/* <UpvoteIconPressed />*/}u</span>
+                  <span className={`${styles.UpvoteDownvote}`}>u</span>
                 ) : (
-                  <span className={`${styles.UpvoteDownvote}`}>{/*   <UpvoteIcon />*/} d</span>
+                  <span className={`${styles.UpvoteDownvote}`}>d</span>
                 )}
                 {Upvotes}
-              </span>
+              </span>*/}
 
-              {/* () ---> Handle Chat Functionality */}
-              <span className={`flex items-center`}>
-                <span className={`${styles.UpvoteDownvote} ml-2`}>{/*   <ChatIcon />*/} c</span>
+            {/* () ---> Handle Chat Functionality */}
+            {/*        <span className={`flex items-center`}>
+                <span className={`${styles.UpvoteDownvote} ml-2`}>c</span>
               </span>
-            </div>
+            </div>*/}
 
             {/* --- Bookmark */}
-            <span
+            {/* <span
               onClick={() => setBookmark()}
               className={`bg-[#a8b3cf0b] flex items-center justify-center px-[12px] py-[16px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
-                <span className={`text-[32px] text-[#a8b3cf]`}>{/*   <BookmarkIcon />*/} b</span>
+                <span className={`text-[32px] text-[#a8b3cf]`}>b</span>
               ) : (
-                <span className={`text-[32px] text-[#a8b3cf]`}>{/* <BookmarkIcon />*/} B</span>
+                <span className={`text-[32px] text-[#a8b3cf]`}>B</span>
               )}
-            </span>
+            </span>*/}
 
             {/* --- Link & Read-post */}
             <div className={`flex items-center gap-2`}>
