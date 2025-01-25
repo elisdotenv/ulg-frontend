@@ -1,6 +1,5 @@
 'use client';
 import styles from './page.module.css';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import colors from 'colors';
