@@ -8,6 +8,7 @@ import { IoIosMore } from 'react-icons/io';
 import { PiArrowFatDownBold, PiArrowFatDownFill, PiArrowFatUpFill, PiArrowFatUpBold, PiDotOutlineFill } from 'react-icons/pi';
 import { HiChatBubbleBottomCenterText } from 'react-icons/hi2';
 import { updatedTimeFn } from '@/utils/date/date-functions';
+import { truncateDescription, truncateTitle } from '@/utils/truncate/truncations';
 
 export default function PrimaryPost({
   gotohref,
@@ -97,11 +98,11 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-4`}>
               <Link href={gotohref}>
                 <span>
-                  <FaArrowUpRightFromSquare className={`text-[18px] text-[#e6f6f6]`} />
+                  <FaArrowUpRightFromSquare className={`text-[18px] text-[#a8b3cf]`} />
                 </span>
               </Link>
               <span>
-                <IoIosMore className={`text-[24px] text-[#e6f6f6]`} />
+                <IoIosMore className={`text-[24px] text-[#a8b3cf]`} />
               </span>
             </div>
           </div>
@@ -111,9 +112,10 @@ export default function PrimaryPost({
           <div className={`${styles.TitleImage}`}>
             <div className={`${styles.TitleDescriptionTag}`}>
               {/* --- Title */}
-              <h1 className={`${styles.Title}`}>{postTitle}</h1>
+              <h1 className={`${styles.Title}`}>{truncateTitle(postTitle)}</h1>
+
               {/* --- Descriptions */}
-              <p className={`${styles.DescriptionMd} hidden`}>{postDescription}</p>
+              <p className={`${styles.DescriptionMd} hidden`}>{truncateDescription(postDescription)}</p>
             </div>
 
             {/* --- Image */}
@@ -130,7 +132,7 @@ export default function PrimaryPost({
             </div>
 
             {/* --- Descriptions */}
-            <p className={`${styles.Description} md:hidden`}>{postDescription}</p>
+            <p className={`${styles.Description} md:hidden`}>{truncateDescription(postDescription)}</p>
           </div>
           {/* ####### */}
 
@@ -138,8 +140,8 @@ export default function PrimaryPost({
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
             <div
-              className={`flex items-center gap-3 rounded-[0.5rem] bg-[#333333]/90 px-[6px] h-9 divide-x-[1.5px] divide-[#4f4f4f]`}>
-              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#e6f6f6]`}>
+              className={`flex items-center gap-3 rounded-[0.5rem] bg-[#333333]/90 px-[6px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
+              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
                   <PiArrowFatUpFill className={`${styles.UpvoteDownvote}`} />
                 ) : (
@@ -159,9 +161,9 @@ export default function PrimaryPost({
               onClick={() => setBookmark()}
               className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
-                <FaBookmark className={`text-[20px] text-[#e6f6f6]`} />
+                <FaBookmark className={`text-[20px] text-[#a8b3cf]`} />
               ) : (
-                <FaRegBookmark className={`text-[20px] text-[#e6f6f6]`} />
+                <FaRegBookmark className={`text-[20px] text-[#a8b3cf]`} />
               )}
             </span>
 
@@ -170,7 +172,7 @@ export default function PrimaryPost({
               <span
                 onClick={() => copyLinkToClipboard()}
                 className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem] `}>
-                <FaLink className={`text-[22px] text-[#e6f6f6]`} />
+                <FaLink className={`text-[22px] text-[#a8b3cf]`} />
               </span>
 
               <Link href={gotohref}>

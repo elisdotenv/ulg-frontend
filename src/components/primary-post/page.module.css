@@ -15,7 +15,7 @@
 }
 /* Time */
 .updatedTime {
-  @apply inline-flex items-center text-[13px] text-[#a8b3cf] font-medium;
+  @apply inline-flex items-center text-[0.875rem] text-[#a8b3cf] font-medium;
 }
 
 /* Title */
@@ -30,15 +30,15 @@
 }
 
 .GoBtn {
-  @apply bg-[#e6f6f6] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[15px] h-[34px] leading-[1.125rem];
+  @apply bg-[#d9ded3] font-[500] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];
 }
 
 .UpvoteDownvote {
-  @apply leading-5 text-[20px] text-[#e6f6f6];
+  @apply leading-5 text-[20px] text-[#a8b3cf];
 }
 
 .Description {
-  @apply mt-[0.375rem] break-words  font-normal text-[15px] leading-[1.3rem] text-[#e6f6f6];
+  @apply mt-[0.5rem] break-words font-[500] text-[1rem] leading-[1.3rem] text-[#d3dede];
 }
 
 /* Media Queries and Screens */
