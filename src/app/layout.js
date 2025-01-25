@@ -2,6 +2,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { Geist } from 'next/font/google';
 import './globals.css';
+import { FooterMobile } from '@/components/footer/footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,8 +18,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} antialiased`}>
-        {children}
-        <Analytics />
+        {/* --- 2. Main Contents Section */}
+        <main>
+          {children}
+          <Analytics />
+        </main>
+
+        {/* --- 3. Footer Section */}
+        <footer>
+          {/* --- [Mobile Screen] */}
+          <div className={`md:hidden`}>
+            <FooterMobile />
+          </div>
+          {/* --- [Medium to Large Screen] */}
+          <div className={`hidden md:block`}></div>
+        </footer>
       </body>
     </html>
   );
