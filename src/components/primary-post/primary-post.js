@@ -11,6 +11,7 @@ import { PiDotOutlineFill } from 'react-icons/pi';
 /*import { HiChatBubbleBottomCenterText } from 'react-icons/hi2';*/
 import { updatedTimeFn } from '@/utils/date/date-functions';
 import { truncateDescription, truncateTitle } from '@/utils/truncate/truncations';
+import { UpvoteIconPressed, UpvoteIcon } from '@/ui/svg-icons/svg-icons';
 
 export default function PrimaryPost({
   gotohref,
@@ -26,6 +27,7 @@ export default function PrimaryPost({
   // --- State variables and dynamic data
   const [isBookMarked, setIsBookMarked] = useState(false);
   const [isLinkCopied, setIsLinkCopied] = useState(false);
+  const [isDownvoted, setIsDownvoted] = useState(false);
   const [isUpvoted, setIsUpvoted] = useState(false);
   const [Upvotes, setUpvotes] = useState(674);
 
@@ -125,7 +127,7 @@ export default function PrimaryPost({
             </div>
 
             {/* --- Descriptions */}
-            <p className={`${styles.Description} md:hidden`}>{truncateDescription(postDescription)}</p>
+            <p className={`${styles.Description} md:hidden`}>{truncateDescription(postDescription)} </p>
           </div>
           {/* ####### */}
 
@@ -137,7 +139,7 @@ export default function PrimaryPost({
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
                   <span className={`${styles.UpvoteDownvote}`}>
-                    <svg
+                    {/*<svg
                       width='1em'
                       height='1em'
                       viewBox='0 0 24 24'
@@ -147,11 +149,12 @@ export default function PrimaryPost({
                         d='M9.456 4.216l-5.985 7.851c-.456.637-.583 1.402-.371 2.108l.052.155a2.384 2.384 0 002.916 1.443l2.876-.864.578 4.042a2.384 2.384 0 002.36 2.047h.234l.161-.006a2.384 2.384 0 002.2-2.041l.576-4.042 2.877.864a2.384 2.384 0 002.625-3.668L14.63 4.33a3.268 3.268 0 00-5.174-.115zm3.57.613c.16.114.298.253.411.411l5.897 7.736a.884.884 0 01-.973 1.36l-3.563-1.069a.884.884 0 00-1.129.722l-.678 4.75a.884.884 0 01-.875.759h-.234a.884.884 0 01-.875-.76l-.679-4.75a.884.884 0 00-1.128-.72l-3.563 1.068a.884.884 0 01-.973-1.36L10.56 5.24a1.767 1.767 0 012.465-.41z'
                         fill='currentcolor'
                         fillRule='evenodd'></path>
-                    </svg>
+                    </svg>*/}
+                    <UpvoteIconPressed />
                   </span>
                 ) : (
                   <span className={`${styles.UpvoteDownvote}`}>
-                    <svg
+                    {/* <svg
                       width='1em'
                       height='1em'
                       viewBox='0 0 24 24'
@@ -161,7 +164,8 @@ export default function PrimaryPost({
                         d='M9.456 4.216l-5.985 7.851c-.456.637-.583 1.402-.371 2.108l.052.155a2.384 2.384 0 002.916 1.443l2.876-.864.578 4.042a2.384 2.384 0 002.36 2.047h.234l.161-.006a2.384 2.384 0 002.2-2.041l.576-4.042 2.877.864a2.384 2.384 0 002.625-3.668L14.63 4.33a3.268 3.268 0 00-5.174-.115zm3.57.613c.16.114.298.253.411.411l5.897 7.736a.884.884 0 01-.973 1.36l-3.563-1.069a.884.884 0 00-1.129.722l-.678 4.75a.884.884 0 01-.875.759h-.234a.884.884 0 01-.875-.76l-.679-4.75a.884.884 0 00-1.128-.72l-3.563 1.068a.884.884 0 01-.973-1.36L10.56 5.24a1.767 1.767 0 012.465-.41z'
                         fill='currentcolor'
                         fillRule='evenodd'></path>
-                    </svg>
+                    </svg>*/}
+                    <UpvoteIcon />
                   </span>
                 )}
                 {Upvotes}
