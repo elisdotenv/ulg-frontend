@@ -16,23 +16,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    turbo: {
-      // You can add any specific Turbopack settings here
-      // For example:
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-      // Additional Turbopack options can be added here
-    },
-  },
-  webpack(config) {
-    // Your existing Webpack configuration can remain here if needed
-    return config;
-  },
 };
 
 export default nextConfig;

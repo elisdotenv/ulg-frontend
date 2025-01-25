@@ -35,7 +35,7 @@
 }
 
 .UpvoteDownvote {
-  @apply leading-5 text-[34px] text-[#a8b3cf];
+  @apply leading-5 text-[32px] text-[#a8b3cf];
 }
 
 .Description {

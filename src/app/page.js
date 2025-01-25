@@ -58,7 +58,6 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className={`text-white font-semibold text-[1rem] text-center`}>Under Development.....</p>
       </div>
     </>
   );
