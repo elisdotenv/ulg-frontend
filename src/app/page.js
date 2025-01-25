@@ -11,12 +11,14 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const API_URL = process.env.NEXT_PUBLIC_ULG_API_URL;
+
   // Fetching posts data from external api
   useEffect(() => {
     const fetchPosts = async () => {
       // Axios-Configuration Object
       const config = {
-        url: 'https://tranquil-morning-50f1598ff6.strapiapp.com/api/posts?populate=*',
+        url: API_URL,
         method: 'GET',
       };
       try {
@@ -56,7 +58,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className={`text-white font-semibold text-[1rem] text-center`}>In development..... Hang on!</p>
+        <p className={`text-white font-semibold text-[1rem] text-center`}>Under Development.....</p>
       </div>
     </>
   );
