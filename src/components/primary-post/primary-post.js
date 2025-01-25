@@ -67,9 +67,9 @@ export default function PrimaryPost({
     <>
       <div className={`relative`}>
         <div
-          className={`${styles.postWrapper} bg-gradient-to-b from-[#333333] to-transparent p-[1rem] rounded-t-2xl border-t-[1.25px] border-t-[#a8b3cf] block`}>
+          className={`${styles.postWrapper} bg-gradient-to-b from-[#14171b] to-transparent px-[1rem] py-[1.5rem] rounded-t-2xl border-t-[1.25px] block`}>
           {/* 1. >>> Post Header Content */}
-          <div className={`flex justify-between items-center`}>
+          <div className={`flex justify-between items-center mb-[0.5rem]`}>
             {/* --- Author profile & Updated time */}
             <div className={`flex items-center gap-2`}>
               {/* --- author image */}
@@ -97,11 +97,11 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-4`}>
               <Link href={gotohref}>
                 <span>
-                  <FaArrowUpRightFromSquare className={`text-[18px] text-white`} />
+                  <FaArrowUpRightFromSquare className={`text-[18px] text-[#e6f6f6]`} />
                 </span>
               </Link>
               <span>
-                <IoIosMore className={`text-[24px] text-white`} />
+                <IoIosMore className={`text-[24px] text-[#e6f6f6]`} />
               </span>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function PrimaryPost({
             </div>
 
             {/* --- Image */}
-            <div className={`${styles.ImageWrapper}`}>
+            <div className={`${styles.ImageWrapper} mt-[1rem]`}>
               <Image
                 className={`${styles.Image}`}
                 width={10000}
@@ -135,11 +135,11 @@ export default function PrimaryPost({
           {/* ####### */}
 
           {/* 3. >>> Post Footer Content */}
-          <div className={`flex items-center gap-[0.5rem] mt-[0.625rem]`}>
+          <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
             <div
               className={`flex items-center gap-3 rounded-[0.5rem] bg-[#333333]/90 px-[6px] h-9 divide-x-[1.5px] divide-[#4f4f4f]`}>
-              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-white`}>
+              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#e6f6f6]`}>
                 {isUpvoted ? (
                   <PiArrowFatUpFill className={`${styles.UpvoteDownvote}`} />
                 ) : (
@@ -159,9 +159,9 @@ export default function PrimaryPost({
               onClick={() => setBookmark()}
               className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
-                <FaBookmark className={`text-[20px] text-white`} />
+                <FaBookmark className={`text-[20px] text-[#e6f6f6]`} />
               ) : (
-                <FaRegBookmark className={`text-[20px] text-white`} />
+                <FaRegBookmark className={`text-[20px] text-[#e6f6f6]`} />
               )}
             </span>
 
@@ -170,7 +170,7 @@ export default function PrimaryPost({
               <span
                 onClick={() => copyLinkToClipboard()}
                 className={`bg-[#333333]/90 flex items-center justify-center px-[8px] rounded-[6px] h-9 leading-[1.125rem] `}>
-                <FaLink className={`text-[22px] text-white`} />
+                <FaLink className={`text-[22px] text-[#e6f6f6]`} />
               </span>
 
               <Link href={gotohref}>
@@ -183,7 +183,7 @@ export default function PrimaryPost({
         {isLinkCopied && (
           <div
             className={`absolute w-fit inline-flex justify-center items-center top-[0.5rem] left-0 right-0 mx-auto bg-[#252525] rounded-[6px]`}>
-            <span className={`flex items-center gap-1 text-[#fcfdfd] text-[15px] font-ternaryMedium px-[0.75rem] py-[6px]`}>
+            <span className={`flex items-center gap-1 text-[#e6f6f6] text-[15px] font-ternaryMedium px-[0.75rem] py-[6px]`}>
               <FaCopy /> Link Copied!
             </span>
           </div>

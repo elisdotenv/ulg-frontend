@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --background: color-mix(in srgb, #a8b3cf, transparent 92%);
   --background: #252525;
+  --background: #14171b;
   --foreground: #171717;
 }
 

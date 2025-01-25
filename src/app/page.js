@@ -37,25 +37,27 @@ export default function Home() {
 
   return (
     <>
-      <ul className={`${styles.secondaryPostsGrid} md:hidden px-0 md:px-[1rem] flex flex-col gap-[0.75rem]`}>
-        {pinnedPosts.map((p) => (
-          <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
-            <PrimaryPost
-              gotohref={`/gadgets/${p.attributes.slug}`}
-              alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-              imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-              postTitle={p?.attributes?.title}
-              postDescription={p?.attributes?.description}
-              authorname={p?.attributes?.author?.authorname}
-              authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
-              tag={p?.attributes?.tags}
-              updatedTime={p?.attributes?.updatedAt}
-              authorLink
-            />
-          </li>
-        ))}
-      </ul>
-      <p className={`text-white font-semibold text-[1rem] text-center`}>In development..... Hang on!</p>
+      <div className={`flex flex-col py-[1rem]`}>
+        <ul className={`${styles.secondaryPostsGrid} md:hidden px-0 md:px-[1rem] flex flex-col gap-[0.75rem]`}>
+          {pinnedPosts.map((p) => (
+            <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
+              <PrimaryPost
+                gotohref={`/gadgets/${p.attributes.slug}`}
+                alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                postTitle={p?.attributes?.title}
+                postDescription={p?.attributes?.description}
+                authorname={p?.attributes?.author?.authorname}
+                authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
+                tag={p?.attributes?.tags}
+                updatedTime={p?.attributes?.updatedAt}
+                authorLink
+              />
+            </li>
+          ))}
+        </ul>
+        <p className={`text-white font-semibold text-[1rem] text-center`}>In development..... Hang on!</p>
+      </div>
     </>
   );
 }
