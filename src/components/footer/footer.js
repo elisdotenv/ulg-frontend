@@ -11,7 +11,7 @@ export const FooterMobile = () => {
       {/* --- Footer Section */}
       <footer
         id='footer-section'
-        className={`${styles.footerWrapper} bg-[#151B23] border-t-[1px] border-t-[#7f76672c] pt-[2rem]`}>
+        className={`${styles.footerWrapper} bg-[#14171b] border-t-[1px] border-t-[#7f76672c] pt-[2rem]`}>
         {/* ---Name and Logo */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
           <div className={`hidden`}>UPTOWN</div>
@@ -83,7 +83,7 @@ export const FooterMobile = () => {
         </div>
 
         {/* --- Conclusion */}
-        <div className={`${styles.conlusion} bg-[#010101] px-[0.75rem] py-[1.5rem]`}>
+        <div className={`${styles.conlusion} bg-[#151B23] px-[0.75rem] py-[1.5rem]`}>
           <h4 className={`text-center text-[0.9375rem] text-[#d7dddc] font-[500]`}>
             Made with <span className={`text-[#0969DA] font-[600]`}>Passion</span> and{' '}
             <span className={`text-[#208740] font-[600]`}>Love</span>, All rights reserved
