@@ -45,8 +45,8 @@ export default function GadgetsPage() {
   // --- On Error Encounter
   if (error) {
     return (
-      <div className={`w-screen h-screen  flex justify-center items-center`}>
-        <p className={`text-black`}>
+      <div className={`bg-red-500 w-screen h-screen flex justify-center items-center`}>
+        <p className={`text-white`}>
           An error has occurred <br /> {error.message}
         </p>
       </div>
