@@ -89,10 +89,11 @@ export default function GadgetsPage() {
   console.log(posts);
 
   return (
-    <div className={`w-screen h-screen bg-purple-500 flex flex-col items-center justify-center`}>
+    <div className={`w-screen  bg-purple-500 flex flex-col items-center justify-center`}>
       <p className={`text-white`}>This is the gadgets page</p>
       {posts.map((p) => (
         <PrimaryPost
+          key={p?.id}
           gotohref={`/gadgets/${p.attributes.slug}`}
           alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
           imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
