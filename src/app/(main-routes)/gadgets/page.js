@@ -10,7 +10,7 @@ export default function GadgetsPage() {
   const [visibleSecondaryCount, setVisibleSecondaryCount] = useState(8);
 
   // --- API Endpoint
-  const API_URL = process.env.NEXT_PUBLIC_ULG_API_URL;
+  const API_URL = 'https://tranquil-morning-50f1598ff6.strapiapp.com/api/posts?populate=*';
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -45,9 +45,11 @@ export default function GadgetsPage() {
   // --- On Error Encounter
   if (error) {
     return (
-      <p className={`text-black`}>
-        An error has occurred <br /> {error}
-      </p>
+      <div className={`w-screen h-screen  flex justify-center items-center`}>
+        <p className={`text-black`}>
+          An error has occurred <br /> {error.message}
+        </p>
+      </div>
     );
   }
 

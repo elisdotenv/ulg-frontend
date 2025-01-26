@@ -44,7 +44,6 @@ export default function SideNavigationBar({ className, onClose }) {
             {/* 2.LOGO*/}
             <div className={`flex justify-end items-center pr-[1rem]`}>
               <Image
-                layout='fixed'
                 priority={true}
                 className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
                 src={logo}
