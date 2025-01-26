@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         {/* 1. Navigation Bar Section */}
         <div>
           {/* --- [Mobile Screen] */}
-          <div className={`md:hidden`}>
+          <div className={`md:hidden fixed top-0 left-0 right-0 z-50`}>
             <MobileNavigationBar />
           </div>
 

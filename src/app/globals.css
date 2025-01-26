@@ -4,10 +4,12 @@
 
 :root {
   /* Some Random Styles */
+  --background: #14171b;
 }
 
 body {
   /* Some Random Styles */
+  background: var(--background);
 }
 
 /* Hide scrollbar for Chrome, Safari, and Opera */

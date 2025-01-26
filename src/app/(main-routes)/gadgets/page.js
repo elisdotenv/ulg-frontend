@@ -89,8 +89,7 @@ export default function GadgetsPage() {
   console.log(posts);
 
   return (
-    <div className={`w-screen  bg-purple-500 flex flex-col items-center justify-center`}>
-      <p className={`text-white`}>This is the gadgets page</p>
+    <div className={`w-screen flex flex-col items-center justify-center py-[5rem]`}>
       {posts.map((p) => (
         <PrimaryPost
           key={p?.id}
