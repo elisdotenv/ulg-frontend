@@ -4,15 +4,11 @@ import { BsTwitterX } from 'react-icons/bs';
 
 // Social Media & Platforms Icons
 export const socialIcons = [
-  { name: 'tiktok', href: '/', icon: <FaTiktok className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'instagram', href: '/', icon: <FaInstagram className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'youtube', href: '/', icon: <FaYoutube className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'twitter', href: '/', icon: <BsTwitterX className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  {
-    name: 'whatsapp',
-    href: 'https://wa.me/255689759215?',
-    icon: <FaWhatsapp className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} />,
-  },
+  { name: 'tiktok', href: '/', icon: <FaTiktok /> },
+  { name: 'instagram', href: '/', icon: <FaInstagram /> },
+  { name: 'youtube', href: '/', icon: <FaYoutube /> },
+  { name: 'twitter', href: '/', icon: <BsTwitterX /> },
+  { name: 'whatsapp', href: 'https://wa.me/255689759215?', icon: <FaWhatsapp /> },
 ];
 
 // Legal Links
