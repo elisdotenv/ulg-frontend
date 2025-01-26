@@ -14,9 +14,10 @@ export const FooterMobile = () => {
         className={`${styles.footerWrapper} bg-[#14171b] border-t-[1px] border-t-[#7f76672c] pt-[2rem]`}>
         {/* ---Name and Logo */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
-          <div className={`hidden`}>UPTOWN</div>
+          <div className={`text-white`}>LOGO</div>
+
           {/* --- Logo */}
-          <div className={`flex justify-end items-center`}>
+          {/* <div className={`flex justify-end items-center`}>
             <Image
               priority={true}
               className={`object-cover h-fit w-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
@@ -25,7 +26,7 @@ export const FooterMobile = () => {
               width={0}
               height={0}
             />
-          </div>
+          </div>*/}
         </div>
 
         {/* --- Social Icons & Links */}
@@ -83,7 +84,7 @@ export const FooterMobile = () => {
         </div>
 
         {/* --- Conclusion */}
-        <div className={`${styles.conlusion} bg-[#151B23] px-[0.75rem] py-[1.5rem]`}>
+        <div className={`${styles.conclusion} bg-[#151B23] px-[0.75rem] py-[1.5rem]`}>
           <h4 className={`text-center text-[0.9375rem] text-[#d7dddc] font-[500]`}>
             Made with <span className={`text-[#0969DA] font-[600]`}>Passion</span> and{' '}
             <span className={`text-[#208740] font-[600]`}>Love</span>, All rights reserved

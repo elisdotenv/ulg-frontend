@@ -40,16 +40,16 @@
 }
 
 /* Conlusion */
-.conlusion {
-  @apply flex flex-col items-center relative border-t-[2px] border-[#191d1e] w-full;
+.conclusion {
+  @apply flex flex-col items-center relative w-full;
 }
 
-.conlusion::before {
+.conclusion::before {
   @apply w-full h-[1.5px] absolute;
   content: ' ';
 }
 
-.conlusionDesktop {
+.conclusionDesktop {
   @apply bg-[#151B23] py-[0.75rem];
 }
 .iconsDesktop {
