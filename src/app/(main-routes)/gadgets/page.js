@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
 
 export default function GadgetsPage() {
   // --- State variables
@@ -84,11 +85,25 @@ export default function GadgetsPage() {
     setVisibleSecondaryCount((c) => c + 8);
   };
 
+  console.log(`Posts: `);
   console.log(posts);
 
   return (
     <div className={`w-screen h-screen bg-purple-500 flex flex-col items-center justify-center`}>
       <p className={`text-white`}>This is the gadgets page</p>
+      {posts.map((p) => (
+        <PrimaryPost
+          gotohref={`/gadgets/${p.attributes.slug}`}
+          alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+          imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+          postTitle={p?.attributes?.title}
+          postDescription={p?.attributes?.description}
+          authorname={p?.attributes?.author?.authorname}
+          authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
+          updatedTime={p?.attributes?.updatedAt}
+          authorLink={''}
+        />
+      ))}
     </div>
   );
 }

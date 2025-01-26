@@ -1,0 +1,75 @@
+/* Mobile-First Responsive Design */
+.postWrapper {
+  border-color: color-mix(in srgb, #a8b3cf, transparent 80%);
+}
+
+/* Cover Image */
+.Image {
+  box-sizing: border-box;
+  @apply block w-full max-w-full h-[180px] mt-[1rem] rounded-xl object-cover overflow-clip;
+}
+
+/* Author Name */
+.AuthorName {
+  @apply text-[14px] font-semibold text-[#e6f6f6];
+}
+/* Time */
+.updatedTime {
+  @apply inline-flex items-center text-[0.875rem] text-[#a8b3cf] font-medium;
+}
+
+/* Title */
+.Title {
+  @apply text-[#e6f6f6] font-bold text-[1.375rem] leading-6 my-[0.75rem];
+}
+
+.Tag {
+  border-width: 1px;
+  border-color: color-mix(in srgb, #a8b3cf, transparent 36%);
+  @apply bg-[#282727]/50 flex items-center justify-center px-[0.625em] rounded-[6px] text-[13px] h-[22px] leading-[1.125rem];
+}
+
+.GoBtn {
+  /* @apply bg-[#a8b3cf] font-[500] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];*/
+  @apply bg-[#a8b3cf] font-[500] flex items-center justify-center text-[#000000] px-[0.725rem] py-[1rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];
+}
+
+.UpvoteDownvote {
+  @apply leading-5 text-[32px] text-[#a8b3cf];
+}
+
+.Description {
+  @apply mt-[0.625rem] break-words font-[550] text-[1.0625rem] leading-[1.3rem] text-[#e6f6f6];
+}
+
+/* Media Queries and Screens */
+@media screen and (min-width: 500px) {
+  .postWrapper {
+    @apply rounded-none;
+  }
+
+  .TitleImage {
+    @apply flex gap-[2rem] mt-2;
+  }
+
+  .Image {
+    box-sizing: border-box;
+    @apply block min-w-[200px] max-w-[240px] h-[160px] mt-[1rem] rounded-xl object-cover overflow-clip;
+  }
+
+  .Description {
+    @apply hidden;
+  }
+
+  .DescriptionMd {
+    @apply block my-0 py-0;
+  }
+
+  .TitleDescriptionTag {
+    @apply flex flex-col gap-2;
+  }
+
+  .Title {
+    @apply my-0 mt-2;
+  }
+}
