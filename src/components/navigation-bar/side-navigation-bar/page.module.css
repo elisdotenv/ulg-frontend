@@ -1,0 +1,15 @@
+.active {
+  @apply text-white flex gap-2 items-center;
+}
+
+.inactive {
+  @apply text-neutral-500 flex gap-2 items-center;
+}
+
+.socialIcons {
+  @apply flex  gap-2 items-center;
+}
+
+.icons {
+  @apply flex gap-4;
+}
