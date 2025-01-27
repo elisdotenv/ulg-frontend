@@ -131,7 +131,7 @@ export default function PrimaryPost({
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
             <div
-              className={`flex items-center gap-3 rounded-[0.75rem] bg-[#a8b3cf0b] px-[16px] py-[22px] border border-red-400 h-9 divide-x-[1.5px] divide-[#a8b3cf92] `}>
+              className={`flex items-center gap-3 rounded-[0.75rem] bg-[#a8b3cf0b] px-[16px] py-[22px] h-9 divide-x-[1.5px] divide-[#a8b3cf92] `}>
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf] `}>
                 {isUpvoted ? (
                   <span className={`${styles.UpvoteDownvote}`}>
@@ -157,7 +157,7 @@ export default function PrimaryPost({
             {/* --- Bookmark */}
             <span
               onClick={() => setBookmark()}
-              className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] border border-red-400 rounded-[0.75rem] h-9 leading-[1.125rem]`}>
+              className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px]  rounded-[0.75rem] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
                 <span className={`text-[32px] text-[#a8b3cf]`}>
                   <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/bookmark.svg'} alt={'Logo'} />
@@ -173,7 +173,7 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-2`}>
               <span
                 onClick={() => copyLinkToClipboard()}
-                className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] border border-red-400 rounded-[0.75rem] h-9 leading-[1.125rem] `}>
+                className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] rounded-[0.75rem] h-9 leading-[1.125rem] `}>
                 <FaLink className={`text-[28px] text-[#a8b3cf]`} />
               </span>
             </div>
