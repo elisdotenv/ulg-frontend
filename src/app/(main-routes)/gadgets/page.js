@@ -104,11 +104,6 @@ export default function GadgetsPage() {
           authorLink={''}
         />
       ))}
-
-      <p className={`text-white p-[20px]`}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse mollitia iste cumque dolorem exercitationem sunt quidem quas
-        officia architecto qui sit et aut, distinctio corporis optio nemo. Accusantium, culpa ducimus.
-      </p>
     </div>
   );
 }
