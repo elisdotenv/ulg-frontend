@@ -130,33 +130,44 @@ export default function PrimaryPost({
           {/* 3. >>> Post Footer Content */}
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             {/* --- Upvote/Chat */}
-            {/*            <div
+            <div
               className={`flex items-center gap-3 rounded-[0.5rem] bg-[#a8b3cf0b] px-[14px] py-[16px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
               <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
-                  <span className={`${styles.UpvoteDownvote}`}>u</span>
+                  <span className={`${styles.UpvoteDownvote}`}>
+                    <Image className={`w-[32px] h-[32px]`} width={0} height={0} src={'/upvote.svg'} alt={'Logo'} />
+                  </span>
                 ) : (
-                  <span className={`${styles.UpvoteDownvote}`}>d</span>
+                  <span className={`${styles.UpvoteDownvote}`}>
+                    {' '}
+                    <Image className={`w-[32px] h-[32px]`} width={0} height={0} src={'/novote.svg'} alt={'Logo'} />
+                  </span>
                 )}
                 {Upvotes}
-              </span>*/}
-
-            {/* () ---> Handle Chat Functionality */}
-            {/*        <span className={`flex items-center`}>
-                <span className={`${styles.UpvoteDownvote} ml-2`}>c</span>
               </span>
-            </div>*/}
+
+              {/* () ---> Handle Chat Functionality */}
+              <span className={`flex items-center`}>
+                <span className={`${styles.UpvoteDownvote} ml-2`}>
+                  <Image className={`w-[32px] h-[32px]`} width={0} height={0} src={'/chat.svg'} alt={'chat-svg-icon'} />
+                </span>
+              </span>
+            </div>
 
             {/* --- Bookmark */}
-            {/* <span
+            <span
               onClick={() => setBookmark()}
               className={`bg-[#a8b3cf0b] flex items-center justify-center px-[12px] py-[16px] rounded-[6px] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
-                <span className={`text-[32px] text-[#a8b3cf]`}>b</span>
+                <span className={`text-[32px] text-[#a8b3cf]`}>
+                  <Image className={`w-[32px] h-[32px]`} width={0} height={0} src={'/bookmark.svg'} alt={'Logo'} />
+                </span>
               ) : (
-                <span className={`text-[32px] text-[#a8b3cf]`}>B</span>
+                <span className={`text-[32px] text-[#a8b3cf]`}>
+                  <Image className={`w-[32px] h-[32px]`} width={0} height={0} src={'/nobookmark.svg'} alt={'Logo'} />
+                </span>
               )}
-            </span>*/}
+            </span>
 
             {/* --- Link & Read-post */}
             <div className={`flex items-center gap-2`}>

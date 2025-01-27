@@ -58,7 +58,7 @@ export default function GadgetsPage() {
   if (isLoading) {
     return (
       <div className={`w-screen h-screen  flex justify-center items-center`}>
-        <p className={`text-black text-xl font-semibold`}>Loading....</p>
+        <p className={`text-white text-xl font-semibold`}>Loading....</p>
       </div>
     );
   }
@@ -104,6 +104,11 @@ export default function GadgetsPage() {
           authorLink={''}
         />
       ))}
+
+      <p className={`text-white p-[20px]`}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse mollitia iste cumque dolorem exercitationem sunt quidem quas
+        officia architecto qui sit et aut, distinctio corporis optio nemo. Accusantium, culpa ducimus.
+      </p>
     </div>
   );
 }
