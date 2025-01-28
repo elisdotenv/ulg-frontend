@@ -25,7 +25,7 @@ export default function TernaryPost({ gotohref, alternativeText, imageURL, postT
               src={imageURL}
             />
             <div
-              className={`bg-[#333333] filter grayscale flex flex-col gap-[6px] items-start absolute h-[35%] w-full bottom-0 left-0 p-[0.5rem]`}>
+              className={`bg-[#24292f] filter grayscale flex flex-col gap-[6px] items-start absolute h-[35%] w-full bottom-0 left-0 p-[0.5rem]`}>
               <h1 className={`${styles.Title}`}>{postTitle}</h1>
             </div>
           </div>

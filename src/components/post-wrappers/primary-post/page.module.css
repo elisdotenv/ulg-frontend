@@ -23,12 +23,6 @@
   @apply text-[#e6f6f6] font-bold text-[1.375rem] leading-6 my-[0.75rem];
 }
 
-.Tag {
-  border-width: 1px;
-  border-color: color-mix(in srgb, #a8b3cf, transparent 36%);
-  @apply bg-[#282727]/50 flex items-center justify-center px-[0.625em] rounded-[6px] text-[13px] h-[22px] leading-[1.125rem];
-}
-
 .GoBtn {
   /* @apply bg-[#a8b3cf] font-[500] flex items-center justify-center border-[1px] text-[#000] px-[0.625rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];*/
   @apply bg-[#a8b3cf] font-[500] flex items-center justify-center text-[#000000] px-[0.725rem] py-[1rem] rounded-[6px] text-[0.9375rem] h-[34px] leading-[1.125rem];
