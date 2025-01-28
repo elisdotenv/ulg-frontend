@@ -5,7 +5,7 @@
 
 .ImageWrapper {
   /*  @apply w-[280px] h-[313px] relative;*/
-  @apply w-[270px] h-[308px] relative;
+  @apply w-[255px] h-[313px] relative;
 }
 
 .Image {
