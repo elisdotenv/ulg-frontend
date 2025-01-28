@@ -94,7 +94,7 @@ export default function GadgetsPage() {
     <div className={`w-screen flex flex-col items-center justify-center py-[5rem]`}>
       {/* Ternary post-wrapper scrolls horizontally to the right */}
       {posts.length > 0 && (
-        <ul className={`${styles.lgFeaturedPostsGrid} px-[1rem] md:px-0`}>
+        <ul className={`${styles.lgFeaturedPostsGrid} px-[0.625rem] md:px-0`}>
           {posts.map((p) => (
             <li key={p?.id}>
               <TernaryPost

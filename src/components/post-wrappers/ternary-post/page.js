@@ -11,7 +11,7 @@ export default function TernaryPost({ gotohref, alternativeText, imageURL, postT
   console.log(postTitle);*/
 
   return (
-    <div>
+    <div className={`mb-[1.5rem]`}>
       <Link href={gotohref}>
         <div className={`${styles.postWrapper}`}>
           {/* 1. Image and Tag */}
