@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
+import TernaryPost from '@/components/post-wrappers/ternary-post/page';
+import styles from './page.module.css';
 
 export default function GadgetsPage() {
   // --- State variables
@@ -90,20 +92,39 @@ export default function GadgetsPage() {
 
   return (
     <div className={`w-screen flex flex-col items-center justify-center py-[5rem]`}>
-      {posts.map((p) => (
-        <PrimaryPost
-          key={p?.id}
-          gotohref={`/gadgets/${p.attributes.slug}`}
-          alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-          imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-          postTitle={p?.attributes?.title}
-          postDescription={p?.attributes?.description}
-          authorname={p?.attributes?.author?.authorname}
-          authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
-          updatedTime={p?.attributes?.updatedAt}
-          authorLink={''}
-        />
-      ))}
+      {/* Ternary post-wrapper scrolls horizontally to the right */}
+      {posts.length > 0 && (
+        <ul className={`${styles.lgFeaturedPostsGrid} px-[1rem] md:px-0`}>
+          {posts.map((p) => (
+            <li key={p?.id}>
+              <TernaryPost
+                gotohref={`/gadgets/${p.attributes.slug}`}
+                alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                postTitle={p?.attributes?.title}
+                imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Primary post-wrapper scrolls vertically to the bottom */}
+      <div>
+        {posts.map((p) => (
+          <PrimaryPost
+            key={p?.id}
+            gotohref={`/gadgets/${p.attributes.slug}`}
+            alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+            imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+            postTitle={p?.attributes?.title}
+            postDescription={p?.attributes?.description}
+            authorname={p?.attributes?.author?.authorname}
+            authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
+            updatedTime={p?.attributes?.updatedAt}
+            authorLink={''}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,62 @@
+/* ? Phase-1 : Firts 6 Latest Posts  */
+/* Secondary Posts */
+.secondaryPostsGrid {
+  @apply col-span-12;
+}
+
+.adBannerPhaseOneSM {
+  @apply col-span-12 h-[10svh] bg-neutral-600 flex text-center w-full items-center justify-center;
+}
+
+.lgFeaturedPostsGrid {
+  @apply col-span-12 w-full h-full flex gap-[0.875rem] overflow-x-scroll;
+}
+
+/* Responsive Design for Medium Sized Devices (1024px to 1200px) */
+@media screen and (min-width: 1080px) {
+  .secondaryPostsGrid {
+    @apply col-span-8 w-full flex flex-col gap-[1rem];
+  }
+
+  .secondaryPost {
+    @apply w-full;
+  }
+
+  .adBannerPhaseOneSM {
+    @apply hidden;
+  }
+  .adBannerPhaseOneLG {
+    @apply col-span-4 h-[65svh] w-full flex flex-col gap-[1.5rem] items-center justify-center sticky top-0 right-0;
+  }
+}
+
+/* ? Phase-2 : Featured Posts */
+.tertiaryPostsGrid {
+  @apply md:hidden lg:hidden col-span-12 w-[100vw] h-full flex gap-[1rem] overflow-x-scroll;
+}
+
+@media screen and (min-width: 480px) {
+  .topReviews {
+    @apply grid grid-cols-12 gap-[0.625rem];
+  }
+  .topReviewPost {
+    @apply col-span-6 border-[1.375px] border-[#232527];
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .topReviewPost {
+    @apply col-span-4;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .topReviewPost {
+    @apply col-span-3;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .lgFeaturedPostsGrid {
+    @apply gap-[1.275rem];
+  }
+}
