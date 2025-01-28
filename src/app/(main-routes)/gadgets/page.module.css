@@ -9,7 +9,7 @@
 }
 
 .lgFeaturedPostsGrid {
-  @apply col-span-12 w-full h-full flex gap-[0.875rem] overflow-x-scroll;
+  @apply col-span-12 w-full h-full flex gap-[1rem] overflow-x-scroll;
 }
 
 /* Responsive Design for Medium Sized Devices (1024px to 1200px) */
