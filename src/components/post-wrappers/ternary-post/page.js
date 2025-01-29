@@ -4,12 +4,6 @@ import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function TernaryPost({ gotohref, alternativeText, imageURL, postTitle }) {
-  console.log(`Debugging props, checking if props are passed to the component successfully`);
-  console.log(alternativeText);
-  /*  console.log(gotohref);
-  console.log(imageURL);
-  console.log(postTitle);*/
-
   return (
     <div className={`mb-[1.5rem]`}>
       <Link href={gotohref}>

@@ -1,15 +1,18 @@
 /* Mobile First Design */
 .postWrapper {
   @apply overflow-clip;
+  @apply rounded-lg; /* Add rounded corners for a softer look */
+  @apply shadow-lg; /* Tailwind utility for large shadow */
 }
 
 .ImageWrapper {
-  /*  @apply w-[280px] h-[313px] relative;*/
   @apply w-[255px] h-[313px] relative;
+  @apply rounded-lg; /* Match the wrapper's rounded corners */
+  @apply shadow-md; /* Add a medium shadow for a subtle effect */
 }
 
 .Image {
-  @apply object-cover w-full h-full block;
+  @apply object-cover w-full h-full block rounded-lg; /* Ensure the image has rounded corners */
 }
 
 .Title {
