@@ -4,6 +4,7 @@ import axios from 'axios';
 import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
 import TernaryPost from '@/components/post-wrappers/ternary-post/page';
 import styles from './page.module.css';
+import SecondaryPost from '@/components/post-wrappers/secondary-post/secondary-post';
 
 export default function GadgetsPage() {
   // --- State variables
@@ -12,39 +13,8 @@ export default function GadgetsPage() {
   const [error, setError] = useState(null);
   const [visibleSecondaryCount, setVisibleSecondaryCount] = useState(8);
 
-  // --- Countdown timer state
-  const [countdown, setCountdown] = useState(0);
-
   // --- API Endpoint
   const API_URL = 'https://tranquil-morning-50f1598ff6.strapiapp.com/api/posts?populate=*';
-
-  useEffect(() => {
-    // Set the end time in local storage if it doesn't already exist
-    const endTime = localStorage.getItem('countdownEndTime');
-    if (!endTime) {
-      const currentTime = Date.now();
-      const newEndTime = currentTime + 72 * 60 * 60 * 1000; // 72 hours in milliseconds
-      localStorage.setItem('countdownEndTime', newEndTime);
-    }
-
-    // Calculate the remaining time
-    const calculateRemainingTime = () => {
-      const endTime = Number(localStorage.getItem('countdownEndTime'));
-      const timeLeft = endTime - Date.now();
-      return Math.max(timeLeft, 0); // Ensure it doesn't go negative
-    };
-
-    setCountdown(calculateRemainingTime());
-
-    const interval = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        const newCountdown = prevCountdown - 1000; // Decrease by one second
-        return Math.max(newCountdown, 0); // Prevent negative countdown
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -90,7 +60,7 @@ export default function GadgetsPage() {
   // --- On Loading Resources
   if (isLoading) {
     return (
-      <div className={`w-screen h-screen flex justify-center items-center`}>
+      <div className={`w-screen h-screen  flex justify-center items-center`}>
         <p className={`text-white text-xl font-semibold`}>Loading....</p>
       </div>
     );
@@ -101,12 +71,19 @@ export default function GadgetsPage() {
   }
 
   // --- 1. Latest 6 posts excluding featured
-  const primaryPosts = posts.filter((p) => !p.attributes.isfeaturedpost).slice(0, 6);
+  /* --> (Posts that are updated latest and have 'isfeaturedpost' property set to 'false') */
+  const primaryPosts = posts
+    .filter((p) => !p.attributes.isfeaturedpost)
+    .sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt))
+    .slice(0, 6);
   const firstPrimaryPost = primaryPosts[0]; // Most Latest Post
   const fivePrimaryPost = primaryPosts.slice(1, 6); // Five Most Latest Posts
 
-  // --- 2. Featured posts (Limit to 8 featured posts)
-  const featuredPosts = posts.filter((p) => p.attributes.isfeaturedpost).slice(0, 8);
+  // --- 2. Featured posts (Limit to 6 featured posts)
+  /* --> (Posts with 'isfeaturedpost' property set to 'true' and sorted inorder of their updated time) */
+  const featuredPosts = posts
+    .filter((p) => p.attributes.isfeaturedpost) // Filter for featured posts
+    .sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
 
   // --- 3. Secondary posts (Neither Featured Post Nor Most Latest Post)
   const secondaryPosts = posts
@@ -118,22 +95,31 @@ export default function GadgetsPage() {
     setVisibleSecondaryCount((c) => c + 8);
   };
 
-  console.log(`Posts: `);
+  console.log(`[posts]`);
   console.log(posts);
 
-  // --- Countdown Timer Calculation
-  const hours = Math.floor(countdown / 3600000);
-  const minutes = Math.floor((countdown % 3600000) / 60000);
-  const seconds = Math.floor((countdown % 60000) / 1000);
-
   return (
-    <div className={`text-white w-screen h-screen flex items-center justify-center p-[2rem]`}>
-      <div className='text-center'>
-        <p className={`text-white font-medium text-[1.25rem]`}>Initializing...</p>
-        <p className={`text-xl mt-4`}>
-          {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
-        </p>
+    // --- Main Gadgets Posts Wrapper
+    <main className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
+      {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
+      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem]`}>
+        {primaryPosts.length > 0 && (
+          <ul role='list' className={`${styles.topReviews} col-span-12 px-[0.625rem]`}>
+            {primaryPosts.map((p) => (
+              <li key={p.id} className={`${styles.topReviewPost}`}>
+                <SecondaryPost
+                  gotohref={'/'}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText}
+                  imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                  postTag={p?.attributes?.tags}
+                  postTitle={p?.attributes?.title}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-    </div>
+      {/* END OF GROUP-1 */}
+    </main>
   );
 }

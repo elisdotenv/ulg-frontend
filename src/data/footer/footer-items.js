@@ -20,10 +20,10 @@ export const legals = [
 ];
 
 // Contacts and Addresses
-export const contactsArray = ['Sinza, Kijitonyama', 'Dar es salaam, Tanzania', '+255(0)-689-759-215', 'debug@bugverse.com'];
+export const contactsArray = ['Sinza, Kijitonyama', 'Dar es salaam, Tanzania', '+255(0)-689-759-215', 'campers@uptown.com'];
 
 export const contactsObject = [
   { name: 'Dar es salaam, Tanzania', icon: null },
   { name: '+255(0)-689-759-215', icon: null },
-  { name: 'debug@bugverse.com', icon: null },
+  { name: 'campers@uptown.com', icon: null },
 ];

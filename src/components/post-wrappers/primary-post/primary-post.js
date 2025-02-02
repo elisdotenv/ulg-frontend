@@ -16,7 +16,7 @@ export default function PrimaryPost({
   postTitle,
   postDescription,
   updatedTime,
-  authorname,
+  authorName,
   authorImageURL,
   authorLink,
 }) {
@@ -61,7 +61,7 @@ export default function PrimaryPost({
             <div className={`flex items-center gap-2`}>
               <Image className={`rounded-full m-0 p-0 object-cover`} src={authorImageURL} alt={''} width={40} height={40} />
               <div className={`flex flex-col`}>
-                <h4 className={`${styles.AuthorName}`}>{authorname}</h4>
+                <h4 className={`${styles.AuthorName}`}>{authorName}</h4>
                 <h4 className={`${styles.updatedTime}`}>
                   2m read time <PiDotOutlineFill />
                   {updatedTimeFn(updatedTime)}

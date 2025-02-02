@@ -90,7 +90,7 @@ export const FooterMobile = () => {
             <span className={`text-[#208740] font-[600]`}>Love</span>, All rights reserved
           </h4>
           <h4 className={`text-center text-[0.9375rem] text-[#d7dddc] font-[600]`}>
-            &copy; {new Date().getFullYear()} dotstub, Inc.
+            &copy; {new Date().getFullYear()} Uptown-Dsm, Inc.
           </h4>
         </div>
       </footer>
