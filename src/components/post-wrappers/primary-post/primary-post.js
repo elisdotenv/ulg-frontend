@@ -20,11 +20,10 @@ export default function PrimaryPost({
   authorImageURL,
   authorLink,
 }) {
-  const [isBookMarked, setIsBookMarked] = useState(false);
   const [isLinkCopied, setIsLinkCopied] = useState(false);
-  const [isDownvoted, setIsDownvoted] = useState(false);
+  const [isBookMarked, setBookmark] = useState(false);
   const [isUpvoted, setIsUpvoted] = useState(false);
-  const [Upvotes, setUpvotes] = useState(674);
+  const [upvotes, setUpvotes] = useState(674);
 
   // Handling clipboard action without causing hydration issues
   const copyLinkToClipboard = () => {
@@ -39,6 +38,18 @@ export default function PrimaryPost({
       .catch((err) => {
         console.error('Could not copy text: ', err);
       });
+  };
+
+  // Upvote Handler
+  const handleUpvote = () => {
+    if (isUpvoted) {
+      // Remove upvote if already upvoted
+      setUpvotes(upvotes - 1);
+    } else {
+      // Add upvote if not upvoted
+      setUpvotes(upvotes + 1);
+    }
+    setIsUpvoted(!isUpvoted); // Toggle upvote state
   };
 
   return (
@@ -93,7 +104,7 @@ export default function PrimaryPost({
           <div className={`flex items-center gap-[0.5rem] mt-[1rem]`}>
             <div
               className={`flex items-center gap-3 rounded-[0.75rem] bg-[#a8b3cf0b] px-[16px] py-[22px] h-9 divide-x-[1.5px] divide-[#a8b3cf92]`}>
-              <span onClick={() => handleUpvote()} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf] `}>
+              <span onClick={handleUpvote} className={`flex items-center gap-1 font-primary font-bold text-[#a8b3cf]`}>
                 {isUpvoted ? (
                   <span className={`${styles.UpvoteDownvote}`}>
                     <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/upvote.svg'} alt={'Logo'} />
@@ -103,7 +114,7 @@ export default function PrimaryPost({
                     <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/novote.svg'} alt={'Logo'} />
                   </span>
                 )}
-                {Upvotes}
+                {upvotes}
               </span>
 
               <span className={`flex items-center`}>
@@ -113,24 +124,26 @@ export default function PrimaryPost({
               </span>
             </div>
 
+            {/* --- Bookmarkings */}
             <span
               onClick={() => setBookmark()}
-              className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px]  rounded-[0.75rem] h-9 leading-[1.125rem]`}>
+              className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] rounded-[0.75rem] h-9 leading-[1.125rem]`}>
               {isBookMarked ? (
                 <span className={`text-[32px] text-[#a8b3cf]`}>
-                  <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/bookmark.svg'} alt={'Logo'} />
+                  <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/bookmark.svg'} alt={'bookmark-icon'} />
                 </span>
               ) : (
                 <span className={`text-[32px] text-[#a8b3cf]`}>
-                  <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/nobookmark.svg'} alt={'Logo'} />
+                  <Image className={`w-[30px] h-[30px]`} width={0} height={0} src={'/nobookmark.svg'} alt={'no-bookmark-icon'} />
                 </span>
               )}
             </span>
 
+            {/* --- Save Link to clipboard */}
             <div className={`flex items-center gap-2`}>
               <span
-                onClick={() => copyLinkToClipboard()}
-                className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] rounded-[0.75rem] h-9 leading-[1.125rem] `}>
+                onClick={copyLinkToClipboard}
+                className={`bg-[#a8b3cf0b] flex items-center justify-center px-[16px] py-[22px] rounded-[0.75rem] h-9 leading-[1.125rem]`}>
                 <FaLink className={`text-[28px] text-[#a8b3cf]`} />
               </span>
             </div>

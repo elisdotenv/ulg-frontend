@@ -12,8 +12,39 @@ export default function GadgetsPage() {
   const [error, setError] = useState(null);
   const [visibleSecondaryCount, setVisibleSecondaryCount] = useState(8);
 
+  // --- Countdown timer state
+  const [countdown, setCountdown] = useState(0);
+
   // --- API Endpoint
   const API_URL = 'https://tranquil-morning-50f1598ff6.strapiapp.com/api/posts?populate=*';
+
+  useEffect(() => {
+    // Set the end time in local storage if it doesn't already exist
+    const endTime = localStorage.getItem('countdownEndTime');
+    if (!endTime) {
+      const currentTime = Date.now();
+      const newEndTime = currentTime + 72 * 60 * 60 * 1000; // 72 hours in milliseconds
+      localStorage.setItem('countdownEndTime', newEndTime);
+    }
+
+    // Calculate the remaining time
+    const calculateRemainingTime = () => {
+      const endTime = Number(localStorage.getItem('countdownEndTime'));
+      const timeLeft = endTime - Date.now();
+      return Math.max(timeLeft, 0); // Ensure it doesn't go negative
+    };
+
+    setCountdown(calculateRemainingTime());
+
+    const interval = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        const newCountdown = prevCountdown - 1000; // Decrease by one second
+        return Math.max(newCountdown, 0); // Prevent negative countdown
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -59,7 +90,7 @@ export default function GadgetsPage() {
   // --- On Loading Resources
   if (isLoading) {
     return (
-      <div className={`w-screen h-screen  flex justify-center items-center`}>
+      <div className={`w-screen h-screen flex justify-center items-center`}>
         <p className={`text-white text-xl font-semibold`}>Loading....</p>
       </div>
     );
@@ -90,40 +121,18 @@ export default function GadgetsPage() {
   console.log(`Posts: `);
   console.log(posts);
 
-  return (
-    <div className={`w-screen flex flex-col items-center justify-center py-[5rem]`}>
-      {/* Ternary post-wrapper scrolls horizontally to the right */}
-      {posts.length > 0 && (
-        <ul className={`${styles.lgFeaturedPostsGrid} px-[0.75rem] md:px-0`}>
-          {posts.map((p) => (
-            <li key={p?.id}>
-              <TernaryPost
-                gotohref={`/gadgets/${p.attributes.slug}`}
-                alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-                postTitle={p?.attributes?.title}
-                imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+  // --- Countdown Timer Calculation
+  const hours = Math.floor(countdown / 3600000);
+  const minutes = Math.floor((countdown % 3600000) / 60000);
+  const seconds = Math.floor((countdown % 60000) / 1000);
 
-      {/* Primary post-wrapper scrolls vertically to the bottom */}
-      <div>
-        {posts.map((p) => (
-          <PrimaryPost
-            key={p?.id}
-            gotohref={`/gadgets/${p.attributes.slug}`}
-            alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-            imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-            postTitle={p?.attributes?.title}
-            postDescription={p?.attributes?.description}
-            authorname={p?.attributes?.author?.authorname}
-            authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
-            updatedTime={p?.attributes?.updatedAt}
-            authorLink={''}
-          />
-        ))}
+  return (
+    <div className={`text-white w-screen h-screen flex items-center justify-center p-[2rem]`}>
+      <div className='text-center'>
+        <p className={`text-white font-medium text-[1.25rem]`}>Initializing...</p>
+        <p className={`text-xl mt-4`}>
+          {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+        </p>
       </div>
     </div>
   );
