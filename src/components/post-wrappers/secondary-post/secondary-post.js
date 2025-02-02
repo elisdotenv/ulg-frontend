@@ -15,7 +15,6 @@ const SecondaryPost = ({ gotohref, alternativeText, imageURL, postTag, postTitle
               className={`${styles.Image}`}
               width={1000}
               height={1000}
-              layout='fixed'
               priority={true}
               alt={alternativeText}
               src={imageURL}

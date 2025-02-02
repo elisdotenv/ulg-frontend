@@ -14,7 +14,7 @@
 }
 
 .ImageWrapper {
-  @apply min-w-[246px] h-[220px] max-w-[414px] relative;
+  @apply min-w-[246px] h-[236px] md:h-[220px] max-w-[414px] relative;
 }
 
 .Image {
