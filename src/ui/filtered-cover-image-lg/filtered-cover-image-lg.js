@@ -11,7 +11,6 @@ const FilteredCoverImageLg = ({ alternativetext, imageURL, imageCaption, postTag
           className={`object-cover rounded-[4px] relative block m-0 p-0 lg:m-0 lg:p-0`}
           width={0}
           height={0}
-          layout='responsive'
           priority={true}
           alt={alternativetext}
           src={imageURL}

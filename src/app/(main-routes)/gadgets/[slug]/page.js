@@ -120,8 +120,11 @@ export default function GadgetsPageSlug({ params }) {
 
   const primaryRelatedPosts = relatedPosts.slice(0, 3);
   const secondaryRelatedPosts = relatedPosts.slice(3, 9);
-  console.log(`Sliced Related Posts`);
+  console.log(`current view posts`);
+  console.log(post);
+  console.log(`primary related posts`);
   console.log(primaryRelatedPosts);
+  console.log(`secondary related posts`);
   console.log(secondaryRelatedPosts);
 
   return (
@@ -343,13 +346,13 @@ export default function GadgetsPageSlug({ params }) {
             <li className={`${styles.secondaryPost}`} key={p.id}>
               <PrimaryPost
                 gotohref={`/gadgets/${p.attributes.slug}`}
-                alternativeText={coverimage?.alternativetext || ''}
-                imageURL={imageURL}
-                postTitle={title}
-                postDescription={description}
-                authorName={author?.authorname}
-                authorImageURL={authorimage?.data?.attributes?.url}
-                updatedTime={updatedAt}
+                alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText}
+                imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                postTitle={p?.attributes?.title}
+                postDescription={p?.attributes?.description}
+                authorName={p?.attributes?.author?.authorname}
+                authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
+                updatedTime={p?.attributes?.updatedAt}
               />
             </li>
           ))}

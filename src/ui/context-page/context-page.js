@@ -286,19 +286,3 @@ const ContextPage = ({ contextOne, contextTwo, noteContext, refSource }) => {
 };
 
 export default ContextPage;
-
-/* 
-{noteContext && (
-        <div className={`prose p-0`}>
-          <span className={`text-[#fcfdfd] uppercase  tracking-widest px-[1rem] text-[1.25rem] flex items-center gap-2`}>
-            <FaLightbulb className={`text-[1.375rem] text-[#FFD700]`} />
-            Note
-          </span>
-          <div
-            className={`bg-gradient-to-b from-[#333333] via-[#333333] to-transparent rounded-t-2xl border-[#f0705a] border-t-[2px] px-[1rem] relative p-0 mb-[1.75rem]`}>
-            <p className={`text-[#fcfdfd]  tracking-wider text-[1.125rem] lg:text-[1.25rem] leading-7`}>{noteContext}</p>
-          </div>
-        </div>
-      )}
-
-*/
