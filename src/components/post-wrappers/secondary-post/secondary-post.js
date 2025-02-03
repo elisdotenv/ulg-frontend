@@ -19,6 +19,7 @@ const SecondaryPost = ({ gotohref, alternativeText, imageURL, postTag, postTitle
               alt={alternativeText}
               src={imageURL}
             />
+
             {/* --- Post Title & Tag */}
             <div className={`${styles.TitleTag}`}>
               <span className={`${styles.Tag}`}>{postTag[0].tags}</span>

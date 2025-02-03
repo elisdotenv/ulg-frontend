@@ -102,9 +102,9 @@ export default function GadgetsPage() {
     // --- Main Gadgets Posts Wrapper
     <main className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
       {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
-      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem]`}>
+      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 pt-[5rem]`}>
         {primaryPosts.length > 0 && (
-          <ul role='list' className={`${styles.topReviews} col-span-12 px-[0.625rem]`}>
+          <ul role='list' className={`${styles.topReviews} col-span-12 px-[1rem] `}>
             {primaryPosts.map((p) => (
               <li key={p.id} className={`${styles.topReviewPost}`}>
                 <SecondaryPost

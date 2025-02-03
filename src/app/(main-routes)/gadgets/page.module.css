@@ -2,7 +2,7 @@
 /* Responsive Design for Medium Sized Devices (1024px to 1124px) */
 
 .topReviews {
-  @apply flex flex-col justify-between gap-[1.125rem];
+  @apply flex flex-col justify-between gap-[1.5rem];
 }
 
 @media screen and (min-width: 480px) {
