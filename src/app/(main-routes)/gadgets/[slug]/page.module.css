@@ -1,0 +1,137 @@
+.joinBtn {
+  @apply pb-[2px];
+}
+
+@media screen and (min-width: 1024px) {
+  .primaryRelatedPosts {
+    display: flex;
+  }
+  .HeaderContext {
+    display: grid;
+    gap: 0.625rem;
+  }
+}
+
+.RelatedPostsGrid {
+  @apply bg-blue-600 col-span-12 w-full h-full grid grid-cols-12 gap-[0.75rem] px-[1rem] justify-between items-center;
+}
+
+@media screen and (min-width: 490px) {
+  .sm {
+    @apply col-span-10 col-start-2;
+  }
+  .smAuthor {
+    @apply flex flex-row justify-between;
+  }
+}
+@media screen and (min-width: 480px) {
+  .relatedPost {
+    @apply col-span-6;
+  }
+}
+@media screen and (min-width: 768px) {
+  .relatedPost {
+    @apply col-span-4;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .RelatedPostsGrid {
+    @apply px-[0.625rem];
+  }
+  .relatedPost {
+    @apply col-span-3;
+  }
+}
+
+/* [LARGE SCREENS] - Share Button Element */
+.shareON {
+  @apply transition-all absolute shadow-lg bg-[#1e1f22] border-[1.5px] border-[#232527] rounded-sm top-[1.75rem] right-0 w-fit h-fit p-[0.725rem] flex flex-col gap-[0.625rem];
+}
+
+.shareOFF {
+  @apply transition-all absolute shadow-lg bg-[#1e1f22] border-[1.5px] border-[#232527] rounded-sm top-[1.75rem] right-0 w-fit h-fit p-[0.725rem] hidden flex-col gap-[0.625rem];
+}
+/* ##### */
+
+/* [MOBILE & MEDIUM SCREENS] - Share Button Element */
+.shareONMobile {
+  @apply z-30 transition-all absolute drop-shadow-md shadow-lg bg-[#333333] border-[1.5px] border-[#55555581] rounded-sm top-[1.75rem] right-[0.625rem] w-fit h-fit p-[0.725rem] flex flex-col gap-[0.625rem];
+}
+
+.shareOFFMobile {
+  @apply transition-all hidden;
+}
+
+.shareLink {
+  @apply transition-all flex items-center gap-2 text-[0.875rem] font-medium text-[#fffdfa] hover:text-[#ada396] active:hover:text-[#ada396];
+}
+/* ##### */
+
+.adverts {
+  @apply flex items-center justify-center bg-lime-700;
+}
+
+@media screen and (min-width: 480px) {
+  .topReviews {
+    @apply col-span-10 col-start-2 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-10 col-start-2;
+  }
+
+  .adverts {
+    @apply col-span-10 col-start-2;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .topReviews {
+    @apply col-span-10 col-start-2 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-6;
+  }
+
+  .adverts {
+    @apply col-span-10 col-start-2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .topReviews {
+    @apply col-span-12 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-4;
+  }
+
+  .adverts {
+    @apply col-span-12;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  .topReviews {
+    @apply col-span-12 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-4;
+  }
+
+  .adverts {
+    @apply col-span-12 w-full h-[10vh];
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .topReviews {
+    @apply col-span-12 grid grid-cols-12 gap-x-[1.25rem];
+  }
+  .adverts {
+    @apply col-span-12 bg-[#333333] h-[20vh];
+  }
+}
+
+.spanDivider {
+  @apply bg-[#fcfdfd] h-[85%] w-[2px];
+}
