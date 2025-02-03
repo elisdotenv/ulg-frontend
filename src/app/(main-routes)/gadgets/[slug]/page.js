@@ -15,7 +15,7 @@ import { truncateTitle } from '@/utils/truncate/truncations';
 import { AuthorProfileDatePostedTop, AuthorProfileMobile, MobileDatePosted } from '@/ui/Author/AuthorMobile/author-mobile';
 import KeyPointsWrapper from '@/ui/keypoints/keypoints-wrapper';
 import ContextPage from '@/ui/context-page/context-page';
-import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
+import MainPost from '@/components/post-wrappers/main-post/main-post';
 
 export default function GadgetsPageSlug({ params }) {
   const slug = React.use(params).slug;
@@ -344,13 +344,14 @@ export default function GadgetsPageSlug({ params }) {
         <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[1rem]`}>
           {secondaryRelatedPosts.map((p) => (
             <li className={`${styles.secondaryPost}`} key={p.id}>
-              <PrimaryPost
+              <MainPost
                 gotohref={`/gadgets/${p.attributes.slug}`}
                 alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText}
                 imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
                 postTitle={p?.attributes?.title}
                 postDescription={p?.attributes?.description}
-                authorName={p?.attributes?.author?.authorname}
+                author={p?.attributes?.author}
+                postTag={p?.attributes?.tags[0]?.tags}
                 authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
                 updatedTime={p?.attributes?.updatedAt}
               />
