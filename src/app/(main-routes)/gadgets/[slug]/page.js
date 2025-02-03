@@ -6,14 +6,15 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import FilteredCoverImageLg from '@/ui/filtered-cover-image-lg/filtered-cover-image-lg';
 import Link from 'next/link';
-
-/* Icons */
 import { GoZap } from 'react-icons/go';
 import { FaBookmark, FaRegBookmark, FaCopy } from 'react-icons/fa6';
 import { BsPeopleFill } from 'react-icons/bs';
 import { RiShareForwardFill, RiFacebookBoxFill } from 'react-icons/ri';
 import { BsTwitterX, BsWhatsapp, BsInstagram, BsLink45Deg } from 'react-icons/bs';
 import { truncateTitle } from '@/utils/truncate/truncations';
+import { AuthorProfileDatePostedTop, AuthorProfileMobile, MobileDatePosted } from '@/ui/Author/AuthorMobile/author-mobile';
+import KeyPointsWrapper from '@/ui/keypoints/keypoints-wrapper';
+import ContextPage from '@/ui/context-page/context-page';
 
 export default function GadgetsPageSlug({ params }) {
   const slug = React.use(params).slug;
@@ -194,14 +195,14 @@ export default function GadgetsPageSlug({ params }) {
 
         {/* d. Author Publication and Social Links */}
         <div className={`col-span-8 grid grid-cols-12 justify-between items-center`}>
-          {/* <div className={`col-span-7 w-full`}>
+          <div className={`col-span-7 w-full`}>
             <AuthorProfileDatePostedTop
-              AuthorName={Author?.AuthorName}
-              AuthorImageURL={AuthorImageSrc}
-              AuthorURL={Author?.AuthorLink}
-              DatePosted={updatedAt}
+              datePosted={updatedAt}
+              authorName={author?.authorname}
+              authorLink={author?.authorlink}
+              authorImage={authorimage?.data?.attributes?.url}
             />
-          </div>*/}
+          </div>
 
           {/* e. Share Button */}
           <div className={`w-full relative h-full col-span-5 flex items-center justify-end z-30 gap-[1rem]`}>
@@ -244,6 +245,81 @@ export default function GadgetsPageSlug({ params }) {
           </div>
         </div>
       </div>
+      {/* -#####- */}
+
+      {/* --- [MEDIUM & LARGE SCREENS] - Post Description Element */}
+      <div className='hidden col-span-8 lg:block m-0 p-0'>
+        <p className={`text-[#dedede] italic font-normal font-primary text-[1.25rem] leading-[1.25]`}>{description}</p>
+      </div>
+      {/* -#####- */}
+
+      {/* --- [MOBILE SCREENS] - Post Author Details Element */}
+      <div className='col-span-8 lg:hidden px-[1rem] flex flex-col gap-[0.625rem] md:flex md:flex-row md:justify-between md:col-span-10 md:col-start-2'>
+        <AuthorProfileMobile
+          authorImage={authorimage?.data?.attributes?.url}
+          authorLink={author?.authorlink}
+          authorName={author?.authorname}
+        />
+        <MobileDatePosted datePosted={updatedAt} />
+      </div>
+      {/* -#####- */}
+
+      {/* --- [MOBILE SCREENS] - Post Social Links Element */}
+      <div className=' relative col-span-4 lg:hidden px-[1rem] flex items-start justify-end gap-[0.625rem] md:flex md:flex-row md:justify-between md:col-span-10 md:col-start-2'>
+        <button onClick={() => showShareItems()} className={`flex items-center justify-between gap-2`}>
+          <RiShareForwardFill className={`text-[1.5rem] text-[#fcfdfd]`} />
+          <span className={`text-[#c9c3b8] leading-[21.5px] text-[0.9375rem] font-quadraMedium`}>Share</span>
+        </button>
+
+        {/* --- Social Links for a share button */}
+        <ul className={`${openShare ? styles.shareONMobile : styles.shareOFFMobile}`}>
+          <Link href={`/`} className={`${styles.shareLink} `}>
+            <RiFacebookBoxFill className={`text-[1.05rem] text-[#fffdfa]`} /> Facebook
+          </Link>
+          <Link href={`/`} className={`${styles.shareLink}`}>
+            <BsInstagram className={`text-[1.05rem] text-[#fffdfa]`} />
+            Instagram
+          </Link>
+          <Link href={`/`} className={`${styles.shareLink}`}>
+            <BsTwitterX className={`text-[1.05rem] text-[#fffdfa]`} />
+            Twitter
+          </Link>
+          <Link href={`/`} className={`${styles.shareLink}`}>
+            <BsWhatsapp className={`text-[1.05rem] text-[#fffdfa]`} />
+            Whatsapp
+          </Link>
+          <span onClick={() => copyLinkToClipboard()} className={`${styles.shareLink}`}>
+            <BsLink45Deg className={`text-[1.05rem] text-[#fffdfa]`} />
+            Copy link
+          </span>
+        </ul>
+      </div>
+      {/* -#####- */}
+
+      {/* --- [MOBILE, MEDIUM & LARGE SCREENS] - Post Summary Blocks Element */}
+      <div className='col-span-12 lg:col-span-8 md:col-span-10 md:col-start-2'>
+        {keypoints && <KeyPointsWrapper context={keypoints} />}
+      </div>
+
+      <div className='col-span-12 lg:col-span-8 md:col-span-10 md:col-start-2'>
+        <ContextPage contextOne={textblockone} contextTwo={textblocktwo} noteContext={note} refSource={refsource} />
+      </div>
+      {/* -#####- */}
+
+      {/* [MOBILE SCREENS] - Ad Space Element */}
+      <div className='bg-[#333333] flex items-center justify-center text-center col-span-12 lg:hidden w-full min-h-[30vh] p-[2rem] md:col-span-10 md:col-start-2'>
+        <p>Animated GIF CTA redirecting to Uptown Communities</p>
+      </div>
+      {/* -#####- */}
+
+      {/* [LARGE SCREENS] - Side Ad Wrapper Element*/}
+      <aside className=' hidden lg:flex flex-col gap-2 col-span-4 px-[1rem]'>
+        <div className='w-full min-h-[60vh] flex flex-col p-[2rem] items-center justify-center text-center z-30 top-[80px] sticky bg-[#333333]'>
+          <p>UPTOWN</p>
+          <p>Animated GIF CTA redirecting to Uptown Communities</p>
+          <p>Events Broadcasting through Animated GIFs</p>
+        </div>
+      </aside>
       {/* -#####- */}
     </div>
   );
