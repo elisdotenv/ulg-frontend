@@ -15,6 +15,7 @@ import { truncateTitle } from '@/utils/truncate/truncations';
 import { AuthorProfileDatePostedTop, AuthorProfileMobile, MobileDatePosted } from '@/ui/Author/AuthorMobile/author-mobile';
 import KeyPointsWrapper from '@/ui/keypoints/keypoints-wrapper';
 import ContextPage from '@/ui/context-page/context-page';
+import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
 
 export default function GadgetsPageSlug({ params }) {
   const slug = React.use(params).slug;
@@ -320,6 +321,40 @@ export default function GadgetsPageSlug({ params }) {
           <p>Events Broadcasting through Animated GIFs</p>
         </div>
       </aside>
+      {/* -#####- */}
+
+      {/* Related Posts Section */}
+      {/* [MOBILE SCREENS] - More Like This Section Element */}
+      <div className={`col-span-12 w-full h-full grid grid-cols-12 px-[1rem]`}>
+        <div className={`col-span-12 py-[2px] lg:hidden `}>
+          <h4
+            className={`text-[1.25rem] tracking-wider font-quadraSemiBold text-[#ffffda]  lg:hidden py-[2px] flex items-center gap-[0.625rem]`}>
+            <GoZap className={`text-[1.5rem]`} />
+            RELATED POSTS
+          </h4>
+        </div>
+      </div>
+      {/* -#####- */}
+
+      {/* A. [MOBILE SCREENS] - Bottom Related Posts Element */}
+      <div className='col-span-12 md:hidden flex flex-col gap-[0.75rem]'>
+        <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[1rem]`}>
+          {secondaryRelatedPosts.map((p) => (
+            <li className={`${styles.secondaryPost}`} key={p.id}>
+              <PrimaryPost
+                gotohref={`/gadgets/${p.attributes.slug}`}
+                alternativeText={coverimage?.alternativetext || ''}
+                imageURL={imageURL}
+                postTitle={title}
+                postDescription={description}
+                authorName={author?.authorname}
+                authorImageURL={authorimage?.data?.attributes?.url}
+                updatedTime={updatedAt}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
       {/* -#####- */}
     </div>
   );
