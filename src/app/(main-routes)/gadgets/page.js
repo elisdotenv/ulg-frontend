@@ -108,7 +108,7 @@ export default function GadgetsPage() {
             {primaryPosts.map((p) => (
               <li key={p.id} className={`${styles.topReviewPost}`}>
                 <SecondaryPost
-                  gotohref={'/'}
+                  gotohref={`/gadgets/${p.attributes.slug}`}
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText}
                   imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
                   postTag={p?.attributes?.tags}
