@@ -104,7 +104,7 @@ export default function GadgetsPage() {
       {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
       <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 pt-[5rem]`}>
         {primaryPosts.length > 0 && (
-          <ul role='list' className={`${styles.topReviews} col-span-12 px-[1rem] `}>
+          <ul role='list' className={`${styles.topReviews} col-span-12 px-[0.75rem] `}>
             {primaryPosts.map((p) => (
               <li key={p.id} className={`${styles.topReviewPost}`}>
                 <SecondaryPost
