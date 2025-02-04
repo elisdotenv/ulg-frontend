@@ -4,11 +4,11 @@
 }
 
 .ImageWrapper {
-  @apply w-[265px] h-[340px] relative;
+  @apply w-[265px] h-[345px] relative;
 }
 
 .Image {
-  @apply object-cover w-full h-full block;
+  @apply object-cover w-full h-[60%] block;
 }
 
 .Title {
@@ -46,4 +46,5 @@
   justify-content: center;
   width: 50px;
   height: 60px;
+  @apply ring-2 ring-blue-500 ring-offset-2;
 }
