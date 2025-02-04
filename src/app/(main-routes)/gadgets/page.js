@@ -5,6 +5,7 @@ import PrimaryPost from '@/components/post-wrappers/primary-post/primary-post';
 import TernaryPost from '@/components/post-wrappers/ternary-post/page';
 import styles from './page.module.css';
 import SecondaryPost from '@/components/post-wrappers/secondary-post/secondary-post';
+import SlidePost from '@/components/post-wrappers/slide-post/slide-post';
 
 export default function GadgetsPage() {
   // --- State variables
@@ -120,6 +121,28 @@ export default function GadgetsPage() {
         )}
       </div>
       {/* END OF GROUP-1 */}
+
+      <p>Featured Posts Follows Here</p>
+
+      {/* >>> Group-2 [MOBILE, TABLETS & DESKTOP SCREENS] */}
+      <div className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden`}>
+        {/* [Mobile Screens] */}
+        {featuredPosts.length > 0 && (
+          <ul className={`flex gap-[0.75rem] overflow-x-scroll col-span-12 md:hidden`}>
+            {featuredPosts.map((p, i) => (
+              <li className={`md:hidden lg:hidden`} key={i}>
+                <SlidePost
+                  gotohref={`/gadgets/${p.attributes.slug}`}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                  imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                  postTitle={p?.attributes?.title}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {/* > End of Group-3 */}
     </main>
   );
 }
