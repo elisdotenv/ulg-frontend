@@ -122,10 +122,12 @@ export default function GadgetsPage() {
       </div>
       {/* END OF GROUP-1 */}
 
-      <p>Featured Posts Follows Here</p>
-
       {/* >>> Group-2 [MOBILE, TABLETS & DESKTOP SCREENS] */}
       <div className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden`}>
+        <div className={`col-span-12 flex flex-col justify-center items-center`}>
+          <h2 className={`text-white`}>Our Featured Post</h2>
+          <h4 className={`text-yellow-400`}>Our Popular 5 Storiees Now</h4>
+        </div>
         {/* [Mobile Screens] */}
         {featuredPosts.length > 0 && (
           <ul className={`flex gap-[0.75rem] overflow-x-scroll col-span-12 md:hidden`}>
@@ -136,6 +138,9 @@ export default function GadgetsPage() {
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
                   postTitle={p?.attributes?.title}
+                  postDescription={p?.attributes?.description}
+                  postId={i}
+                  updateTime={p?.attributes?.updatedAt}
                 />
               </li>
             ))}

@@ -1,6 +1,6 @@
 /* Mobile First Design */
 .postWrapper {
-  @apply overflow-clip;
+  @apply overflow-clip relative;
 }
 
 .ImageWrapper {
@@ -12,7 +12,7 @@
 }
 
 .Title {
-  @apply font-semibold text-[1.125rem] leading-[1.375rem] text-[#ffffff];
+  @apply font-semibold text-[1.125rem] leading-[1.375rem] text-black;
 }
 
 /* Shadow Effects */
