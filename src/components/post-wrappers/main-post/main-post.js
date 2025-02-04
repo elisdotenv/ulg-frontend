@@ -8,7 +8,6 @@ import {
   truncateTitle,
 } from '@/utils/truncate/truncations';
 import { lastUpdateTimeFn } from '@/utils/date/date-functions';
-import { FaArrowUpRightFromSquare, FaLink, FaCopy } from 'react-icons/fa6';
 
 const MainPost = ({
   gotohref,
@@ -62,11 +61,7 @@ const MainPost = ({
                 <h4 className={`${styles.Date}`}>Updated {lastUpdateTimeFn(updatedTime)}</h4>
               </div>
 
-              {/* View Post Button and More Actions Button */}
-              {/*  <button
-                className={`text-white w-fit border-[1.25px] border-[#ffffff] px-[12px] py-[6px] rounded-[8px] flex items-center gap-2`}>
-                See post <FaArrowUpRightFromSquare className={`text-white`} />
-              </button>*/}
+              {/* --- For a See More btn */}
             </div>
           </div>
         </Link>
