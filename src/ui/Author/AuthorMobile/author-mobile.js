@@ -42,14 +42,7 @@ export const AuthorProfileDatePostedTop = ({ authorLink, authorImage, authorName
       <div className={`w-fit lg:flex items-center justify-between gap-[1rem] hidden`}>
         {/* Profile Image Element */}
         <Link className={`flex items-center gap-3`} href={authorLink}>
-          <Image
-            className={`rounded-full m-0 p-0`}
-            src={authorImage}
-            alt={'author-image-alt'}
-            width={36}
-            height={36}
-            objectFit='cover'
-          />
+          <Image className={`rounded-full m-0 p-0`} src={authorImage} alt={'author-image-alt'} width={36} height={36} />
 
           <span className={`text-[#d8d8d8] leading-[21.5px] text-[0.725rem] font-primary font-semibold no-underline`}>
             By {authorName}

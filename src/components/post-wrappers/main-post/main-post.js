@@ -63,10 +63,10 @@ const MainPost = ({
               </div>
 
               {/* View Post Button and More Actions Button */}
-              <button
+              {/*  <button
                 className={`text-white w-fit border-[1.25px] border-[#ffffff] px-[12px] py-[6px] rounded-[8px] flex items-center gap-2`}>
                 See post <FaArrowUpRightFromSquare className={`text-white`} />
-              </button>
+              </button>*/}
             </div>
           </div>
         </Link>
