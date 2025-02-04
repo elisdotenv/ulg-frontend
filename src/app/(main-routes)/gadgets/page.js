@@ -102,8 +102,35 @@ export default function GadgetsPage() {
   return (
     // --- Main Gadgets Posts Wrapper
     <main className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
+      {/* >>> Group-2 [MOBILE, TABLETS & DESKTOP SCREENS] */}
+      <div className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden pt-[5rem]`}>
+        <div className={`col-span-12 flex flex-col justify-center items-center`}>
+          <h2 className={`text-white`}>Our Featured Post</h2>
+          <h4 className={`text-yellow-400`}>Our Popular 5 Storiees Now</h4>
+        </div>
+        {/* [Mobile Screens] */}
+        {featuredPosts.length > 0 && (
+          <ul className={`flex gap-[1rem] overflow-x-scroll col-span-12 md:hidden`}>
+            {featuredPosts.map((p, i) => (
+              <li className={`md:hidden lg:hidden`} key={i}>
+                <SlidePost
+                  gotohref={`/gadgets/${p.attributes.slug}`}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                  imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                  postTitle={p?.attributes?.title}
+                  postDescription={p?.attributes?.description}
+                  postId={i}
+                  updateTime={p?.attributes?.updatedAt}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {/* > End of Group-2 */}
+
       {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
-      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 pt-[5rem]`}>
+      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12`}>
         {primaryPosts.length > 0 && (
           <ul role='list' className={`${styles.topReviews} col-span-12 px-[0.75rem] `}>
             {primaryPosts.map((p) => (
@@ -121,33 +148,6 @@ export default function GadgetsPage() {
         )}
       </div>
       {/* END OF GROUP-1 */}
-
-      {/* >>> Group-2 [MOBILE, TABLETS & DESKTOP SCREENS] */}
-      <div className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden`}>
-        <div className={`col-span-12 flex flex-col justify-center items-center`}>
-          <h2 className={`text-white`}>Our Featured Post</h2>
-          <h4 className={`text-yellow-400`}>Our Popular 5 Storiees Now</h4>
-        </div>
-        {/* [Mobile Screens] */}
-        {featuredPosts.length > 0 && (
-          <ul className={`flex gap-[0.75rem] overflow-x-scroll col-span-12 md:hidden`}>
-            {featuredPosts.map((p, i) => (
-              <li className={`md:hidden lg:hidden`} key={i}>
-                <SlidePost
-                  gotohref={`/gadgets/${p.attributes.slug}`}
-                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-                  imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-                  postTitle={p?.attributes?.title}
-                  postDescription={p?.attributes?.description}
-                  postId={i}
-                  updateTime={p?.attributes?.updatedAt}
-                />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-      {/* > End of Group-3 */}
     </main>
   );
 }

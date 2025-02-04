@@ -9,9 +9,6 @@ const SlidePost = ({ gotohref, alternativeText, imageURL, postTitle, postId, upd
     <>
       <Link href={gotohref}>
         <div className={`${styles.postWrapper} relative`}>
-          {/*     <span className={`bg-pink-500 text-white rotate-45 px-[1em] py-[0.5em] absolute top-[1.25em] z-20 left-[1.25em]`}>
-            <p className={`-rotate-45`}> {postId + 1}</p>
-          </span>*/}
           <span
             className={`bg-pink-500 block text-white px-[1em] py-[1.5em] absolute top-[0.75em] z-30 left-[0.75em] ${styles.hexagon}`}>
             <p>{postId + 1}</p>
