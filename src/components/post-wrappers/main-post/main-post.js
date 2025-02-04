@@ -49,15 +49,25 @@ const MainPost = ({
               <p className={`${styles.Description} hidden lg:block`}>{truncateDescriptionLarge(postDescription)}</p>
             </div>
 
-            <div className={`${styles.AuthorWrapper}`}>
-              {/* --- Author Name */}
-              <div className={`flex gap-2 items-center`}>
-                <Image className={`rounded-full m-0 p-0`} src={authorImageURL} alt={''} width={40} height={40} />
-                <h4 className={`${styles.AuthorName}`}>{author?.authorname}</h4>
+            <div className={`${styles.AuthorWrapper} flex items-center justify-between`}>
+              <div>
+                {/* --- Author Name */}
+                <div className={`flex gap-2 items-center`}>
+                  <Image className={`rounded-full m-0 p-0`} src={authorImageURL} alt={''} width={40} height={40} />
+                  <h4 className={`${styles.AuthorName}`}>{author?.authorname}</h4>
+                </div>
+
+                {/* --- Last Updated Time */}
+                <h4 className={`${styles.Date}`}>Updated {lastUpdateTimeFn(updatedTime)}</h4>
               </div>
 
-              {/* --- Last Updated Time */}
-              <h4 className={`${styles.Date}`}>Updated {lastUpdateTimeFn(updatedTime)}</h4>
+              {/* View Post Button and More Actions Button */}
+              <div className={`flex items-center gap-2`}>
+                <button className={`text-white w-fit border-[1.25px] border-[#ffffff] px-[12px] py-[4px] rounded-md`}>
+                  See post{' '}
+                </button>
+                <span className={`text-white inline-block`}>:</span>
+              </div>
             </div>
           </div>
         </Link>
