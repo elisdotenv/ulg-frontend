@@ -16,6 +16,8 @@ import { AuthorProfileDatePostedTop, AuthorProfileMobile, MobileDatePosted } fro
 import KeyPointsWrapper from '@/ui/keypoints/keypoints-wrapper';
 import ContextPage from '@/ui/context-page/context-page';
 import MainPost from '@/components/post-wrappers/main-post/main-post';
+import SecondaryPost from '@/components/post-wrappers/secondary-post/secondary-post';
+import JoinWhatsappCTA from '@/ui/cta/join-whatsapp';
 
 export default function GadgetsPageSlug({ params }) {
   const slug = React.use(params).slug;
@@ -360,6 +362,47 @@ export default function GadgetsPageSlug({ params }) {
         </ul>
       </div>
       {/* -#####- */}
+
+      <div className={`hidden col-span-12 w-full h-full md:grid grid-cols-12 gap-[1.5rem]`}>
+        {/* B. [MEDIUM & LARGE SCREENS] */}
+        <ul className={`${styles.topReviews} col-span-12 flex flex-col gap-y-[1rem] gap-x-[1.25rem]`}>
+          {secondaryRelatedPosts.map((p) => (
+            <li key={p?.id} className={`${styles.topReviewPost}`}>
+              <SecondaryPost
+                gotohref={`/gadgets/${p.attributes.slug}`}
+                alternativeText={p?.attributes?.CoverImage?.data?.attributes?.alternativeText || ''}
+                imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
+                postTitle={p?.attributes?.title}
+                postTag={p?.attributes?.tags[0]?.tags}
+              />
+            </li>
+          ))}
+        </ul>
+        <div className={`${styles.adverts} col-span-12`}>
+          <p>Animated Ad Banner GIF</p>
+        </div>
+      </div>
+      {/* -#####- */}
+
+      {/* [MOBILE SCREENS] - CTA Element */}
+      <div className='lg:hidden col-span-12 px-[1rem] '>
+        <JoinWhatsappCTA />
+      </div>
+      {/* -#####- */}
+
+      {/* [MISCELLANEOUS LAYOUTS] */}
+
+      {/* 1. Link Copied Alert Box */}
+      {isLinkCopied && (
+        <div
+          className={`md:hidden absolute w-fit inline-flex justify-center items-center top-[50vh] left-0 right-0 mx-auto bg-[#333333] rounded-[6px]`}>
+          <span className={`text-[#fcfdfd] text-[1rem] font-ternaryMedium px-[0.75rem] py-[6px] flex items-center gap-2`}>
+            {' '}
+            <FaCopy className={`text-[#fcfdfd]`} />
+            Copied to Clipboard!
+          </span>
+        </div>
+      )}
     </div>
   );
 }

@@ -111,7 +111,7 @@ export default function GadgetsPage() {
                   gotohref={`/gadgets/${p.attributes.slug}`}
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText}
                   imageURL={p?.attributes?.coverimage?.data?.attributes?.url}
-                  postTag={p?.attributes?.tags}
+                  postTag={p?.attributes?.tags[0].tags}
                   postTitle={p?.attributes?.title}
                 />
               </li>

@@ -52,9 +52,10 @@ const MainPost = ({
             <div className={`${styles.AuthorWrapper}`}>
               {/* --- Author Name */}
               <div className={`flex gap-2 items-center`}>
-                <Image className={`rounded-full m-0 p-0`} src={authorImageURL} alt={''} width={30} height={30} />
+                <Image className={`rounded-full m-0 p-0`} src={authorImageURL} alt={''} width={40} height={40} />
                 <h4 className={`${styles.AuthorName}`}>{author?.authorname}</h4>
               </div>
+
               {/* --- Last Updated Time */}
               <h4 className={`${styles.Date}`}>Updated {lastUpdateTimeFn(updatedTime)}</h4>
             </div>

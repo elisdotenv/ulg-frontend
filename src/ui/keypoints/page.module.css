@@ -1,10 +1,10 @@
 .orderedList {
   list-style: none;
   counter-reset: list-counter;
-  @apply relative flex flex-col gap-[1rem] py-[1rem] px-[0.75rem] md:p-[1.375rem] m-0 rounded;
+  @apply relative inline-flex flex-col gap-[1rem] py-[1rem] px-[0.75rem] md:p-[1.375rem] m-0 rounded;
 }
 .orderedList li {
-  @apply m-0 gap-[0.5rem] text-[#ffffda] text-[1.125rem] lg:text-[1.125rem] leading-[1.3em] tracking-wide md:font-medium flex items-center;
+  @apply m-0 gap-[0.5rem] text-[#ffffda] text-[1.125rem] lg:text-[1.125rem] leading-[1.3em] tracking-wide md:font-medium inline-flex items-center;
   position: relative;
   counter-increment: list-counter;
 }

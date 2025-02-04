@@ -31,7 +31,7 @@ export default function MobileNavigationBar() {
 
           <button className={`rounded-[8.5px] p-px bg-gradient-to-br from-[#B2E905] via-yellow-400 to-[#98E216]`}>
             <Link
-              href={`/`}
+              href={`https://chat.whatsapp.com/CjGYABNfUyb3LGPRHXlSoq`}
               className={`bg-[#1e2522] block border border-[#575e62] text-[#ffffda] rounded-[8px] px-[12px] py-[6px] shadow-sm font-bold`}>
               Join us
             </Link>
@@ -40,15 +40,15 @@ export default function MobileNavigationBar() {
 
         {/* 2.LOGO*/}
         <div className={`flex justify-end items-center pr-[0.625rem]`}>
-          {/* <Image
+          <Image
             layout='fixed'
             priority={true}
-            className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
+            className={`object-cover w-[44px] h-[44px] relative block m-0 p-0 lg:m-0 lg:p-0`}
             src={logo}
             alt={`Logo`}
-            width={0}
-            height={0}
-          />*/}
+            width={44}
+            height={44}
+          />
         </div>
         {isOpen && <SideNavigationBar className={`md:hidden`} onClose={toggleNav} />}
       </nav>

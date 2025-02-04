@@ -94,7 +94,7 @@ const ContextPage = ({ contextOne, contextTwo, noteContext, refSource }) => {
               ),
             }}
             modifiers={{
-              bold: ({ children }) => <strong className={`text-[#ffffda] text-[1.25rem]`}>{children}</strong>,
+              bold: ({ children }) => <strong className={`text-[#ffffda] inline text-[1.25rem]`}>{children}</strong>,
               italic: ({ children }) => <span className='italic text-inherit font-inherit'>{children}</span>,
               code: ({ children }) => <div>{children}</div>,
               strikethrough: ({ children }) => <strike className={``}>{children}</strike>,

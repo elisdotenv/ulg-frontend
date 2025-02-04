@@ -8,7 +8,7 @@ export const socialIcons = [
   { name: 'instagram', href: '/', icon: <FaInstagram /> },
   { name: 'youtube', href: '/', icon: <FaYoutube /> },
   { name: 'twitter', href: '/', icon: <BsTwitterX /> },
-  { name: 'whatsapp', href: 'https://wa.me/255689759215?', icon: <FaWhatsapp /> },
+  { name: 'whatsapp', href: 'https://chat.whatsapp.com/CjGYABNfUyb3LGPRHXlSoq', icon: <FaWhatsapp /> },
 ];
 
 // Legal Links
