@@ -13,9 +13,7 @@
   @apply p-[1rem] overflow-clip block rounded-[8px] bg-gradient-to-b from-[#333333] via-[#333333] to-transparent border-t-[1px] rounded-t-2xl border-[#575e62];
 }*/
 .postWrapper {
-  @apply bg-gradient-to-b from-[#333333] to-transparent p-[1rem] rounded-none border-t-[1px] border-t-[#a8b3cf] block;
-
-  @apply bg-gradient-to-b from-[#14171b] to-transparent px-[1rem] py-[1.5rem] rounded-t-2xl border-t-[1.25px] block;
+  @apply p-[1rem] border-[1px] border-[#a8b3cf] block rounded-md;
 }
 
 .ImageWrapper {

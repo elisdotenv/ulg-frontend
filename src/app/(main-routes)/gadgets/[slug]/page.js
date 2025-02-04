@@ -342,8 +342,8 @@ export default function GadgetsPageSlug({ params }) {
       {/* -#####- */}
 
       {/* A. [MOBILE SCREENS] - Bottom Related Posts Element */}
-      <div className='col-span-12 md:hidden flex flex-col gap-[0.75rem]'>
-        <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[1rem]`}>
+      <div className='col-span-12 md:hidden flex flex-col gap-[1rem]'>
+        <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[1.5rem] px-[0.75rem]`}>
           {secondaryRelatedPosts.map((p) => (
             <li className={`${styles.secondaryPost}`} key={p.id}>
               <MainPost
