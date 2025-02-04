@@ -8,9 +8,13 @@ const SlidePost = ({ gotohref, alternativeText, imageURL, postTitle, postId, upd
   return (
     <>
       <Link href={gotohref}>
-        <div className={`${styles.postWrapper}`}>
-          <span className={`bg-pink-500 text-white rotate-45 px-[1em] py-[0.5em] absolute top-[1.25em] z-20 left-[1.25em]`}>
+        <div className={`${styles.postWrapper} relative`}>
+          {/*     <span className={`bg-pink-500 text-white rotate-45 px-[1em] py-[0.5em] absolute top-[1.25em] z-20 left-[1.25em]`}>
             <p className={`-rotate-45`}> {postId + 1}</p>
+          </span>*/}
+          <span
+            className={`bg-pink-500 text-white px-[1em] py-[1.5em] absolute top-[0.75em] z-20 left-[0.75em] ${styles.hexagon}`}>
+            <p>{postId + 1}</p>
           </span>
 
           {/* 1. Image and Tag */}
@@ -24,7 +28,7 @@ const SlidePost = ({ gotohref, alternativeText, imageURL, postTitle, postId, upd
               src={imageURL}
             />
             <div
-              className={`bg-[#dfdfdf] flex flex-col gap-  [6px] items-start justify-between absolute h-[45%] w-full bottom-0 left-0 p-[0.5rem]`}>
+              className={`bg-[#ffffff] flex flex-col gap-  [6px] items-start justify-between absolute h-[45%] w-full bottom-0 left-0 p-[0.5rem]`}>
               <div>
                 <h1 className={`${styles.Title}`}>{truncateTitle(postTitle)}</h1>
                 <p>{truncateDescriptionSmall(postDescription)}</p>
