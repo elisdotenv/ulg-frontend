@@ -13,7 +13,7 @@
   @apply p-[1rem] overflow-clip block rounded-[8px] bg-gradient-to-b from-[#333333] via-[#333333] to-transparent border-t-[1px] rounded-t-2xl border-[#575e62];
 }*/
 .postWrapper {
-  @apply p-[1rem] border-[1px] border-[#a8b3cf] block rounded-md;
+  @apply p-[0.75rem] block bg-green-800;
 }
 
 .ImageWrapper {
