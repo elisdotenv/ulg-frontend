@@ -8,6 +8,7 @@ import {
   truncateTitle,
 } from '@/utils/truncate/truncations';
 import { lastUpdateTimeFn } from '@/utils/date/date-functions';
+import { FaArrowUpRightFromSquare, FaLink, FaCopy } from 'react-icons/fa6';
 
 const MainPost = ({
   gotohref,
@@ -49,7 +50,7 @@ const MainPost = ({
               <p className={`${styles.Description} hidden lg:block`}>{truncateDescriptionLarge(postDescription)}</p>
             </div>
 
-            <div className={`${styles.AuthorWrapper} flex items-center justify-between`}>
+            <div className={`${styles.AuthorWrapper} flex items-center justify-start gap-6`}>
               <div>
                 {/* --- Author Name */}
                 <div className={`flex gap-2 items-center`}>
@@ -62,12 +63,10 @@ const MainPost = ({
               </div>
 
               {/* View Post Button and More Actions Button */}
-              <div className={`flex items-center gap-2`}>
-                <button className={`text-white w-fit border-[1.25px] border-[#ffffff] px-[12px] py-[4px] rounded-md`}>
-                  See post{' '}
-                </button>
-                <span className={`text-white inline-block`}>:</span>
-              </div>
+              <button
+                className={`text-white w-fit border-[1.25px] border-[#ffffff] px-[12px] py-[6px] rounded-[8px] flex items-center gap-2`}>
+                See post <FaArrowUpRightFromSquare className={`text-white`} />
+              </button>
             </div>
           </div>
         </Link>
