@@ -132,6 +132,9 @@ export default function GadgetsPage() {
 
       {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
       <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12`}>
+        <div className={`col-span-12 mb-[2em] flex flex-col justify-center items-center`}>
+          <h2 className={`text-white px-[12px] py-[6px] bg-black transform -skew-x-2 shadow-lg`}>Our Featured Post</h2>
+        </div>
         {primaryPosts.length > 0 && (
           <ul role='list' className={`${styles.topReviews} col-span-12 px-[0.75rem] `}>
             {primaryPosts.map((p) => (
