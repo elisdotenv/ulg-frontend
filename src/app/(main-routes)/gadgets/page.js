@@ -103,7 +103,8 @@ export default function GadgetsPage() {
     // --- Main Gadgets Posts Wrapper
     <main className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
       {/* >>> Group-2 [MOBILE, TABLETS & DESKTOP SCREENS] */}
-      <div className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden pt-[5rem]`}>
+      <div
+        className={`col-span-12 grid grid-cols-12 px-[1rem] md:hidden pt-[5rem] pb-[3rem] bg-gradient-to-b from-purple-500 via-pink-500 to-transparent`}>
         <div className={`col-span-12 flex flex-col justify-center items-center`}>
           <h2 className={`text-white`}>Our Featured Post</h2>
           <h4 className={`text-yellow-400`}>Our Popular 5 Storiees Now</h4>
