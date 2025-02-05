@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
 import Image from 'next/image';
-import logo from '../../../../public/images/logo-blocks-footer.png';
+import logo from '../../../../public/images/new-white.png';
 import SideNavigationBar from '../side-navigation-bar/side-navigation-bar';
 
 export default function MobileNavigationBar() {
@@ -41,13 +41,12 @@ export default function MobileNavigationBar() {
         {/* 2.LOGO*/}
         <div className={`flex justify-end items-center pr-[0.625rem]`}>
           <Image
-            layout='fixed'
             priority={true}
-            className={`object-cover w-[44px] h-[44px] relative block m-0 p-0 lg:m-0 lg:p-0`}
+            className={`object-cover w-[44px] h-[40px] relative block m-0 p-0 lg:m-0 lg:p-0`}
             src={logo}
             alt={`Logo`}
             width={44}
-            height={44}
+            height={40}
           />
         </div>
         {isOpen && <SideNavigationBar className={`md:hidden`} onClose={toggleNav} />}
