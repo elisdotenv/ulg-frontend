@@ -25,12 +25,12 @@ const SlidePost = ({ gotohref, alternativeText, imageURL, postTitle, postId, upd
               src={imageURL}
             />
             <div
-              className={`bg-[#ffffff] flex flex-col [6px] items-start justify-between absolute h-[47%] w-full bottom-0 left-0 p-[0.5rem]`}>
+              className={`bg-[#001F3F] flex flex-col [6px] items-start justify-between absolute h-[47%] w-full bottom-0 left-0 p-[0.5rem]`}>
               <div>
                 <h1 className={`${styles.Title}`}>{truncateTitle(postTitle)}</h1>
-                <p>{truncateDescriptionSmall(postDescription)}</p>
+                <p className={`text-white`}>{truncateDescriptionSmall(postDescription)}</p>
               </div>
-              <h6 className={`z-30 text-red-600`}>{updatedTimeFn(updateTime)}</h6>
+              <h6 className={`z-30 text-[#39FF14]`}>{updatedTimeFn(updateTime)}</h6>
             </div>
           </div>
         </div>
