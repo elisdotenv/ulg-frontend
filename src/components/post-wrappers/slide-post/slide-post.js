@@ -10,8 +10,8 @@ const SlidePost = ({ gotohref, alternativeText, imageURL, postTitle, postId, upd
       <Link href={gotohref}>
         <div className={`${styles.postWrapper} relative`}>
           <span
-            /*   className={`bg-black block text-white px-[1em] py-[1.5em] absolute top-[0.625em] z-30 left-[0.625em] ${styles.hexagon}`}>*/
-            className={`bg-pink-400 block text-white px-[1em] py-[1.5em] absolute -top-[0.9em] z-30 -left-[0.2em] ${styles.hexagon}`}>
+            className={`bg-black block text-white px-[1em] py-[1.5em] absolute top-[0.625em] z-30 left-[0.625em] ${styles.hexagon}`}>
+            {/*    className={`bg-pink-400 block text-white px-[1em] py-[1.5em] absolute -top-[0.9em] z-30 -left-[0.2em] ${styles.hexagon}`}>*/}
             <p>{postId + 1}</p>
           </span>
 

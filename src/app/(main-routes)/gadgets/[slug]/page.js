@@ -30,7 +30,7 @@ export default function GadgetsPageSlug({ params }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   // --- Close Share Button Dropdown Function
-  const closeShareDropDown = (e) => {
+  const closeShareDropDown = () => {
     setOpenShare(false);
   };
 

@@ -1,7 +1,7 @@
 // Vercel Analytics Tracker and Insight Tracker
+import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { Geist } from 'next/font/google';
-import './globals.css';
 import { FooterMobile } from '@/components/footer/footer';
 import MobileNavigationBar from '@/components/navigation-bar/mobile-navigation-bar/mobile-navigatioin';
 
@@ -11,7 +11,9 @@ const geistSans = Geist({
 });
 
 export const metadata = {
-  title: 'Welcome to the Lobby (@uptown-lobby)',
+  title: {
+    default: 'Welcome to the Lobby (@uptown-lobby)',
+  },
   description: 'For the Love of Tech and Games',
 };
 
