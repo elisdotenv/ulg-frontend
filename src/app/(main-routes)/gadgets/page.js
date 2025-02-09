@@ -48,11 +48,21 @@ export default function GadgetsPage() {
   }, []);
 
   // --- On Error Encounter
-  if (error) {
+  /*  if (error) {
     return (
       <div className={`bg-red-500 w-screen h-screen flex justify-center items-center`}>
         <p className={`text-white`}>
           An error has occurred <br /> {error.message}
+        </p>
+      </div>
+    );
+  }*/
+
+  if (error) {
+    return (
+      <div className={`w-screen h-screen bg-black flex items-center justify-center px-[1rem]`}>
+        <p className={`text-white text-[0.875rem] text-center`}>
+          We're sorry, we have a network problem with our servers but we are working to make sure we solve the problem
         </p>
       </div>
     );

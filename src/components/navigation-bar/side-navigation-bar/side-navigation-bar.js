@@ -43,14 +43,15 @@ export default function SideNavigationBar({ className, onClose }) {
           <div className='flex justify-between items-center px-[1rem] h-[64px] relative'>
             {/* 2.LOGO*/}
             <div className={`flex justify-end items-center pr-[1rem]`}>
-              <Image
+              {/*  <Image
                 priority={true}
                 className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
                 src={logo}
                 alt={`Logo`}
                 width={0}
                 height={0}
-              />
+              />*/}
+              <p className={`text-white`}>LOGO</p>
             </div>
 
             <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.375rem] rounded border-[1px] border-[#575e62]`}>
