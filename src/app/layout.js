@@ -12,9 +12,9 @@ const geistSans = Geist({
 
 export const metadata = {
   title: {
-    default: 'Welcome to the Lobby (@uptown-lobby)',
+    default: 'upptwn-lobby',
   },
-  description: 'For the Love of Tech and Games',
+  description: 'Video Games, Tech, Crypto, Movies and Everything in Between',
 };
 
 export default function RootLayout({ children }) {
