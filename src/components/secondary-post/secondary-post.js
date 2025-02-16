@@ -1,0 +1,27 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './page.module.css';
+import { truncateTitle } from '@/utils/truncations';
+
+const SecondaryPost = ({ href, alt, src, tag, title }) => {
+  return (
+    <>
+      <Link href={href}>
+        <div className={`${styles.postWrapper}`}>
+          {/* 1. Image and Tag */}
+          <div className={` ${styles.ImageWrapper}`}>
+            <div className={`${styles.filter}`}></div>
+            <Image className={`${styles.Image}`} width={1000} height={1000} priority={true} alt={alt} src={src} />
+            {/* Post Title & Tag */}
+            <div className={`${styles.TitleTag}`}>
+              <span className={`${styles.Tag}`}>{tag}</span>
+              <h1 className={`${styles.Title}`}>{truncateTitle(title)}</h1>
+            </div>
+          </div>
+        </div>
+      </Link>
+    </>
+  );
+};
+
+export default SecondaryPost;

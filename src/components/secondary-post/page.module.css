@@ -1,0 +1,62 @@
+/* Mobile-First Responsive Design */
+.filter::before {
+  @apply z-20 h-[50%] w-full absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(0deg, #191919, #191919 10%, rgba(25, 25, 25, 0) 90%);
+}
+
+.postWrapper {
+  @apply p-[0.625rem] border-[2px] border-orange-900 overflow-clip;
+}
+
+.ImageWrapper {
+  /* set the min-h-[216px] to just h-[216px] for consinsent size for all images*/
+  @apply min-w-[254px] min-h-[207px] max-w-[414px] relative border-[2px] border-green-500;
+}
+
+.Image {
+  @apply object-cover w-full h-full rounded block;
+}
+
+.TitleTag {
+  @apply absolute  bottom-[10px] left-[10px] z-30;
+}
+
+.Tag {
+  @apply bg-black/30 py-[3px] px-[12px] rounded-[4px] font-semibold text-[0.875rem]  z-30 text-white border border-light;
+}
+
+.Title {
+  @apply mt-2 font-semibold text-[1.25rem] leading-[1.375rem] text-white;
+}
+
+@media screen and (min-width: 480px) {
+  .ImageWrapper {
+    @apply min-w-[134px] h-[134px] relative border-[2px] border-green-500 inline-block;
+  }
+  .Image {
+    @apply object-cover w-full h-full rounded block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ImageWrapper {
+    @apply min-w-[223px] h-[130px] relative border-[2px] border-green-500;
+  }
+  .Image {
+    @apply object-cover w-full h-full rounded block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ImageWrapper {
+    @apply min-w-[220px] h-[221px] max-w-[414px] relative border-[2px] border-green-500;
+  }
+  .Image {
+    @apply object-cover w-full h-full rounded block;
+  }
+}

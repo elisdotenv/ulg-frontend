@@ -1,0 +1,4 @@
+.detailsWrapper {
+  box-shadow: 0 6px 7px #0003;
+  @apply transition-all absolute z-50 top-[68px] left-0 right-0 h-[240px] w-full bg-[#252525];
+}

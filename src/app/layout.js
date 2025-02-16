@@ -2,17 +2,19 @@
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { Geist } from 'next/font/google';
-import { FooterMobile } from '@/components/footer/footer';
-import MobileNavigationBar from '@/components/navigation-bar/mobile-navigation-bar/mobile-navigatioin';
+import NavigationBar from '@/components/ui/navigation-bar/navigation-bar';
+import { FooterDesktop, FooterMobile } from '@/components/ui/footer/footer';
+import DesktopNavigationBar from '@/components/ui/navigation-bar/desktop-navigation/desktop-navigation';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
 });
 
+// @metadata Object
 export const metadata = {
   title: {
-    default: 'upptwn-lobby',
+    default: 'uptown-lobby',
   },
   description: 'Video Games, Tech, Crypto, Movies and Everything in Between',
 };
@@ -21,31 +23,32 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} antialiased`}>
-        {/* 1. Navigation Bar Section */}
-        <div>
-          {/* --- [Mobile Screen] */}
-          <div className={`md:hidden fixed top-0 left-0 right-0 z-50`}>
-            <MobileNavigationBar />
+        <main className={`min-h-screen flex flex-col relative`}>
+          {/* 1. Mobile Layout Navigatio-bar */}
+          <div className={`sticky top-0 left-0 right-0 z-50 md:hidden`}>
+            <NavigationBar />
           </div>
 
-          {/* --- [Medium to Large Screen] */}
-        </div>
-
-        {/* --- 2. Main Contents Section */}
-        <main>
-          {children}
-          <Analytics />
+          {/* 2. Medium & Desktop Layout Navigatio-bar */}
+          <nav className={`w-full hidden md:block sticky top-0 left-0 right-0 z-40 mb-5`}>
+            <div className={'desktopNavigation'}>
+              <DesktopNavigationBar />
+            </div>
+          </nav>
+          {/* Main Content */}
+          <div>{children}</div>
+          {/* Footer Section */}
+          <footer>
+            {/* 1. Mobile Layout Footer */}
+            <div className={`md:hidden`}>
+              <FooterMobile />
+            </div>
+            {/* 1. Desktop Layout Footer */}
+            <div className={`hidden md:block lg:block`}>
+              <FooterDesktop />
+            </div>
+          </footer>
         </main>
-
-        {/* --- 3. Footer Section */}
-        <footer>
-          {/* --- [Mobile Screen] */}
-          <div className={`md:hidden`}>
-            <FooterMobile />
-          </div>
-          {/* --- [Medium to Large Screen] */}
-          <div className={`hidden md:block`}></div>
-        </footer>
       </body>
     </html>
   );

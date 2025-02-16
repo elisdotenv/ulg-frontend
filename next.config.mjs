@@ -1,5 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+/* @type {import('next').NextConfig} */
+/*const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -13,6 +13,24 @@ const nextConfig = {
         hostname: 'tranquil-morning-50f1598ff6.media.strapiapp.com',
         port: '',
         pathname: '/**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+*/
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Images Configuration
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '4000',
+        pathname: '/uploads/**',
       },
     ],
   },

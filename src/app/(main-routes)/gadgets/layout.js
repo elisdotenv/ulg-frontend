@@ -1,8 +1,8 @@
-export default function GadgetsRootLayout({ children }) {
-  /* ---  Export Metadata Objects and Layout Necessary Data Inside of this component */
+export default function GadgetsLayout({ children }) {
   return (
     <div>
-      <main>{children}</main>
+      <p>This is the gadgets layout page</p>
+      {children}
     </div>
   );
 }

@@ -1,0 +1,72 @@
+.footerWrapper {
+  @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-center mt-[1rem] relative;
+}
+
+/*.footerWrapper::before {
+  content: '';
+  @apply bg-gradient-to-r from-[#b4e900] to-[#2abac4] w-full h-[2px] absolute top-0 left-0 right-0;
+}*/
+
+/* Social Icons */
+.socialIcons {
+  @apply flex flex-col gap-2 items-center;
+}
+.icons {
+  @apply flex gap-4 text-[#9198A1];
+}
+
+/* Legals */
+.legalItems {
+  @apply flex flex-col items-center;
+}
+.legals {
+  @apply flex flex-col items-center;
+}
+.legalItem {
+  @apply relative;
+}
+.legalItem::after {
+  @apply w-full;
+  content: '';
+  position: absolute;
+  height: 1px;
+  background: #fffdfa;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Contacts */
+.contacts {
+  @apply flex flex-col items-center;
+}
+
+.contactItems {
+  @apply flex flex-col items-center gap-1;
+}
+
+/* Associates */
+.associates {
+  @apply flex flex-col  items-center gap-1;
+}
+
+.divide {
+  @apply bg-[#adbdbc] w-[2px] h-[20px];
+}
+
+/* Conlusion */
+.conlusion {
+  @apply flex flex-col items-center relative border-t-[2px] border-darkbg w-full;
+}
+
+.conlusion::before {
+  @apply w-full h-[1.5px] absolute;
+  content: ' ';
+}
+
+.conlusionDesktop {
+  @apply bg-[#151B23] py-[0.75rem];
+}
+.iconsDesktop {
+  @apply flex gap-[1rem] text-[#9198A1];
+}

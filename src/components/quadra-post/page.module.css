@@ -1,0 +1,41 @@
+/* Mobile-First Responsive Design */
+.postWrapper {
+  @apply p-[0.625rem] flex flex-col gap-[1rem] rounded border-[3px] bg-[#333333] overflow-clip;
+}
+
+.Title {
+  @apply font-semibold text-[1.25rem] leading-[1.375rem] text-white;
+}
+
+.ImageWrapper {
+  @apply w-[210px] h-[90px] relative z-10;
+}
+
+.ImageWrapper::before {
+  content: '';
+  @apply w-full h-full border-[2px] bg-neutral-200 absolute left-[5px] top-[5px] -z-10;
+}
+
+.DescriptionWrapper {
+  @apply w-full flex justify-between items-center gap-2;
+}
+
+.Image {
+  @apply object-cover w-full h-full block;
+}
+
+.Description {
+  @apply self-start  font-normal text-[1rem] leading-[1.3rem] text-light;
+}
+
+.TagWrapper {
+  @apply w-full flex justify-between items-center;
+}
+
+.Date {
+  @apply font-normal text-[0.725rem] text-[#b6b4b5];
+}
+
+.Tag {
+  @apply inline-block py-[0.1875rem] px-[0.5rem] rounded-[4px]  font-semibold text-[0.875rem] text-light/80 border border-light;
+}

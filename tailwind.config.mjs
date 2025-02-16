@@ -1,17 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+      /* Typography plugin configutrations and customizations */
+      typography: () => ({
+        DEFAULT: {
+          css: {
+            fontFamily: 'theme(fontFamily.secondary)',
+            maxWidth: '75ch',
+          },
+        },
+      }),
+
+      // Screens and Media Queries
+      screens: {},
+      // Theme Colors
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#252627',
+        secondary: '#bf1313',
+        ternary: '#5c9bfa',
+        grayedText: '#d3d3d3',
+        lightGray: '#f2f2f2',
+        grayBorder: '#333',
+        dark: '#090808',
+        darkbg: '#191d1e',
+        cyaned: '#09b1c6',
+        light: '#efebe6',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

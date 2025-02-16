@@ -1,0 +1,12 @@
+.special {
+}
+
+.regular {
+}
+
+.hovered {
+  @apply text-[#f0705a] transition-all;
+}
+.notHovered {
+  @apply text-[#fdfdfc] transition-all;
+}

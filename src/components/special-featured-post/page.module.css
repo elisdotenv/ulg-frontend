@@ -1,0 +1,52 @@
+/* Mobile-First Responsive Design */
+/* ? Wether or not should use filter it's up to me */
+/* .filter::before {
+  @apply z-20 h-[35%] w-full absolute;
+  content: '';
+  display: block;
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(0deg, #191919 10%, #191919 10%, rgba(25, 25, 25, 0) 90%);
+}*/
+
+.postWrapper {
+  /* border-color: color-mix(in srgb, #a8b3cf, transparent 60%); */
+  @apply w-full grid grid-cols-2 bg-[#333333];
+}
+
+.ImageWrapper {
+  @apply w-full relative;
+}
+
+.Image {
+  @apply object-cover w-full h-full block;
+}
+
+.Tag {
+  @apply py-[3px] px-[12px] rounded-[4px]  font-semibold text-[0.875rem] absolute bottom-[10px] left-[10px] z-30 text-light/80;
+}
+
+.TextHeaderWrapper {
+  @apply w-full h-full flex flex-col justify-between px-[1.125rem] py-[0.625rem] overflow-clip;
+}
+
+.Title {
+  @apply font-bold text-[1.75rem] leading-[1.2] text-[#fdfdfd];
+}
+
+.Description {
+  @apply font-normal text-[1.125rem] leading-[1.3rem] text-[#fdfcfc];
+}
+
+.AuthorWrapper {
+  @apply my-[0.375rem] flex justify-between;
+}
+
+.AuthorName {
+  @apply font-bold text-[0.875rem]  text-light;
+}
+
+.Date {
+  @apply font-normal text-[0.875rem] text-[#b6b4b5];
+}

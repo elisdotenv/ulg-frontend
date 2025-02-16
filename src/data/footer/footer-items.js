@@ -1,17 +1,20 @@
-// Icons for Social Medias and Platforms
 import { FaYoutube, FaInstagram, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
+import { FaLocationDot, FaPhone } from 'react-icons/fa6';
+import { IoMailSharp } from 'react-icons/io5';
 
-// Social Media & Platforms Icons
 export const socialIcons = [
-  { name: 'tiktok', href: '/', icon: <FaTiktok /> },
-  { name: 'instagram', href: '/', icon: <FaInstagram /> },
-  { name: 'youtube', href: '/', icon: <FaYoutube /> },
-  { name: 'twitter', href: '/', icon: <BsTwitterX /> },
-  { name: 'whatsapp', href: 'https://chat.whatsapp.com/CjGYABNfUyb3LGPRHXlSoq', icon: <FaWhatsapp /> },
+  { name: 'tiktok', href: '/', icon: <FaTiktok className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
+  { name: 'instagram', href: '/', icon: <FaInstagram className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
+  { name: 'youtube', href: '/', icon: <FaYoutube className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
+  { name: 'twitter', href: '/', icon: <BsTwitterX className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
+  {
+    name: 'whatsapp',
+    href: 'wa.me',
+    icon: <FaWhatsapp className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} />,
+  },
 ];
 
-// Legal Links
 export const legals = [
   { name: 'Terms of Services', href: '/' },
   { name: 'Privacy policy', href: '/' },
@@ -19,11 +22,15 @@ export const legals = [
   { name: 'Disclaimer', href: '/' },
 ];
 
-// Contacts and Addresses
-export const contactsArray = ['Sinza, Kijitonyama', 'Dar es salaam, Tanzania', '+255(0)-689-759-215', 'campers@uptown.com'];
+export const contacts = ['Sinza, Kijitonyama', 'Dar es salaam, Tanzania', '+255(0)-760-659-831', 'debug@bugverse.com'];
 
-export const contactsObject = [
+export const contact = [
+  /*  { name: 'Sinza, Kijitonyama', icon: <FaLocationDot /> },*/
   { name: 'Dar es salaam, Tanzania', icon: null },
-  { name: '+255(0)-689-759-215', icon: null },
-  { name: 'campers@uptown.com', icon: null },
+  { name: '+255(0)-760-659-831', icon: null },
+  { name: 'debug@bugverse.com', icon: null },
 ];
+
+{
+  /*<FaLocationDot /> <FaPhone /> <IoMailSharp />*/
+}

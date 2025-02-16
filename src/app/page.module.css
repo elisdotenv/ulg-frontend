@@ -1,0 +1,131 @@
+.MainWrapper {
+  @apply max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem];
+}
+
+.GadgetsWrapper {
+  @apply w-full h-full col-span-12 p-[10px] bg-red-500 border-[2px] border-black grid grid-cols-12;
+}
+
+.MoviesWrapper {
+  @apply w-full h-full col-span-12 p-[10px] bg-red-500 border-[2px] border-green-600;
+}
+
+.TrendingsWrapper {
+  @apply w-full h-full col-span-12 p-[10px] bg-red-500 border-[2px] border-pink-500;
+}
+
+.ReviewsWrapper {
+  @apply w-full h-full col-span-12 p-[10px] bg-red-500 border-[2px] border-lime-500;
+}
+
+/* --- Gadgets Posts Section */
+/* --- Responsive Design for Medium Sized Devices (1024px to 1124px) */
+@media (min-width: 1024px) and (max-width: 1104px) {
+  .AdSpace {
+    @apply bg-lime-500 col-start-2 col-span-10 h-[35svh];
+  }
+}
+
+.topReviews {
+  @apply flex flex-col justify-between gap-[1.125rem];
+}
+
+.adverts {
+  @apply flex items-center justify-center bg-lime-700;
+}
+
+@media screen and (min-width: 480px) {
+  .topReviews {
+    @apply col-span-10 col-start-2 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-10 col-start-2;
+  }
+
+  .adverts {
+    @apply col-span-10 col-start-2;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .topReviews {
+    @apply col-span-10 col-start-2 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-6;
+  }
+
+  .adverts {
+    @apply col-span-10 col-start-2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .topReviews {
+    @apply col-span-12 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-4;
+  }
+
+  .adverts {
+    @apply col-span-12;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  .topReviews {
+    @apply col-span-12 grid grid-cols-12;
+  }
+  .topReviewPost {
+    @apply col-span-4;
+  }
+
+  .adverts {
+    @apply col-span-12;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .topReviews {
+    @apply col-span-9 grid grid-cols-12;
+  }
+  .adverts {
+    @apply col-span-3 bg-lime-800;
+  }
+}
+
+/* --- Movies Posts Section */
+.tertiaryPostsGrid {
+  @apply md:hidden lg:hidden col-span-12 w-[100vw] h-full px-[0.75rem] flex gap-[1rem] overflow-x-scroll;
+}
+
+.lgFeaturedPostsGrid {
+  @apply col-span-12 w-full h-full flex gap-[0.875rem] overflow-x-scroll;
+}
+
+/* --- Reviews Posts Section */
+/* --- Secondary Posts */
+.secondaryPostsGrid {
+  @apply col-span-12;
+}
+
+/* --- Responsive Design for Medium Sized Devices (480px to 768px) */
+@media screen and (min-width: 480px) {
+  .secondaryPostsGrid {
+    @apply col-span-12 w-full flex flex-col gap-[1rem];
+  }
+  .secondaryPost {
+    @apply w-full h-full;
+  }
+}
+
+/* --- Responsive Design for Medium Sized Devices (1024px to 1200px) */
+@media screen and (min-width: 1104px) {
+  .secondaryPostsGrid {
+    @apply col-span-8 w-full flex flex-col gap-[1rem];
+  }
+  .secondaryPost {
+    @apply w-full;
+  }
+}
