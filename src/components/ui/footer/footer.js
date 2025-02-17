@@ -72,7 +72,7 @@ export const FooterMobile = () => {
             Become a partner
           </Link>
         </div>
-        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzanian Gamers for Gamers.</h4> {/* Conclusion */}
+        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzanian Gamers for Techies.</h4> {/* Conclusion */}
         {/* Conclusion */}
         <div className={`${styles.conlusion} py-[2rem]`}>
           <h4 className={`text-center text-[0.875rem] text-[#ccc]`}>
