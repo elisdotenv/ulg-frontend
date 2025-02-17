@@ -5,7 +5,7 @@ import { contact, contacts, legals, socialIcons } from '@/data/footer/footer-ite
 export const FooterMobile = () => {
   return (
     <>
-      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#333] pt-[1rem]`}>
+      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#333] pt-[1rem] pl-[2rem]`}>
         {/* --- NAME & LOGO */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
           <div className={`hidden`}>UPTOWN</div>
@@ -22,7 +22,6 @@ export const FooterMobile = () => {
             />*/}
           </div>
         </div>
-
         {/* - Social Icons */}
         <div className={`${styles.socialIcons}`}>
           <h4 className={`font-lato font-bold text-[1.5rem] text-[#ccc] leading-[33.6px]`}>Follow Us</h4>
@@ -34,7 +33,6 @@ export const FooterMobile = () => {
             ))}
           </ul>
         </div>
-
         {/* Legal */}
         <div className={`${styles.legalItems}`}>
           <h4 className={`font-lato font-bold text-[1.5rem] text-[#ccc] leading-[33.6px]`}>Legal</h4>
@@ -46,7 +44,6 @@ export const FooterMobile = () => {
             ))}
           </ul>
         </div>
-
         {/* Contacts */}
         <div className={`${styles.contacts} `}>
           <h4 className={`font-lato font-bold text-[1.5rem] text-[#ccc] leading-[33.6px]`}>Contact us</h4>
@@ -56,10 +53,9 @@ export const FooterMobile = () => {
             ))}
           </ul>
         </div>
-
         {/* Associate */}
         <div className={`${styles.associates}`}>
-          <ul className={`flex items-center gap-2 font-lato font-normal text-[1rem] text-[#ccc]`}>
+          <ul className={`flex items-center gap-3 font-lato font-normal text-[1rem] text-[#ccc]`}>
             <li>
               <Link href='/'>Advertise</Link>
             </li>
@@ -76,11 +72,12 @@ export const FooterMobile = () => {
             Become a partner
           </Link>
         </div>
-
+        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzania Gamers for Gamers.</h4> {/* Conclusion */}
         {/* Conclusion */}
-        <div className={`${styles.conlusion} bg-red-500`}>
-          <h4 className={`text-center text-[0.875rem] text-[#adbdbc]`}>Made with Passion and Love, All rights reserved</h4>
-          <h4 className={`text-center text-[0.875rem] text-[#adbdbc]`}>&copy; {new Date().getFullYear()} bugverse, Inc.</h4>
+        <div className={`${styles.conlusion} py-[2rem]`}>
+          <h4 className={`text-center text-[0.875rem] text-[#ccc]`}>
+            &copy; {new Date().getFullYear()}, Uptown Lobby Store. All Rights Reserved.
+          </h4>
         </div>
       </footer>
     </>

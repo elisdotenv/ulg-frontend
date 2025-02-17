@@ -1,10 +1,12 @@
 .footerWrapper {
-  @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-center mt-[1rem] relative;
+  /* @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-center mt-[1rem] relative;*/
+  @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-start mt-[1rem] relative;
 }
 
 /* Social Icons */
 .socialIcons {
-  @apply flex flex-col gap-2 items-center;
+  /* @apply flex flex-col gap-2 items-center;*/
+  @apply flex flex-col gap-2 items-start;
 }
 
 .icons {
@@ -13,38 +15,34 @@
 
 /* Legals */
 .legalItems {
-  @apply flex flex-col items-center;
+  /*  @apply flex flex-col items-center;*/
+  @apply flex flex-col gap-2 items-start;
 }
 .legals {
-  @apply flex flex-col items-center;
+  /* @apply flex flex-col items-center;*/
+  @apply flex flex-col items-start;
 }
 
 /* Contacts */
 .contacts {
-  @apply flex flex-col items-center;
+  /*  @apply flex flex-col items-center;*/
+  @apply flex flex-col items-start;
 }
 
 .contactItems {
-  @apply flex flex-col items-center gap-1;
+  /*  @apply flex flex-col items-center gap-1;*/
+  @apply flex flex-col items-start gap-1;
 }
 
 /* Associates */
 .associates {
-  @apply flex flex-col  items-center gap-1;
-}
-
-.divide {
-  @apply bg-[#ccc] w-[2px] h-[20px];
+  /*  @apply flex flex-col items-center gap-1;*/
+  @apply flex flex-col items-start gap-1;
 }
 
 /* Conlusion */
 .conlusion {
-  @apply flex flex-col items-center relative border-t-[2px] border-darkbg w-full;
-}
-
-.conlusion::before {
-  @apply w-full h-[1.5px] absolute;
-  content: ' ';
+  @apply flex flex-col items-center relative border-t-[1px] border-[#c7c5c5] w-[90%];
 }
 
 .conlusionDesktop {
