@@ -55,7 +55,7 @@ export const FooterMobile = () => {
         </div>
         {/* Associate */}
         <div className={`${styles.associates}`}>
-          <ul className={`flex items-center gap-3 font-lato font-normal text-[1rem] text-[#ccc]`}>
+          <ul className={`flex items-center gap-3 font-lato font-normal text-[1rem] text-[#0969DA]`}>
             <li>
               <Link href='/'>Advertise</Link>
             </li>
@@ -68,11 +68,11 @@ export const FooterMobile = () => {
               <Link href='/'>Affiliate</Link>
             </li>
           </ul>
-          <Link className={`font-lato font-normal text-[1rem] text-[#ccc]`} href='/'>
+          <Link className={`font-lato font-normal text-[1rem] text-[#208740]`} href='/'>
             Become a partner
           </Link>
         </div>
-        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzania Gamers for Gamers.</h4> {/* Conclusion */}
+        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzanian Gamers for Gamers.</h4> {/* Conclusion */}
         {/* Conclusion */}
         <div className={`${styles.conlusion} py-[2rem]`}>
           <h4 className={`text-center text-[0.875rem] text-[#ccc]`}>
