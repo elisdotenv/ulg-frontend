@@ -55,7 +55,7 @@ export const FooterMobile = () => {
         </div>
         {/* Associate */}
         <div className={`${styles.associates}`}>
-          <ul className={`flex items-center gap-3 font-lato font-normal text-[1rem] text-[#0969DA]`}>
+          <ul className={`flex items-center gap-3 font-lato font-normal text-[1rem] text-[#CCFF00]`}>
             <li>
               <Link href='/'>Advertise</Link>
             </li>
@@ -68,7 +68,7 @@ export const FooterMobile = () => {
               <Link href='/'>Affiliate</Link>
             </li>
           </ul>
-          <Link className={`font-lato font-normal text-[1rem] text-[#208740]`} href='/'>
+          <Link className={`font-lato font-normal text-[1rem] text-[#0969DA]`} href='/'>
             Become a partner
           </Link>
         </div>
