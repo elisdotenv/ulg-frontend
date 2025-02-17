@@ -13,7 +13,7 @@ export default function ApplicationHomePage() {
   const [gadgets, setGadgetsPosts] = useState([]);
   const [movies, setMoviesPosts] = useState([]);
   const [trendings, setTrendingsPosts] = useState([]);
-  const [reviews, setReviewsPosts] = useState([]);
+  const [games, setGamesPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -69,25 +69,21 @@ export default function ApplicationHomePage() {
         const primaryTrendingsPosts = sortedTrendingsPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
         // ::: End of Trendings Posts [Filtering & Sorting]
 
-        // --- [Filtering & Sorting] 'Reviews' category posts
-        const reviewsPosts = data.filter((p) =>
-          p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Reviews')
-        );
+        // --- [Filtering & Sorting] 'Games' category posts
+        const gamesPosts = data.filter((p) => p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Games'));
 
-        // - Sort Gadegets Posts in order of their updated time (updatedAt)
-        const sortedReviewsPosts = reviewsPosts.sort(
-          (a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt)
-        );
+        // - Sort Games Posts in order of their updated time (updatedAt)
+        const sortedGamesPosts = gamesPosts.sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
 
         // - Filter Latest 6 posts excluding featured
-        const primaryReviewsPosts = sortedReviewsPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
-        // ::: End of Reviews Posts [Filtering & Sorting]
+        const primaryGamesPosts = sortedGamesPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
+        // ::: End of Games Posts [Filtering & Sorting]
 
         // --- State Management
         setGadgetsPosts(primaryGadgetsPosts);
         setMoviesPosts(primaryMoviesPosts);
         setTrendingsPosts(primaryTrendingsPosts);
-        setReviewsPosts(primaryReviewsPosts);
+        setGamesPosts(primaryGamesPosts);
       } catch (error) {
         console.error(`An Error has occured: ${error.message}`);
         setError(error.message);
@@ -187,10 +183,10 @@ export default function ApplicationHomePage() {
         </div>
         {/* --- END OF MOVIES SECTION */}
 
-        {/* 3. --- [REVIEWS] */}
+        {/* 3. --- 'GAMES REVIEWS'  */}
         <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[1rem]`}>
           <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[0.75rem]`}>
-            {reviews.map((p) => (
+            {games.map((p) => (
               <li className={`${styles.secondaryPost}`} key={p.id}>
                 <PrimaryPost
                   href={`/gadgets/${p.attributes.slug}`}

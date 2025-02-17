@@ -14,6 +14,7 @@ import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 import { GiThorHammer, GiHouseKeys } from 'react-icons/gi';
 import TrendingsDetails from '@/components/details/trendings-details/trendings';
 import Image from 'next/image';
+import CryptosDetails from '@/components/details/cryptos-details/cryptos';
 
 /*  This Component Fetches The Navigation Items */
 const DesktopNavigationBar = () => {
@@ -23,19 +24,20 @@ const DesktopNavigationBar = () => {
   const [isTrendings, setIsTrendings] = useState(false);
   const [isMovies, setIsMovies] = useState(false);
   const [isGames, setIsGames] = useState(false);
+  const [isCryptos, setIsCryptos] = useState(false);
 
   return (
     <>
       <div className={`bg-[#000000] w-screen z-40 border-b-4 border-b-[#f0705a] relative`}>
         <nav className={`max-w-[1300px] h-[64px] mx-auto flex items-center justify-between bg-[#000000] `}>
-          {/* A. Logo & Navigational Items */}
+          {/*  --- Logo & Navigational Items */}
           <div className={`flex items-center gap-[1.5rem]`}>
             {/* LOGO Redirects to '/'*/}
             <div>LOGO</div>
 
-            {/* B. Navigational Items - imported From Local [data] */}
+            {/*  - 2. Navigational Items */}
             <ul className={`flex items-center gap-[1rem]`}>
-              {/* route-1 ('/lobby') Redirects to Home */}
+              {/* --- route-1 ('/lobby') Redirects to Home */}
               <li
                 className={` 
                 ${pathname === '/' || (pathname.startsWith('/' + '/') && '/' !== '/') ? styles.special : styles.regular}
@@ -50,7 +52,7 @@ const DesktopNavigationBar = () => {
                 </Link>
               </li>
 
-              {/* route-2 ('/gadgets') Redirects to '/gadgets' */}
+              {/* --- route-2 ('/gadgets') Redirects to '/gadgets' */}
               <li
                 className={` 
                 ${
@@ -73,7 +75,7 @@ const DesktopNavigationBar = () => {
               {/* Some Misinformations about the 'route' */}
               {isGadgets ? <div>{<GadgetsDetails />}</div> : ''}
 
-              {/* route-3 ('/trendings') Redirects to '/trendings' */}
+              {/* --- route-3 ('/trendings') Redirects to '/trendings' */}
               <li
                 className={` 
                 ${
@@ -93,7 +95,7 @@ const DesktopNavigationBar = () => {
                   {isTrendings ? <AiFillCaretUp className={``} /> : <AiFillCaretDown className={``} />}
                 </Link>
               </li>
-              {/* Some Misinformations about the 'route' */}
+              {/* --- Some Misinformations about the 'route' */}
               {isTrendings ? (
                 <div>
                   <TrendingsDetails />
@@ -102,7 +104,7 @@ const DesktopNavigationBar = () => {
                 ''
               )}
 
-              {/* route-4 ('/movies') Redirects to '/movies' */}
+              {/* --- route-4 ('/movies') Redirects to '/movies' */}
               <li
                 className={` 
                 ${
@@ -122,7 +124,7 @@ const DesktopNavigationBar = () => {
                   {isMovies ? <AiFillCaretUp className={``} /> : <AiFillCaretDown className={``} />}
                 </Link>
               </li>
-              {/* Some Misinformations about the 'route' */}
+              {/* --- Some Misinformations about the 'route' */}
               {isMovies ? (
                 <div>
                   <MoviesDetails />
@@ -131,7 +133,7 @@ const DesktopNavigationBar = () => {
                 ''
               )}
 
-              {/* route-5 ('/games') Redirects to '/games' */}
+              {/* --- route-5 ('/games') Redirects to '/games' */}
               <li
                 className={` 
                 ${
@@ -156,6 +158,35 @@ const DesktopNavigationBar = () => {
               {isGames ? (
                 <div>
                   <GamesDetails />
+                </div>
+              ) : (
+                ''
+              )}
+
+              {/* --- route-5 ('/cryptos') Redirects to '/cryptos' */}
+              <li
+                className={` 
+                ${
+                  pathname === '/cryptos' || (pathname.startsWith('/cryptos' + '/') && '/cryptos' !== '/')
+                    ? styles.special
+                    : styles.regular
+                }
+                
+                  ${isCryptos ? styles.hovered : styles.notHovered}
+                  `}
+                onMouseOver={() => setIsCryptos(true)}
+                onMouseOut={() => setIsCryptos(false)}>
+                <Link
+                  className={` text-[1rem] leading-4 tracking-wider uppercase flex gap-[0.375rem] items-center`}
+                  href={`/cryptos`}>
+                  Cyptos
+                  {isCryptos ? <AiFillCaretUp className={``} /> : <AiFillCaretDown className={``} />}
+                </Link>
+              </li>
+              {/* --- Some Misinformations about the 'route' */}
+              {isCryptos ? (
+                <div>
+                  <CryptosDetails />
                 </div>
               ) : (
                 ''

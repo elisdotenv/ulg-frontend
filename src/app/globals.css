@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* Some Random Styles */
   --background: #14171b;
   --background: #f0f0f0;
 }
 
 body {
-  /* Some Random Styles */
+  /* --- Some random styles */
   background: var(--background);
   font-size: 16px;
 }
 
-/* Hide scrollbar for Chrome, Safari, and Opera */
+/* --- Hide scrollbar for Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
   display: none;
 }

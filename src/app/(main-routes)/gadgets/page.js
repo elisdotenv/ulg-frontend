@@ -89,8 +89,15 @@ export default function GadgetsPage() {
 
   return (
     <div className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
-      {/* >>> Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] */}
-      <div className={`w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem]`}>
+      {/* --- Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] --- */}
+      <div
+        className={`bg-red-500 w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem] pb-[2rem] md:pb-[1rem]`}>
+        {/* Section Header */}
+        <div className={'col-span-12 flex flex-col items-center justify-center'}>
+          <span className={`text-white`}>TRENDING GADGETS</span>
+          <span className={`text-white`}>Our 5 Most Popular Gadgets This Week</span>
+        </div>
+        {/* Section Content */}
         {primaryPosts.length > 0 && (
           <ul className={`${styles.lgFeaturedPostsGrid} px-[1rem] md:px-0`}>
             {fivePrimaryPost.map((p, i) => (
@@ -100,9 +107,11 @@ export default function GadgetsPage() {
                   alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
+                  description={p?.attributes?.description}
                   tag={p?.attributes?.tags[0]?.tags}
                   author={p?.attributes?.author?.authorname}
                   time={p?.attributes?.updatedAt}
+                  postId={i}
                 />
               </li>
             ))}
@@ -175,7 +184,7 @@ export default function GadgetsPage() {
       </div>
       {/* >>> End of Group-2 */}
 
-      {/* > Group-3: 8 Featured Reviews Post */}
+      {/* > Group-3: 8 Featured Post */}
       <div className={`col-span-12 w-full h-full md:block hidden`}>
         {/* [Medium & Large Screens] */}
         <ul className={`${styles.topReviews} md:block hidden`}>

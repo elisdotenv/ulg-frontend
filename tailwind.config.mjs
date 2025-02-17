@@ -3,7 +3,7 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      /* Typography plugin configutrations and customizations */
+      /* --- Typography plugin configutrations and customizations */
       typography: () => ({
         DEFAULT: {
           css: {
@@ -13,9 +13,13 @@ export default {
         },
       }),
 
-      // Screens and Media Queries
+      // --- Screens and Media Queries
       screens: {},
-      // Theme Colors
+      // --- Theme Colors
+
+      fontFamily: {
+        lato: ['var(--font-lato-sans)', 'sans-serif'],
+      },
       colors: {
         primary: '#252627',
         secondary: '#bf1313',

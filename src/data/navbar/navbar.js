@@ -9,7 +9,7 @@ export const NavigationItems = [
   { name: 'Lobby', href: '/', icon: <IoHomeSharp /> },
   { name: 'Gadgets', href: '/gadgets', icon: <BsFillKeyboardFill /> },
   { name: 'Trendings', href: '/trendings', icon: <ImFire /> },
-  { name: 'Cypto', href: '/trendings', icon: <FaBitcoin /> },
+  { name: 'Cypto', href: '/cryptos', icon: <FaBitcoin /> },
   { name: 'Movies', href: '/movies', icon: <BiMoviePlay /> },
-  { name: 'Game Reviews', href: '/reviews', icon: <IoGameController /> },
+  { name: 'Game Reviews', href: '/games', icon: <IoGameController /> },
 ];

@@ -4,14 +4,14 @@ import { FaLocationDot, FaPhone } from 'react-icons/fa6';
 import { IoMailSharp } from 'react-icons/io5';
 
 export const socialIcons = [
-  { name: 'tiktok', href: '/', icon: <FaTiktok className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'instagram', href: '/', icon: <FaInstagram className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'youtube', href: '/', icon: <FaYoutube className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
-  { name: 'twitter', href: '/', icon: <BsTwitterX className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} /> },
+  { name: 'tiktok', href: '/', icon: <FaTiktok className={`lg:w-[20px] w-[24px] lg:h-[20px] h-[24px] text-[1.5rem]`} /> },
+  { name: 'instagram', href: '/', icon: <FaInstagram className={`lg:w-[20px] w-[24px] lg:h-[20px] h-[24px] text-[1.5rem]`} /> },
+  { name: 'youtube', href: '/', icon: <FaYoutube className={`lg:w-[20px] w-[24px] lg:h-[20px] h-[24px] text-[1.5rem]`} /> },
+  { name: 'twitter', href: '/', icon: <BsTwitterX className={`lg:w-[20px] w-[24px] lg:h-[20px] h-[24px] text-[1.5rem]`} /> },
   {
     name: 'whatsapp',
-    href: 'wa.me',
-    icon: <FaWhatsapp className={`lg:w-[20px] w-[18px] lg:h-[20px] h-[18px] text-[0.75rem]`} />,
+    href: 'https://chat.whatsapp.com/CjGYABNfUyb3LGPRHXlSoq',
+    icon: <FaWhatsapp className={`lg:w-[20px] w-[24px] lg:h-[20px] h-[24px] text-[1.5rem]`} />,
   },
 ];
 
