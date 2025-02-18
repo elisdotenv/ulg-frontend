@@ -5,7 +5,7 @@ import { contact, contacts, legals, socialIcons } from '@/data/footer/footer-ite
 export const FooterMobile = () => {
   return (
     <>
-      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#333] pt-[1rem] pl-[2rem]`}>
+      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[1rem] pl-[2rem]`}>
         {/* --- NAME & LOGO */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
           <div className={`hidden`}>UPTOWN</div>
@@ -68,7 +68,7 @@ export const FooterMobile = () => {
               <Link href='/'>Affiliate</Link>
             </li>
           </ul>
-          <Link className={`font-lato font-normal text-[1rem] text-[#0969DA]`} href='/'>
+          <Link className={`font-lato font-normal text-[1rem] text-[#CCFF00]`} href='/'>
             Become a partner
           </Link>
         </div>

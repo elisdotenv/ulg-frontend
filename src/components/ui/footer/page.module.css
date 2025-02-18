@@ -42,7 +42,7 @@
 
 /* Conlusion */
 .conlusion {
-  @apply flex flex-col items-center relative border-t-[1px] border-[#000000] w-[90%];
+  @apply flex flex-col items-center relative border-t-[1.5px] border-[#000000] w-[90%];
 }
 
 .conlusionDesktop {
