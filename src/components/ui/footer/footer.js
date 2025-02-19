@@ -9,9 +9,9 @@ export const FooterMobile = () => {
     <>
       <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[2rem] pl-[1rem]`}>
         {/* --- NAME & LOGO */}
-        <div className={`flex flex-col gap-[0.625rem] items-center`}>
-          {/* 2.LOGO*/}
-          <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.cardSM}`}>
+        {/*    <div className={`flex flex-col gap-[0.625rem] items-center`}>*/}
+        {/* 2.LOGO*/}
+        {/* <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.cardSM}`}>
             <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#030303]`}>
               <Image
                 src={LogoWhite}
@@ -23,7 +23,7 @@ export const FooterMobile = () => {
               />
             </div>
           </div>
-        </div>
+        </div>*/}
         {/* - Social Icons */}
         <div className={`${styles.socialIcons}`}>
           <h4 className={`font-lato font-bold text-[1.5rem] text-[#ccc] leading-[33.6px]`}>Follow Us</h4>
