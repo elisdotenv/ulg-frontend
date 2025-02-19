@@ -44,7 +44,7 @@ const NavigationBar = () => {
 
         {/* 2.LOGO*/}
         <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.card}`}>
-          <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-black`}>
+          <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#030303]`}>
             <Image
               src={LogoWhite}
               priority={true}

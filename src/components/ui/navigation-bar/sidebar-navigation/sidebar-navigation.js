@@ -42,15 +42,17 @@ const SideNavigationBar = ({ className, onClose }) => {
           {/* 1. Logo & Close Button */}
           <div className='flex justify-between items-center px-[1rem] h-[64px] relative'>
             {/* 2.LOGO*/}
-            <div className={`flex justify-end items-center pr-[1rem] w-[72px] h-[64px]`}>
-              <Image
-                src={LogoWhite}
-                priority={true}
-                className={`object-cover w-fit h-[80%] relative block m-0 p-0 lg:m-0 lg:p-0`}
-                alt={`Logo`}
-                width={0}
-                height={0}
-              />
+            <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.card}`}>
+              <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#1e2522]`}>
+                <Image
+                  src={LogoWhite}
+                  priority={true}
+                  className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
+                  alt={`Logo`}
+                  width={0}
+                  height={0}
+                />
+              </div>
             </div>
 
             <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.375rem] rounded border-[1px] border-[#575e62]`}>

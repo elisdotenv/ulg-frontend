@@ -1,5 +1,5 @@
 .footerWrapper {
-  @apply w-full min-h-screen max-h-screen flex flex-col justify-end gap-[2rem] items-start mt-[1rem] relative;
+  @apply w-full min-h-[80svh] max-h-screen flex flex-col justify-end gap-[2rem] items-start mt-[1rem] relative;
 }
 
 /* Social Icons */
@@ -81,6 +81,47 @@
 
 .card::before {
   filter: blur(1rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* Logo Animation */
+.cardSM {
+  z-index: 1;
+  @apply rounded-[6px] relative;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cardSM::after,
+.cardSM::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  border-radius: 8px;
+  background-image: conic-gradient(from var(--angle), transparent 50%, #f3ff6a, #00ff99, #77aaf2, #f3ff6a);
+  animation: 3s spin linear infinite;
+}
+
+.cardSM::before {
+  filter: blur(0.375rem);
   opacity: 0.5;
 }
 

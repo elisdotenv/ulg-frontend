@@ -7,12 +7,12 @@ import LogoWhite from '../../../../public/Logo-White.png';
 export const FooterMobile = () => {
   return (
     <>
-      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[1rem] pl-[1rem]`}>
+      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[2rem] pl-[1rem]`}>
         {/* --- NAME & LOGO */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
-          {/* - Logo */}
-          <div className={`flex items-center justify-center w-[60px] h-[60px] ${styles.card}`}>
-            <div className={`bg-black rounded-md w-[56px] h-[56px]`}>
+          {/* 2.LOGO*/}
+          <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.cardSM}`}>
+            <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#030303]`}>
               <Image
                 src={LogoWhite}
                 priority={true}
