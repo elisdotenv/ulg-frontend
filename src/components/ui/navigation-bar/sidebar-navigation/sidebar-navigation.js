@@ -1,12 +1,14 @@
 'use client';
 import { NavigationItems } from '@/data/navbar/navbar';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { BsThreeDots } from 'react-icons/bs';
 import styles from './page.module.css';
 import { BsChevronLeft } from 'react-icons/bs';
 import { FaPaperPlane } from 'react-icons/fa6';
+import LogoWhite from '../../../../../public/Logo-White.png';
 
 const SideNavigationBar = ({ className, onClose }) => {
   const pathname = usePathname();
@@ -40,17 +42,16 @@ const SideNavigationBar = ({ className, onClose }) => {
           {/* 1. Logo & Close Button */}
           <div className='flex justify-between items-center px-[1rem] h-[64px] relative'>
             {/* 2.LOGO*/}
-            <div className={`flex justify-end items-center pr-[1rem]`}>
-              {/* Uncomment this for a Logo in Side navigation bar */}
-              {/*  <Image
+            <div className={`flex justify-end items-center pr-[1rem] w-[72px] h-[64px]`}>
+              <Image
+                src={LogoWhite}
                 layout='fixed'
                 priority={true}
-                className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
-                src={logo}
+                className={`object-cover w-fit h-[80%] relative block m-0 p-0 lg:m-0 lg:p-0`}
                 alt={`Logo`}
                 width={0}
                 height={0}
-              />*/}
+              />
             </div>
 
             <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.375rem] rounded border-[1px] border-[#575e62]`}>
