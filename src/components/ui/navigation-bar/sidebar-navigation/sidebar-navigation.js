@@ -45,7 +45,6 @@ const SideNavigationBar = ({ className, onClose }) => {
             <div className={`flex justify-end items-center pr-[1rem] w-[72px] h-[64px]`}>
               <Image
                 src={LogoWhite}
-                layout='fixed'
                 priority={true}
                 className={`object-cover w-fit h-[80%] relative block m-0 p-0 lg:m-0 lg:p-0`}
                 alt={`Logo`}

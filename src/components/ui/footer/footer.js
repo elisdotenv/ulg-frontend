@@ -1,25 +1,27 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './page.module.css';
 import { contact, contacts, legals, socialIcons } from '@/data/footer/footer-items';
+import LogoWhite from '../../../../public/Logo-White.png';
 
 export const FooterMobile = () => {
   return (
     <>
-      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[1rem] pl-[2rem]`}>
+      <footer id='footer-section' className={`${styles.footerWrapper} bg-[#030303] pt-[1rem] pl-[1rem]`}>
         {/* --- NAME & LOGO */}
         <div className={`flex flex-col gap-[0.625rem] items-center`}>
-          <div className={`hidden`}>UPTOWN</div>
-          {/* - LOGO*/}
-          <div className={`flex justify-end items-center`}>
-            {/* ---  Uncomment this for a Logo Image at the Footer */}
-            {/* <Image
-              priority={true}
-              className={`object-cover h-fit w-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
-              src={logo}
-              alt={`Logo`}
-              width={0}
-              height={0}
-            />*/}
+          {/* - Logo */}
+          <div className={`flex items-center justify-center w-[60px] h-[60px] ${styles.card}`}>
+            <div className={`bg-black rounded-md w-[56px] h-[56px]`}>
+              <Image
+                src={LogoWhite}
+                priority={true}
+                className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
+                alt={`Logo`}
+                width={0}
+                height={0}
+              />
+            </div>
           </div>
         </div>
         {/* - Social Icons */}
@@ -72,7 +74,7 @@ export const FooterMobile = () => {
             Become a partner
           </Link>
         </div>
-        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Tanzanian Gamers for Techies.</h4> {/* Conclusion */}
+        <h4 className={`text-[0.875rem] text-[#ccc]`}>Made by Love & Honor for Tanzanian Techies.</h4>
         {/* Conclusion */}
         <div className={`${styles.conlusion} py-[2rem]`}>
           <h4 className={`text-center text-[0.875rem] text-[#ccc]`}>
@@ -87,26 +89,37 @@ export const FooterMobile = () => {
 export const FooterDesktop = () => {
   return (
     <>
-      <div className={`w-full min-h-[20svh] bg-[#333] py-[2rem]`}>
+      <div className={`w-full min-h-[20svh] bg-[#030303] pt-[2rem]`}>
         <div className={`h-full w-full max-w-[1300px] mx-auto grid grid-cols-5 py-[1rem]`}>
           {/* --- NAME & LOGO */}
-          <div className={`col-span-2 px-[0.625rem] w-full flex flex-col gap-4`}>
+          <div className={`col-span-2 px-[0.625rem] w-full flex flex-col gap-2`}>
             {/* - Logo */}
-            <div className={`flex`}>
-              {/* <Image
-                layout='fixed'
-                priority={true}
-                className={`object-cover h-fit w-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
-                src={logo}
-                alt={`Logo`}
-                width={0}
-                height={0}
-              />*/}
-              LOGO
+            <div className={`flex items-center justify-center w-[60px] h-[60px] ${styles.card}`}>
+              <div className={`bg-black rounded-md w-[56px] h-[56px]`}>
+                <Image
+                  src={LogoWhite}
+                  priority={true}
+                  className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
+                  alt={`Logo`}
+                  width={0}
+                  height={0}
+                />
+              </div>
             </div>
 
-            {/* - Name */}
-            <div>NAME</div>
+            {/* Social Links */}
+            <div className={`flex flex-col gap-[0.25rem]`}>
+              <h4 className={`font-lato font-bold text-[1.25rem] text-[#ccc] leading-[30px]`}>Follow Us</h4>
+              <div className={`col-span-1 flex items-center gap-[0.625rem]`}>
+                <ul className={` ${styles.iconsDesktop}`}>
+                  {socialIcons.map((icon, i) => (
+                    <li key={i}>
+                      <Link href={icon.href}>{icon.icon}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* --- Contacts */}
@@ -169,24 +182,13 @@ export const FooterDesktop = () => {
         </div>
 
         {/*2. Conclusion */}
-        {/* <div className={`w-full`}>
-          <div className={`w-full mx-auto h-full flex justify-between items-center py-[1.5rem]`}>
-            <h4 className={`text-center text-[#9198A1]  text-[0.875rem]`}>
-              All rights reserved &copy; {new Date().getFullYear()} bugverse, Inc
-            </h4>*/}
-
-        {/* Social Links */}
-        {/*            <div className={`col-span-1 flex items-center gap-[0.625rem]`}>
-              <ul className={` ${styles.iconsDesktop}`}>
-                {socialIcons.map((icon, i) => (
-                  <li key={i}>
-                    <Link href={icon.href}>{icon.icon}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className={`w-full bg-[#ccc]`}>
+          <div className={`w-[1300px] mx-auto h-full py-[1rem] flex items-center justify-center`}>
+            <h4 className={`text-center text-black  text-[0.875rem]`}>
+              &copy; {new Date().getFullYear()}, Uptown Lobby Store. All Rights Reserved.
+            </h4>
           </div>
-        </div>*/}
+        </div>
       </div>
     </>
   );

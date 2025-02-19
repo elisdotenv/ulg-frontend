@@ -46,7 +46,6 @@ const NavigationBar = () => {
         <div className={`flex justify-end items-center pr-[0.625rem] w-[64px] h-[56px]`}>
           <Image
             src={LogoWhite}
-            layout='fixed'
             priority={true}
             className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
             alt={`Logo`}
