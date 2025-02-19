@@ -7,8 +7,6 @@ import { BsThreeDots } from 'react-icons/bs';
 import styles from './page.module.css';
 import { BsChevronLeft } from 'react-icons/bs';
 import { FaPaperPlane } from 'react-icons/fa6';
-import Image from 'next/image';
-import logo from '../../../../../public/images/logo-blocks.png';
 
 const SideNavigationBar = ({ className, onClose }) => {
   const pathname = usePathname();
