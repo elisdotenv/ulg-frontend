@@ -1,6 +1,5 @@
 .footerWrapper {
-  /* @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-center mt-[1rem] relative;*/
-  @apply w-full min-h-[80vh] max-h-screen flex flex-col justify-end gap-[2rem] items-start mt-[1rem] relative;
+  @apply w-full min-h-screen max-h-screen flex flex-col justify-end gap-[2rem] items-start mt-[1rem] relative;
 }
 
 /* Social Icons */

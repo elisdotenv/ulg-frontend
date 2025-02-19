@@ -92,7 +92,7 @@ export const FooterDesktop = () => {
       <div className={`w-full min-h-[20svh] bg-[#030303] pt-[2rem]`}>
         <div className={`h-full w-full max-w-[1300px] mx-auto grid grid-cols-5 py-[1rem]`}>
           {/* --- NAME & LOGO */}
-          <div className={`col-span-2 px-[0.625rem] w-full flex flex-col gap-2`}>
+          <div className={`col-span-2 px-[0.625rem] w-full flex flex-col gap-3`}>
             {/* - Logo */}
             <div className={`flex items-center justify-center w-[60px] h-[60px] ${styles.card}`}>
               <div className={`bg-black rounded-md w-[56px] h-[56px]`}>
@@ -108,7 +108,7 @@ export const FooterDesktop = () => {
             </div>
 
             {/* Social Links */}
-            <div className={`flex flex-col gap-[0.25rem]`}>
+            <div className={`flex flex-col gap-[0.5rem]`}>
               <h4 className={`font-lato font-bold text-[1.25rem] text-[#ccc] leading-[30px]`}>Follow Us</h4>
               <div className={`col-span-1 flex items-center gap-[0.625rem]`}>
                 <ul className={` ${styles.iconsDesktop}`}>
