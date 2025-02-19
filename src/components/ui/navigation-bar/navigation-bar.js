@@ -43,15 +43,17 @@ const NavigationBar = () => {
         </div>
 
         {/* 2.LOGO*/}
-        <div className={`flex justify-end items-center pr-[0.625rem] w-[64px] h-[56px]`}>
-          <Image
-            src={LogoWhite}
-            priority={true}
-            className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
-            alt={`Logo`}
-            width={0}
-            height={0}
-          />
+        <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.card}`}>
+          <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-black`}>
+            <Image
+              src={LogoWhite}
+              priority={true}
+              className={`object-cover w-fit h-fit relative block m-0 p-0 lg:m-0 lg:p-0`}
+              alt={`Logo`}
+              width={0}
+              height={0}
+            />
+          </div>
         </div>
         {isOpen && <SideNavigationBar className={`md:hidden`} onClose={toggleNav} />}
       </nav>
