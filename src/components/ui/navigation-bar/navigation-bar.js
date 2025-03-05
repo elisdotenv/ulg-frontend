@@ -29,8 +29,8 @@ const NavigationBar = () => {
         className={`relative bg-[#030303] w-screen h-[64px] px-[0.75rem] border-b border-[#575e62] flex justify-between items-center`}>
         {/* 1. Chevron & CTA */}
         <div className={`min-w-[55%] flex items-center gap-[1rem]`}>
-          <button onClick={toggleNav} className={`text-[1.25rem] shadow-2xl p-[0.375rem] rounded border border-[#575e62]`}>
-            <BsChevronRight className={`text-[1.375rem] text-[#ffffda]`} />
+          <button onClick={toggleNav} className={`text-[1.25rem] shadow-2xl p-[0.475rem] rounded border border-[#575e62]`}>
+            <BsChevronRight className={`text-[1.475rem] text-[#ffffda]`} />
           </button>
 
           <button className={`rounded-[8.5px] p-px bg-gradient-to-br from-[#B2E905] via-[#CCFF00] to-yellow-400`}>

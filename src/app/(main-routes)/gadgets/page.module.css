@@ -60,3 +60,9 @@
     @apply gap-[1.275rem];
   }
 }
+
+.gadgetsHero {
+  background: #000000;
+  background: -webkit-linear-gradient(181deg, #000000 0%, #ccff00 50%, rgba(204, 255, 0, 0) 100%);
+  background: linear-gradient(181deg, #000000 0%, #ccff00 50%, rgba(204, 255, 0, 0) 100%);
+}

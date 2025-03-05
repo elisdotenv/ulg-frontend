@@ -19,6 +19,7 @@ export default {
 
       fontFamily: {
         lato: ['var(--font-lato-sans)', 'sans-serif'],
+        roboto: ['var(--font-roboto-sans)', 'sans-serif'],
       },
       colors: {
         primary: '#252627',

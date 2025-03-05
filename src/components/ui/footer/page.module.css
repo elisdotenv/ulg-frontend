@@ -75,7 +75,7 @@
   translate: -50% -50%;
   z-index: -1;
   border-radius: 8px;
-  background-image: conic-gradient(from var(--angle), transparent 10%, #f3ff6a, #00ff99, #77aaf2, #f3ff6a);
+  background-image: conic-gradient(from var(--angle), transparent 60%, #f3ff6a, #00ff99, #77aaf2, #f3ff6a);
   animation: 3s spin linear infinite;
 }
 

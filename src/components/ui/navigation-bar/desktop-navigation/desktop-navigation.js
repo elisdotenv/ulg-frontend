@@ -1,19 +1,15 @@
 'use client';
 import { useState } from 'react';
-import { NavigationItems } from '@/data/navbar/navbar';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
-import logo from '../../../../../public/images/logo-blocks.png';
-import squares from '../../../../../public/images/square-bg.svg';
 import { FaPaperPlane } from 'react-icons/fa6';
 import GadgetsDetails from '@/components/details/gadgets-details/gadgets';
 import MoviesDetails from '@/components/details/movies-details/movies';
 import GamesDetails from '@/components/details/games-details/games';
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
-import { GiThorHammer, GiHouseKeys } from 'react-icons/gi';
+import { GiThorHammer } from 'react-icons/gi';
 import TrendingsDetails from '@/components/details/trendings-details/trendings';
-import Image from 'next/image';
 import CryptosDetails from '@/components/details/cryptos-details/cryptos';
 
 /*  This Component Fetches The Navigation Items */
@@ -28,7 +24,7 @@ const DesktopNavigationBar = () => {
 
   return (
     <>
-      <div className={`bg-[#000000] w-screen z-40 border-b-4 border-b-[#f0705a] relative`}>
+      <div className={`bg-[#000000] w-screen z-40 border-b-4 relative`}>
         <nav className={`max-w-[1300px] h-[64px] mx-auto flex items-center justify-between bg-[#000000] `}>
           {/*  --- Logo & Navigational Items */}
           <div className={`flex items-center gap-[1.5rem]`}>
@@ -179,7 +175,7 @@ const DesktopNavigationBar = () => {
                 <Link
                   className={` text-[1rem] leading-4 tracking-wider uppercase flex gap-[0.375rem] items-center`}
                   href={`/cryptos`}>
-                  Cyptos
+                  Crypto
                   {isCryptos ? <AiFillCaretUp className={``} /> : <AiFillCaretDown className={``} />}
                 </Link>
               </li>

@@ -8,6 +8,7 @@ import { BsThreeDots } from 'react-icons/bs';
 import styles from './page.module.css';
 import { BsChevronLeft } from 'react-icons/bs';
 import { FaPaperPlane } from 'react-icons/fa6';
+import { BsBriefcase } from 'react-icons/bs';
 import LogoWhite from '../../../../../public/Logo-White.png';
 
 const SideNavigationBar = ({ className, onClose }) => {
@@ -30,7 +31,7 @@ const SideNavigationBar = ({ className, onClose }) => {
 
   return (
     <motion.div
-      className={`${className} bg-[#1e2522] fixed top-0 left-0 w-screen h-[100vh] z-50`}
+      className={`${className} bg-[#111111] fixed top-0 left-0 w-screen h-[100vh] z-50`}
       variants={variants}
       initial='hidden'
       animate='visible'
@@ -40,10 +41,10 @@ const SideNavigationBar = ({ className, onClose }) => {
         {/* Logo and Routes */}
         <div className={`flex flex-col gap-[2rem]`}>
           {/* 1. Logo & Close Button */}
-          <div className='flex justify-between items-center px-[1rem] h-[64px] relative'>
+          <div className='flex justify-between items-center px-[1.125rem] h-[64px] relative'>
             {/* 2.LOGO*/}
             <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.card}`}>
-              <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#1e2522]`}>
+              <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#111111]`}>
                 <Image
                   src={LogoWhite}
                   priority={true}
@@ -55,13 +56,13 @@ const SideNavigationBar = ({ className, onClose }) => {
               </div>
             </div>
 
-            <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.375rem] rounded border-[1px] border-[#575e62]`}>
-              <BsChevronLeft className={`text-[1.375rem] text-[#ffffda]`} />
+            <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.5rem] rounded border-[1px] border-[#575e62]`}>
+              <BsChevronLeft className={`text-[1.5rem] text-[#ffffda]`} />
             </button>
           </div>
 
           {/* 2. Routes (Navigation-Items) */}
-          <ul className={`flex flex-col items-start px-[1.375rem] space-y-5`}>
+          <ul className={`flex flex-col items-center px-[1.375rem] space-y-8`}>
             {NavigationItems.map((n) => (
               <motion.li
                 key={n.href}
@@ -70,28 +71,32 @@ const SideNavigationBar = ({ className, onClose }) => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}>
                 <Link className={`${Path === n.href ? styles.active : styles.inactive}`} onClick={onClose} href={n.href}>
-                  <span className={`text-[1.75rem]`}>{n.icon}</span>
-                  <span className={`text-[0.9375rem] font-semibold leading-[1.5] uppercase`}>{n.name}</span>
+                  {/* <span className={`text-[1.75rem]`}>{n.icon}</span> */}
+                  <span className={`text-[1.25rem] font-semibold tracking-wider leading-[1.5] uppercase text-center`}>
+                    {n.name}
+                  </span>
                 </Link>
                 {/* Route to About-us, Advertise Here, Privacy Policy, Terms of Use, Site Map   */}
               </motion.li>
             ))}
 
             {/* Brand Collaborattion */}
-            <Link onClick={onClose} className={`flex gap-2 items-center`} href={'/advertise-with-us'}>
-              <span className={`text-[1.375rem] p-[0.25rem]`}>
-                <FaPaperPlane className={`text-[#98E216]`} />
+            <Link onClick={onClose} className={`flex gap-2 items-center `} href={'/advertise-with-us'}>
+              <span className={`text-[1.5rem] p-[0.25rem]`}>
+                <BsBriefcase className={`text-[#f3ff6a]`} />
               </span>
-              <span className={`text-[1rem] font-semibold leading-[1.5] text-[#98E216]`}>BRAND COLLABORATION</span>
+              <span className={`text-[1.25rem] font-semibold leading-[1.5] tracking-wider text-[#f3ff6a]`}>
+                BRAND COLLABORATION
+              </span>
             </Link>
 
             {/* More (Redirects to the footer section) */}
-            <Link onClick={onClose} className={`flex gap-2 items-center`} href={'#footer-section'}>
+            {/* <Link onClick={onClose} className={`flex gap-2 items-center`} href={'#footer-section'}>
               <span className={`text-[1.375rem] border-[1.25px] border-neutral-500 rounded-full p-[0.25rem]`}>
                 <BsThreeDots className={`text-neutral-500`} />
               </span>
               <span className={`text-[0.9375rem] font-normal leading-[1.5] text-neutral-500`}>More</span>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </nav>

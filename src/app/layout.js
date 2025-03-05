@@ -1,7 +1,7 @@
 // Vercel Analytics Tracker and Insight Tracker
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
-import { Geist, Lato } from 'next/font/google';
+import { Geist, Lato, Roboto } from 'next/font/google';
 import NavigationBar from '@/components/ui/navigation-bar/navigation-bar';
 import { FooterDesktop, FooterMobile } from '@/components/ui/footer/footer';
 import DesktopNavigationBar from '@/components/ui/navigation-bar/desktop-navigation/desktop-navigation';
@@ -17,6 +17,12 @@ const latoSans = Lato({
   weight: ['100', '300', '400', '700', '900'],
 });
 
+const robotoSans = Roboto({
+  variable: '--font-lato-sans',
+  subsets: ['latin'],
+  weight: ['100', '300', '500', '700', '900'],
+});
+
 // @metadata Object
 export const metadata = {
   title: {
@@ -28,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${latoSans.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${latoSans.variable} ${robotoSans.variable} antialiased`}>
         <main className={`min-h-screen flex flex-col relative`}>
           {/* ---  Mobile Layout Navigatio-bar */}
           <div className={`sticky top-0 left-0 right-0 z-50 md:hidden`}>

@@ -26,7 +26,6 @@ export default function GadgetsPage() {
       try {
         const res = await axios(config);
         const { data } = res.data;
-
         // Filtering 'Gadgets' category posts
         const filteredPosts = data.filter((p) =>
           p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Gadgets')
@@ -91,11 +90,11 @@ export default function GadgetsPage() {
     <div className={`max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem]`}>
       {/* --- Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] --- */}
       <div
-        className={`bg-red-500 w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem] pb-[2rem] md:pb-[1rem]`}>
+        className={`${styles.gadgetsHero} w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem] pb-[2rem] md:pb-[1rem]`}>
         {/* Section Header */}
-        <div className={'col-span-12 flex flex-col items-center justify-center'}>
-          <span className={`text-white`}>TRENDING GADGETS</span>
-          <span className={`text-white`}>Our 5 Most Popular Gadgets This Week</span>
+        <div className={'col-span-12 flex flex-col items-center justify-center p-[1rem]'}>
+          <span className={`text-white uppercase text-[32px] font-extrabold font-lato`}>TRENDING GADGETS</span>
+          <span className={`text-white text-[24px] text-center font-roboto font-medium`}>Most Popular Gadgets This Week</span>
         </div>
         {/* Section Content */}
         {primaryPosts.length > 0 && (

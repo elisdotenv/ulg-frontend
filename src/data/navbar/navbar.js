@@ -6,10 +6,10 @@ import { IoHomeSharp, IoGameController } from 'react-icons/io5';
 import { FaBitcoin } from 'react-icons/fa6';
 
 export const NavigationItems = [
-  { name: 'Lobby', href: '/', icon: <IoHomeSharp /> },
+  { name: 'UPTOWN', href: '/', icon: <IoHomeSharp /> },
   { name: 'Gadgets', href: '/gadgets', icon: <BsFillKeyboardFill /> },
   { name: 'Trendings', href: '/trendings', icon: <ImFire /> },
-  { name: 'Cypto', href: '/cryptos', icon: <FaBitcoin /> },
+  { name: 'Crypto', href: '/cryptos', icon: <FaBitcoin /> },
   { name: 'Movies', href: '/movies', icon: <BiMoviePlay /> },
   { name: 'Game Reviews', href: '/games', icon: <IoGameController /> },
 ];
