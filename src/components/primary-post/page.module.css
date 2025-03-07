@@ -13,11 +13,11 @@
   @apply p-[1rem] overflow-clip block rounded-[8px] bg-gradient-to-b from-[#333333] via-[#333333] to-transparent border-t-[1px] rounded-t-2xl border-[#575e62];
 }*/
 .postWrapper {
-  @apply bg-gradient-to-b from-[#333333] to-transparent p-[1rem] rounded-none border-t-[1px] border-t-[#a8b3cf] block;
+  @apply bg-[#4b4b46] p-[0.75rem] rounded-[12px] block;
 }
 
 .ImageWrapper {
-  @apply min-w-[254px] h-[216px] rounded lg:rounded-none max-w-[364px] relative;
+  @apply min-w-[254px] h-[216px] rounded-[8px] lg:rounded-none max-w-[364px] relative;
 }
 
 .Image {
@@ -25,7 +25,11 @@
 }
 
 .Tag {
-  @apply py-[3px] px-[12px] rounded-[4px]  font-semibold text-[0.875rem] absolute bottom-[10px] left-[10px] z-30 text-light/80 border border-light;
+  @apply py-[6px] px-[12px] rounded-[4px] font-semibold text-[0.9375rem] absolute z-30  bottom-[10px] left-[10px]  text-[#ffffff] border border-[#a4a4a4];
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(236, 236, 236, 0.792);
 }
 
 .TextHeaderWrapper {

@@ -16,7 +16,10 @@ const MobileSecondaryPost = ({ href, alt, src, tag, title }) => {
             <Image className={`${styles.Image}`} width={1000} height={1000} priority={true} alt={alt} src={src} />
             {/* Post Title & Tag */}
             <div className={`${styles.TitleTag}`}>
-              <span className={`${styles.Tag}`}>{tag}</span>
+              <span className={`${styles.Tag}`}>
+                <span className={`text-[#f3ff6a] text-[0.9375rem] md:hidden`}>#</span>
+                {tag}
+              </span>
               <h1 className={`${styles.Title}`}>{truncateTitle(title)}</h1>
             </div>
           </div>

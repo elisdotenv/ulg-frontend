@@ -1,5 +1,5 @@
 .MainWrapper {
-  @apply max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[2rem];
+  @apply max-w-[1300px] mx-auto min-h-screen grid grid-cols-12 gap-[1.5rem];
 }
 
 .GadgetsWrapper {
@@ -31,7 +31,7 @@
 }
 
 .adverts {
-  @apply flex items-center justify-center bg-lime-700;
+  @apply flex items-center justify-center;
 }
 
 @media screen and (min-width: 480px) {
@@ -97,7 +97,7 @@
 
 /* --- Movies Posts Section */
 .tertiaryPostsGrid {
-  @apply md:hidden lg:hidden col-span-12 w-[100vw] h-full px-[0.75rem] flex gap-[1rem] overflow-x-scroll;
+  @apply md:hidden lg:hidden col-span-12 w-[100vw] h-full px-[1rem] flex gap-[1.25rem] overflow-x-scroll;
 }
 
 .lgFeaturedPostsGrid {

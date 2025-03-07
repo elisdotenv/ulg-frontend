@@ -31,7 +31,7 @@ const SideNavigationBar = ({ className, onClose }) => {
 
   return (
     <motion.div
-      className={`${className} bg-[#111111] fixed top-0 left-0 w-screen h-[100vh] z-50`}
+      className={`${className} ${styles.glass} fixed top-0 left-0 w-screen h-[100vh] z-50`}
       variants={variants}
       initial='hidden'
       animate='visible'
@@ -41,10 +41,10 @@ const SideNavigationBar = ({ className, onClose }) => {
         {/* Logo and Routes */}
         <div className={`flex flex-col gap-[2rem]`}>
           {/* 1. Logo & Close Button */}
-          <div className='flex justify-between items-center px-[1.125rem] h-[64px] relative'>
+          <div className='flex justify-between items-center px-[1rem] h-[64px] relative'>
             {/* 2.LOGO*/}
             <div className={`flex items-center justify-center w-[54px] h-[54px] ${styles.card}`}>
-              <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#111111]`}>
+              <div className={`flex items-center w-[50px] h-[50px] rounded-md bg-[#1c1c1c]`}>
                 <Image
                   src={LogoWhite}
                   priority={true}
@@ -56,8 +56,8 @@ const SideNavigationBar = ({ className, onClose }) => {
               </div>
             </div>
 
-            <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.5rem] rounded border-[1px] border-[#575e62]`}>
-              <BsChevronLeft className={`text-[1.5rem] text-[#ffffda]`} />
+            <button onClick={onClose} className={`text-[1.25rem] shadow-2xl p-[0.5rem] rounded border-[1px] border-[#b6babc]`}>
+              <BsChevronLeft className={`text-[1.5rem] text-[#fffffd]`} />
             </button>
           </div>
 

@@ -8,12 +8,14 @@ import FirstFeaturedPost from '@/components/special-featured-post/special-featur
 import PrimaryPost from '@/components/primary-post/primary-post';
 import TertiaryPost from '@/components/tertiary-post/tertiary-post';
 import Link from 'next/link';
+import SidewayPost from '@/components/sideway-post/sideway-post';
 
 export default function ApplicationHomePage() {
   const [gadgets, setGadgetsPosts] = useState([]);
   const [movies, setMoviesPosts] = useState([]);
   const [trendings, setTrendingsPosts] = useState([]);
   const [games, setGamesPosts] = useState([]);
+  const [cryptos, setCryptoPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -42,7 +44,7 @@ export default function ApplicationHomePage() {
 
         // - Filter Latest 6 posts excluding featured
         const primaryGadgetsPosts = sortedGadgetsPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
-        // ::: End of Gadgets Posts [Filtering & Sorting] :::
+        // :::::::::: End of Gadgets Posts [Filtering & Sorting]
 
         // --- [Filtering & Sorting] 'Movies' category posts
         const moviesPosts = data.filter((p) =>
@@ -54,7 +56,7 @@ export default function ApplicationHomePage() {
 
         // - Filter Latest 6 posts excluding featured
         const primaryMoviesPosts = sortedMoviesPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
-        // ::: End of Movies Posts [Filtering & Sorting]
+        // :::::::::: End of Movies Posts [Filtering & Sorting]
 
         // --- [Filtering & Sorting] 'Trendings' category posts
         const trendingsPosts = data.filter((p) =>
@@ -67,7 +69,7 @@ export default function ApplicationHomePage() {
 
         // - Filter Latest 6 posts excluding featured
         const primaryTrendingsPosts = sortedTrendingsPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
-        // ::: End of Trendings Posts [Filtering & Sorting]
+        // :::::::::: End of Trendings Posts [Filtering & Sorting]
 
         // --- [Filtering & Sorting] 'Games' category posts
         const gamesPosts = data.filter((p) => p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Games'));
@@ -77,13 +79,26 @@ export default function ApplicationHomePage() {
 
         // - Filter Latest 6 posts excluding featured
         const primaryGamesPosts = sortedGamesPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
-        // ::: End of Games Posts [Filtering & Sorting]
+        // :::::::::: End of Games Posts [Filtering & Sorting]
 
-        // --- State Management
+        // --- [Filtering & Sorting] 'Cryptos' category posts
+        const cryptoPosts = data.filter((p) =>
+          p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Cryptos')
+        );
+
+        // - Sort Cryptos Posts in order of their updated time (updatedAt)
+        const sortedCryptoPosts = cryptoPosts.sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
+
+        // - Filter Latest 6 posts excluding featured
+        const primaryCryptoPosts = sortedCryptoPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
+        // :::::::::: End of Cryptos Posts [Filtering & Sorting]
+
+        // --- Partial State Management
         setGadgetsPosts(primaryGadgetsPosts);
         setMoviesPosts(primaryMoviesPosts);
         setTrendingsPosts(primaryTrendingsPosts);
         setGamesPosts(primaryGamesPosts);
+        setCryptoPosts(primaryCryptoPosts);
       } catch (error) {
         console.error(`An Error has occured: ${error.message}`);
         setError(error.message);
@@ -95,15 +110,19 @@ export default function ApplicationHomePage() {
   }, []);
 
   const firstMoviesPost = movies[0];
-  const firstTrendingsPost = movies[0];
+  const firstTrendingsPost = trendings[0];
 
   return (
     <>
-      <div className={`${styles.MainWrapper}`}>
+      <div className={`${styles.MainWrapper} pt-[1.25rem]`}>
+        {/* --- Sponsor/Ad-Related Banner */}
+        {/* <div className={` col-start-2 col-span-10 w-full h-[64px] bg-yellow-400`}></div> */}
+        {/* :::::::: End of Banner */}
+
         {/* - GADGETS & ACCESSORIES' SECTION - */}
-        <div className={`col-span-12 w-full h-full grid grid-cols-12 gap-[1.5rem]`}>
+        <div className={`col-span-12 w-full h-full grid grid-cols-12 gap-y-[1.5rem]`}>
           {/* --- [Mobile, Medium & Large Screens] */}
-          <ul className={`${styles.topReviews} col-span-12 px-[0.625rem]`}>
+          <ul className={`${styles.topReviews} col-span-12 px-[0.875rem]`}>
             {gadgets.map((p) => (
               <li key={p?.id} className={`${styles.topReviewPost}`}>
                 <MobileSecondaryPost
@@ -117,10 +136,10 @@ export default function ApplicationHomePage() {
             ))}
           </ul>
 
-          {/* --- Ad-Space Goes Here */}
-          <div className={`${styles.adverts} col-span-12`}>
-            <p>Advertise Here</p>
-          </div>
+          {/* --- Sponsor/Ad-Space Goes Here */}
+          {/* <div className={`${styles.adverts} bg-[#3e3e3e] text-white col-start-2 col-span-10 h-[72px]`}>
+            <p>Support Us & Earn this Space in Exchange</p>
+          </div> */}
         </div>
         {/* --- END OF GADGETS SECTION */}
 
@@ -136,6 +155,8 @@ export default function ApplicationHomePage() {
                   src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
                   tag={p?.attributes?.tags[0]?.tags}
+                  postId={i}
+                  time={p?.attributes?.updatedAt}
                 />
               </li>
             ))}
@@ -172,6 +193,9 @@ export default function ApplicationHomePage() {
                     alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                     src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                     title={p?.attributes?.title}
+                    tag={firstMoviesPost?.attributes?.tags[0]?.tags}
+                    time={firstMoviesPost?.attributes?.updatedAt}
+                    postId={i}
                   />
                 </li>
               ))}
@@ -183,21 +207,34 @@ export default function ApplicationHomePage() {
         </div>
         {/* --- END OF MOVIES SECTION */}
 
+        {/* --- Sideway Posts */}
+        <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[0.5rem]`}>
+          <ul className={`col-span-12 flex flex-col gap-[1rem]`}>
+            {games.map((p) => (
+              <li>
+                <SidewayPost
+                  href={`/gadgets/${p.attributes.slug}`}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                  imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
+                  title={p?.attributes?.title}
+                  tag={p?.attributes?.tags[0]?.tags}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* 3. --- 'GAMES REVIEWS'  */}
-        <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[1rem]`}>
+        <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[0.5rem]`}>
           <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[0.75rem]`}>
             {games.map((p) => (
               <li className={`${styles.secondaryPost}`} key={p.id}>
-                <PrimaryPost
+                <SidewayPost
                   href={`/gadgets/${p.attributes.slug}`}
-                  alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-                  src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                  imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
-                  description={p?.attributes?.description}
-                  author={p?.attributes?.author?.authorname}
-                  authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
                   tag={p?.attributes?.tags[0]?.tags}
-                  time={p?.attributes?.updatedAt}
                 />
               </li>
             ))}
@@ -219,21 +256,17 @@ export default function ApplicationHomePage() {
         {/* --- END OF REVIEWS SECTION */}
 
         {/* 4. --- [TRENDINGS] */}
-        <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[1rem] px-[1rem]`}>
+        <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[1rem] px-[0.5rem]`}>
           {/* --- [Mobile Screens] */}
           <ul className={`${styles.secondaryPostsGrid} md:hidden flex flex-col gap-[0.75rem]`}>
             {trendings.map((p) => (
               <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
-                <PrimaryPost
+                <SidewayPost
                   href={`/reviews/${p.attributes.slug}`}
-                  alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
-                  src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
+                  alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                  imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
-                  description={p?.attributes?.description}
-                  author={p?.attributes?.author?.authorname}
-                  authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
                   tag={p?.attributes?.tags[0]?.tags}
-                  time={p?.attributes?.updatedAt}
                 />
               </li>
             ))}
