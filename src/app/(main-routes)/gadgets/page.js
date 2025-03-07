@@ -7,7 +7,7 @@ import TertiaryPost from '@/components/tertiary-post/tertiary-post';
 import FirstFeaturedPost from '@/components/special-featured-post/special-featured-post';
 import MobileSecondaryPost from '@/components/secondary-post-mobile/secondary-post-mobile';
 import TertiaryMoviesPost from '@/components/movies-components/sixth-post/poster';
-import EnhancedPrimaryPost from '@/components/enhanced/primary-post';
+import SidewayPost from '@/components/sideway-post/sideway-post';
 
 export default function GadgetsPage() {
   const [posts, setPosts] = useState([]);
@@ -53,11 +53,11 @@ export default function GadgetsPage() {
     );
   }
 
-  // On Loading Resources
+  // On Loading Resources (Loading Spinner Animation)
   if (isLoading) {
     return (
-      <div className={`w-full h-full bg-yellow-500 flex justify-center items-center`}>
-        <p className={`text-white text-2xl font-bold`}>Loading Animations</p>
+      <div className={`w-screen h-screen flex items-center justify-center bg-[#333]`}>
+        <div className={`${styles.spinner}`}></div>;
       </div>
     );
   }
@@ -99,6 +99,7 @@ export default function GadgetsPage() {
         {/* Section Content */}
         {primaryPosts.length > 0 && (
           <ul className={`${styles.lgFeaturedPostsGrid} px-[1rem] md:px-0`}>
+            <p className={`text-red-500`}>5 Latests Posts</p>
             {fivePrimaryPost.map((p, i) => (
               <li key={i}>
                 <TertiaryMoviesPost
@@ -122,19 +123,16 @@ export default function GadgetsPage() {
       {/* >>> Group-2 : [Mobile Screens] - 6 First Latest Posts */}
       <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[2rem]`}>
         {/* [Mobile Screens] */}
-        <ul className={`${styles.secondaryPostsGrid} md:hidden px-0 md:px-[1rem] flex flex-col gap-[0.75rem]`}>
+        <ul className={`${styles.secondaryPostsGrid} md:hidden px-[0.75rem] md:px-[1rem] flex flex-col gap-[0.75rem]`}>
+          <p className={`text-red-500`}>6 First Latests Posts</p>
           {primaryPosts.map((p) => (
             <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
-              <EnhancedPrimaryPost
+              <SidewayPost
                 href={`/gadgets/${p.attributes.slug}`}
-                alt={p?.attributes?.CoverImage?.data?.attributes?.alternativeText || ''}
-                src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
+                alternativeText={p?.attributes?.CoverImage?.data?.attributes?.alternativeText || ''}
+                imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                 title={p?.attributes?.title}
-                description={p?.attributes?.description}
-                author={p?.attributes?.author?.authorname}
-                authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
-                tag={p?.attributes?.tags}
-                time={p?.attributes?.updatedAt}
+                tag={p?.attributes?.tags[0].tags}
               />
             </li>
           ))}
@@ -207,7 +205,8 @@ export default function GadgetsPage() {
       <div>
         {/* [Mobile Screens] */}
         {featuredPosts.length > 0 && (
-          <ul className={`${styles.tertiaryPostsGrid} px-[1rem]`}>
+          <ul className={`${styles.tertiaryPostsGrid} px-[0.75rem]`}>
+            <p className={`text-red-500`}>8 Featured Posts</p>
             {featuredPosts.map((p, i) => (
               <li className={`md:hidden lg:hidden`} key={i}>
                 <TertiaryPost
@@ -230,19 +229,16 @@ export default function GadgetsPage() {
       {/* >>> Group-4: - 8 Other Posts */}
       <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[2rem]`}>
         {/* [MOBILE SCREENS to 768px] */}
-        <ul className={`${styles.secondaryPostsGrid} md:hidden flex flex-col gap-[0.75rem]`}>
+        <ul className={`${styles.secondaryPostsGrid} md:hidden flex flex-col gap-[0.75rem] px-[0.75rem]`}>
+          <p className={`text-red-500`}>8 Other Available Posts</p>
           {secondaryPosts.map((p) => (
             <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
-              <EnhancedPrimaryPost
+              <SidewayPost
                 href={`/gadgets/${p.attributes.slug}`}
-                src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
-                alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
+                imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
+                alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                 title={p?.attributes?.title}
-                description={p?.attributes?.description}
-                author={p?.attributes?.author?.authorname}
-                authorImageURL={p?.attributes?.authorimage?.data?.attributes?.url}
-                tag={p?.attributes?.tags}
-                time={p?.attributes?.updatedAt}
+                tag={p?.attributes?.tags[0].tags}
               />
             </li>
           ))}

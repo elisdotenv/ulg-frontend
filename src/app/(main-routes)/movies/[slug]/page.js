@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function GadgetSlug({ params }) {
+export default function MovieSlug({ params }) {
   const slug = React.use(params).slug;
   const [post, setPost] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -104,7 +104,7 @@ export default function GadgetSlug({ params }) {
 
   return (
     <div>
-      <p>You have Reached an Independent page for Gadgets posts</p>
+      <p>You have Reached an Independent page for Movies posts</p>
     </div>
   );
 }

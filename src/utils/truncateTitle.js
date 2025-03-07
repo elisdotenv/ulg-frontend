@@ -9,7 +9,7 @@ export const truncateTitle = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 export const truncateDescription = (title) => {
@@ -23,7 +23,7 @@ export const truncateDescription = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 /* MObile Screens */
@@ -38,7 +38,7 @@ export const truncateDescriptionMobile = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 /* Medium Screens */
@@ -53,7 +53,7 @@ export const truncateDescriptionMedium = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 export const truncateSpecialTitle = (title) => {
@@ -67,7 +67,7 @@ export const truncateSpecialTitle = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 export const truncateSpecialTitleSmall = (title) => {
@@ -75,13 +75,13 @@ export const truncateSpecialTitleSmall = (title) => {
 
   const trimmedTitle = title.replace(/\s+/g, '');
 
-  if (trimmedTitle.length <= 65) return title;
+  if (trimmedTitle.length <= 55) return title;
 
-  const truncated = title.slice(0, 65);
+  const truncated = title.slice(0, 55);
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };
 
 /* Card Component */
@@ -96,5 +96,5 @@ export const truncateSpecialTitleCard = (title) => {
   const lastSpaceIndex = truncated.lastIndexOf(' ');
 
   // If there are no spaces, just return the first 100 characters
-  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '...' : truncated + '...';
+  return lastSpaceIndex > -1 ? truncated.slice(0, lastSpaceIndex) + '..' : truncated + '..';
 };

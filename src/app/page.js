@@ -5,7 +5,6 @@ import axios from 'axios';
 import MobileSecondaryPost from '@/components/secondary-post-mobile/secondary-post-mobile';
 import TertiaryMoviesPost from '@/components/movies-components/sixth-post/poster';
 import FirstFeaturedPost from '@/components/special-featured-post/special-featured-post';
-import PrimaryPost from '@/components/primary-post/primary-post';
 import TertiaryPost from '@/components/tertiary-post/tertiary-post';
 import Link from 'next/link';
 import SidewayPost from '@/components/sideway-post/sideway-post';
@@ -78,7 +77,7 @@ export default function ApplicationHomePage() {
         const sortedGamesPosts = gamesPosts.sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
 
         // - Filter Latest 6 posts excluding featured
-        const primaryGamesPosts = sortedGamesPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
+        const primaryGamesPosts = sortedGamesPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
         // :::::::::: End of Games Posts [Filtering & Sorting]
 
         // --- [Filtering & Sorting] 'Cryptos' category posts
@@ -90,7 +89,7 @@ export default function ApplicationHomePage() {
         const sortedCryptoPosts = cryptoPosts.sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
 
         // - Filter Latest 6 posts excluding featured
-        const primaryCryptoPosts = sortedCryptoPosts.filter((p) => !p.attributes.isfeatured).slice(0, 8);
+        const primaryCryptoPosts = sortedCryptoPosts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
         // :::::::::: End of Cryptos Posts [Filtering & Sorting]
 
         // --- Partial State Management
@@ -121,6 +120,7 @@ export default function ApplicationHomePage() {
 
         {/* - GADGETS & ACCESSORIES' SECTION - */}
         <div className={`col-span-12 w-full h-full grid grid-cols-12 gap-y-[1.5rem]`}>
+          <p className={`text-red-500`}>Gadgets</p>
           {/* --- [Mobile, Medium & Large Screens] */}
           <ul className={`${styles.topReviews} col-span-12 px-[0.875rem]`}>
             {gadgets.map((p) => (
@@ -146,11 +146,12 @@ export default function ApplicationHomePage() {
         {/* 2. --- [MOVIES] */}
         {movies.length > 0 && (
           <ul className={`${styles.tertiaryPostsGrid}`}>
+            <p className={`text-red-500`}>Movies</p>
             {/* --- [Mobile Screens] Only */}
             {movies.map((p, i) => (
               <li className={`md:hidden lg:hidden`} key={i}>
                 <TertiaryMoviesPost
-                  href={`/gadgets/${p.attributes.slug}`}
+                  href={`/movies/${p.attributes.slug}`}
                   alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
@@ -169,7 +170,7 @@ export default function ApplicationHomePage() {
           {firstMoviesPost && (
             <div className={`col-span-12`}>
               <FirstFeaturedPost
-                href={`/gadgets/${firstMoviesPost.attributes.slug}`}
+                href={`/movies/${firstMoviesPost.attributes.slug}`}
                 alt={firstMoviesPost?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                 src={'http://localhost:4000' + firstMoviesPost?.attributes?.coverimage?.data?.attributes?.url}
                 title={firstMoviesPost?.attributes?.title}
@@ -189,7 +190,7 @@ export default function ApplicationHomePage() {
               {movies.map((p, i) => (
                 <li key={i}>
                   <TertiaryMoviesPost
-                    href={`/gadgets/${p.attributes.slug}`}
+                    href={`/movies/${p?.attributes?.slug}`}
                     alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                     src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                     title={p?.attributes?.title}
@@ -207,13 +208,14 @@ export default function ApplicationHomePage() {
         </div>
         {/* --- END OF MOVIES SECTION */}
 
-        {/* --- Sideway Posts */}
+        {/* --- 3. 'CRYPTOS POSTS' */}
         <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[0.5rem]`}>
+          <p className={`text-red-500`}>Cyptos</p>
           <ul className={`col-span-12 flex flex-col gap-[1rem]`}>
             {games.map((p) => (
-              <li>
+              <li key={p?.id}>
                 <SidewayPost
-                  href={`/gadgets/${p.attributes.slug}`}
+                  href={`/cryptos/${p?.attributes?.slug}`}
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
@@ -224,13 +226,14 @@ export default function ApplicationHomePage() {
           </ul>
         </div>
 
-        {/* 3. --- 'GAMES REVIEWS'  */}
+        {/* --- 4. 'MOVIES REVIEWS' */}
         <div className={`col-span-12 grid grid-cols-12 w-full h-full px-[0.5rem]`}>
           <ul className={`${styles.secondaryPostsGrid} flex flex-col gap-[0.75rem]`}>
+            <p className={`text-red-500`}>Movies</p>
             {games.map((p) => (
               <li className={`${styles.secondaryPost}`} key={p.id}>
                 <SidewayPost
-                  href={`/gadgets/${p.attributes.slug}`}
+                  href={`/movies/${p?.attributes?.slug}`}
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
@@ -241,7 +244,7 @@ export default function ApplicationHomePage() {
           </ul>
 
           {/* --- [Aside] - Ads Stats and Ad Poster */}
-          <div className={`hidden  w-full h-fit col-span-4 lg:flex flex-col gap-[0.625rem] sticky top-0 p-[1rem]`}>
+          <div className={`hidden w-full h-fit col-span-4 lg:flex flex-col gap-[0.625rem] sticky top-0 p-[1rem]`}>
             {/* 1. --- Ads Stats */}
             <div className={`w-full h-[23vh] bg-lime-600 flex items-center justify-center`}>
               <p>AdStats</p>
@@ -253,16 +256,17 @@ export default function ApplicationHomePage() {
             </div>
           </div>
         </div>
-        {/* --- END OF REVIEWS SECTION */}
+        {/* --- END OF MOVIES SECTION */}
 
-        {/* 4. --- [TRENDINGS] */}
+        {/* 5. --- [TRENDINGS] */}
         <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[1rem] px-[0.5rem]`}>
           {/* --- [Mobile Screens] */}
           <ul className={`${styles.secondaryPostsGrid} md:hidden flex flex-col gap-[0.75rem]`}>
+            <p className={`text-red-500`}>Trendings</p>
             {trendings.map((p) => (
               <li className={`${styles.secondaryPost} md:hidden`} key={p.id}>
                 <SidewayPost
-                  href={`/reviews/${p.attributes.slug}`}
+                  href={`/trendings/${p?.attributes?.slug}`}
                   alternativeText={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   imageURL={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                   title={p?.attributes?.title}
@@ -278,7 +282,7 @@ export default function ApplicationHomePage() {
             {firstTrendingsPost && (
               <div className={`col-span-12`}>
                 <FirstFeaturedPost
-                  href={`/gadgets/${firstTrendingsPost?.attributes.slug}`}
+                  href={`/trendings/${firstTrendingsPost?.attributes?.slug}`}
                   alt={firstTrendingsPost?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                   src={'http://localhost:4000' + firstTrendingsPost?.attributes?.coverimage?.data?.attributes?.url}
                   title={firstTrendingsPost?.attributes?.title}
@@ -298,7 +302,7 @@ export default function ApplicationHomePage() {
                 {trendings.map((p, i) => (
                   <li key={i}>
                     <TertiaryPost
-                      href={`/gadgets/${p.attributes.slug}`}
+                      href={`/trendings/${p?.attributes?.slug}`}
                       alt={p?.attributes?.coverimage?.data?.attributes?.alternativeText || ''}
                       src={'http://localhost:4000' + p?.attributes?.coverimage?.data?.attributes?.url}
                       title={p?.attributes?.title}
