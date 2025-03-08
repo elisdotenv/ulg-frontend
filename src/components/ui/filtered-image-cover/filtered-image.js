@@ -10,8 +10,8 @@ const FilteredImageCover = ({ alternativeText, imageURL, Tag }) => {
         <Image
           priority={true}
           className={`object-cover relative block m-0 p-0 lg:m-0 lg:p-0`}
-          width={0}
-          height={0}
+          width={1000}
+          height={1000}
           alt={alternativeText}
           src={imageURL}
         />

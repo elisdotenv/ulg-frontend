@@ -26,12 +26,12 @@ export default function GadgetsPage() {
       try {
         const res = await axios(config);
         const { data } = res.data;
-        // Filtering 'Gadgets' category posts
+        // --- Filtering 'Gadgets' category posts
         const filteredPosts = data.filter((p) =>
           p.attributes.categories.data.some((c) => c.attributes.navigationitem === 'Gadgets')
         );
 
-        // Sort filtered posts by updatedAt in descending order
+        // --- Sort filtered posts by updatedAt in descending order
         const sortedPosts = filteredPosts.sort((a, b) => new Date(b.attributes.updatedAt) - new Date(a.attributes.updatedAt));
         setPosts(sortedPosts);
       } catch (error) {
@@ -44,7 +44,7 @@ export default function GadgetsPage() {
     fetchPosts();
   }, []);
 
-  // On Error Encounter
+  // --- On Error Encounter
   if (error) {
     return (
       <p className={`text-black`}>
@@ -53,7 +53,7 @@ export default function GadgetsPage() {
     );
   }
 
-  // On Loading Resources (Loading Spinner Animation)
+  // --- On Loading Resources (Loading Spinner Animation)
   if (isLoading) {
     return (
       <div className={`w-screen h-screen flex items-center justify-center bg-[#333]`}>
@@ -66,21 +66,21 @@ export default function GadgetsPage() {
     return <p className={`text-black`}>There are currently no posts for this dummy niche!</p>;
   }
 
-  // 1. Latest 6 posts excluding featured
+  // --- 1. Latest 6 posts excluding featured
   const primaryPosts = posts.filter((p) => !p.attributes.isfeatured).slice(0, 6);
   const firstPrimaryPost = primaryPosts[0]; // --- Most Latest Post
   const fivePrimaryPost = primaryPosts.slice(1, 6); // --- Five Most Latest Posts
 
-  // 2. Featured posts (Limit to 8 featured posts)
+  // --- 2. Featured posts (Limit to 8 featured posts)
   const featuredPosts = posts.filter((p) => p.attributes.isfeatured).slice(0, 8);
 
-  // 3. Neither Featured Post Nor Most Latest Post
+  // --- 3. Neither Featured Post Nor Most Latest Post
   const secondaryPosts = posts
     .filter((p) => !p.attributes.isfeatured && !primaryPosts.includes(p))
     .slice(0, visibleSecondaryCount);
 
   const handleSeeMore = () => {
-    // Increase count by 8 on click
+    // --- Increase count by 8 on click
     setVisibleSecondaryCount((c) => c + 8);
   };
 
@@ -91,12 +91,12 @@ export default function GadgetsPage() {
       {/* --- Group-1 [MOBILE, TABLETS & DESKTOP SCREENS] --- */}
       <div
         className={`${styles.gadgetsHero} w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem] pt-[2rem] pb-[2rem] md:pb-[1rem]`}>
-        {/* Section Header */}
+        {/* --- Section Header */}
         <div className={'col-span-12 flex flex-col items-center justify-center p-[1rem]'}>
           <span className={`text-white uppercase text-[32px] font-extrabold font-lato`}>TRENDING GADGETS</span>
           <span className={`text-white text-[24px] text-center font-roboto font-medium`}>Most Popular Gadgets This Week</span>
         </div>
-        {/* Section Content */}
+        {/* --- Section Content */}
         {primaryPosts.length > 0 && (
           <ul className={`${styles.lgFeaturedPostsGrid} px-[1rem] md:px-0`}>
             <p className={`text-red-500`}>5 Latests Posts</p>
@@ -120,7 +120,7 @@ export default function GadgetsPage() {
       </div>
       {/* END OF GROUP-1 */}
 
-      {/* >>> Group-2 : [Mobile Screens] - 6 First Latest Posts */}
+      {/* --- Group-2 : [Mobile Screens] - 6 First Latest Posts */}
       <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[2rem]`}>
         {/* [Mobile Screens] */}
         <ul className={`${styles.secondaryPostsGrid} md:hidden px-[0.75rem] md:px-[1rem] flex flex-col gap-[0.75rem]`}>
@@ -138,9 +138,9 @@ export default function GadgetsPage() {
           ))}
         </ul>
 
-        {/* [Medium & Large Screens] */}
+        {/* --- [Medium & Large Screens] */}
         <div className={`hidden w-full h-full col-span-12 md:grid lg:grid grid-cols-12 gap-[1.5rem]`}>
-          {/* 1. First Featured Post */}
+          {/* --- 1. First Featured Post */}
           {firstPrimaryPost && (
             <div className={`col-span-12`}>
               <FirstFeaturedPost
@@ -158,7 +158,7 @@ export default function GadgetsPage() {
             </div>
           )}
 
-          {/* 2. 5-Featured Posts */}
+          {/* --- 2. 5-Featured Posts */}
           {fivePrimaryPost.length > 0 && (
             <ul className={`${styles.lgFeaturedPostsGrid}`}>
               {fivePrimaryPost.map((p, i) => (
@@ -179,11 +179,11 @@ export default function GadgetsPage() {
           )}
         </div>
       </div>
-      {/* >>> End of Group-2 */}
+      {/*  End of Group-2 */}
 
-      {/* > Group-3: 8 Featured Post */}
+      {/* --- Group-3: 8 Featured Post */}
       <div className={`col-span-12 w-full h-full md:block hidden`}>
-        {/* [Medium & Large Screens] */}
+        {/* --- [Medium & Large Screens] */}
         <ul className={`${styles.topReviews} md:block hidden`}>
           {featuredPosts.map((p) => (
             <li key={p?.id} className={`${styles.topReviewPost}`}>
@@ -203,7 +203,7 @@ export default function GadgetsPage() {
       </div>
 
       <div>
-        {/* [Mobile Screens] */}
+        {/* --- [Mobile Screens] */}
         {featuredPosts.length > 0 && (
           <ul className={`${styles.tertiaryPostsGrid} px-[0.75rem]`}>
             <p className={`text-red-500`}>8 Featured Posts</p>
@@ -224,11 +224,11 @@ export default function GadgetsPage() {
           </ul>
         )}
       </div>
-      {/* > End of Group-3 */}
+      {/* End of Group-3 */}
 
-      {/* >>> Group-4: - 8 Other Posts */}
+      {/* --- Group-4: - 8 Other Posts */}
       <div className={`w-full h-full col-span-12 grid grid-cols-12 gap-[2rem]`}>
-        {/* [MOBILE SCREENS to 768px] */}
+        {/* --- [MOBILE SCREENS to 768px] */}
         <ul className={`${styles.secondaryPostsGrid} md:hidden flex flex-col gap-[0.75rem] px-[0.75rem]`}>
           <p className={`text-red-500`}>8 Other Available Posts</p>
           {secondaryPosts.map((p) => (
@@ -244,7 +244,7 @@ export default function GadgetsPage() {
           ))}
         </ul>
 
-        {/* [MEDIUM & LARGE SCREENS] */}
+        {/* --- [MEDIUM & LARGE SCREENS] */}
         <ul className={`${styles.secondaryPostsGrid} hidden md:flex  px-[1rem] flex-col gap-[0.75rem]`}>
           {secondaryPosts.map((p) => (
             <li className={`${styles.secondaryPost} hidden md:block`} key={p.id}>
@@ -263,12 +263,12 @@ export default function GadgetsPage() {
           ))}
         </ul>
 
-        {/* >Ad-Space [Mobile & Medium Screens] */}
+        {/* --- Ad-Space [Mobile & Medium Screens] */}
         <div className={` ${styles.adBannerPhaseOneSM}`}>
           <p>An Animated GIF poster posing as a CTA for advertisers to advertise here</p>
         </div>
 
-        {/* >Ad-Space [Large Screens] */}
+        {/* --- Ad-Space [Large Screens] */}
         <div className={`${styles.adBannerPhaseOneLG} hidden`}>
           {/* 1. Ad-Stats */}
           <div className={`flex items-center justify-center p-[2rem] text-center w-full h-[22vh] bg-[#333333]`}>

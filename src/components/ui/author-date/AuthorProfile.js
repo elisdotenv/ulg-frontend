@@ -5,6 +5,7 @@ import { FaFileSignature } from 'react-icons/fa6';
 
 /* 1. Renders On Mobile Devices Only */
 export const AuthorProfileMobile = ({ AuthorURL, AuthorImageURL, AuthorName }) => {
+  console.log(`Author Image URL`, AuthorImageURL);
   return (
     <>
       {/* Author Profile Element */}
@@ -12,7 +13,14 @@ export const AuthorProfileMobile = ({ AuthorURL, AuthorImageURL, AuthorName }) =
         <div className={`flex items-center gap-[10px]`}>
           {/* Profile Image Element */}
           <Link href={AuthorURL}>
-            <Image className={`rounded-full m-0 p-0`} src={AuthorImageURL} alt={''} width={28} height={28} objectFit='cover' />
+            <Image
+              className={`rounded-full m-0 p-0`}
+              src={`http://localhost:4000` + AuthorImageURL?.data?.attributes?.url}
+              alt={`http://localhost:4000` + AuthorImageURL?.data?.attributes?.alternativeText || 'not-defined'}
+              width={28}
+              height={28}
+              objectFit='cover'
+            />
           </Link>
           <div className={`flex items-center gap-1`}>
             {/* Author Name Element */}
@@ -35,7 +43,14 @@ export const AuthorProfileDatePostedTop = ({ AuthorURL, AuthorImageURL, AuthorNa
       <div className={`w-fit lg:flex items-center justify-between gap-[1rem] hidden`}>
         {/* Profile Image Element */}
         <Link className={`flex items-center gap-3`} href={AuthorURL}>
-          <Image className={`rounded-full m-0 p-0`} src={AuthorImageURL} alt={''} width={28} height={28} objectFit='cover' />
+          <Image
+            className={`rounded-full m-0 p-0`}
+            src={`http://localhost:4000` + AuthorImageURL?.data?.attributes?.url}
+            alt={`http://localhost:4000` + AuthorImageURL?.data?.attributes?.alternativeText || 'not-defined'}
+            width={28}
+            height={28}
+            objectFit='cover'
+          />
 
           <span className={`text-[#d8d8d8] leading-[21.5px] text-[0.725rem]  font-semibold no-underline`}>By {AuthorName}</span>
 
